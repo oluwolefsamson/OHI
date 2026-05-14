@@ -1,4 +1,5 @@
 import React from "react";
+import SectionHeader from "../SectionHeader";
 
 const tiers = [
   {
@@ -49,35 +50,32 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Billing() {
+export default function ValueProposition() {
   return (
     <div
       id="approach"
-      className="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8"
+      className="relative isolate bg-white px-4 py-20 sm:px-6 sm:py-32 lg:px-8"
     >
-      <div className="xl:w-[470px] mx-auto">
-        <h2 className="heading text-center">Our Value Proposition</h2>
-        <p className="text__para text-center">
-          OHI combines creativity, credibility and flexibility to help projects
-          communicate with clarity and impact.
-        </p>
-      </div>
+      <SectionHeader
+        title="Our Value Proposition"
+        description="OHI combines creativity, credibility and flexibility to help projects communicate with clarity and impact."
+      />
 
-      <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 lg:max-w-6xl lg:grid-cols-3">
+      <div className="mx-auto mt-12 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-16 lg:max-w-6xl lg:grid-cols-3">
         {tiers.map((tier) => (
           <div
             key={tier.id}
             className={classNames(
               tier.featured
-                ? "relative bg-green-900 shadow-2xl"
-                : "bg-white/60 sm:mx-8 lg:mx-0",
-              "rounded-3xl p-8 ring-1 ring-gray-900/10 sm:p-10"
+                ? "relative bg-black shadow-2xl border border-white/10"
+                : "bg-white/60 sm:mx-0 lg:mx-0",
+              "rounded-3xl p-6 ring-1 ring-gray-900/10 sm:p-8"
             )}
           >
             <h3
               id={tier.id}
               className={classNames(
-                tier.featured ? "text-green-400" : "text-green-600",
+                tier.featured ? "text-white" : "text-primaryColor",
                 "text-base/7 font-semibold"
               )}
             >
@@ -112,12 +110,12 @@ export default function Billing() {
                 <li key={feature} className="flex gap-x-3">
                   <span
                     className={classNames(
-                      tier.featured ? "text-green-400" : "text-green-600",
+                      tier.featured ? "text-white" : "text-primaryColor",
                       "h-6 w-5 flex-none"
                     )}
                     aria-hidden="true"
                   >
-                    •
+                    &bull;
                   </span>
                   {feature}
                 </li>
@@ -128,8 +126,8 @@ export default function Billing() {
               aria-describedby={tier.id}
               className={classNames(
                 tier.featured
-                  ? "bg-green-500 text-white shadow-xs hover:bg-green-400 focus-visible:outline-green-500"
-                  : "text-green-600 ring-1 ring-green-200 ring-inset hover:ring-green-300 focus-visible:outline-green-600",
+                  ? "bg-yellowColor text-black shadow-xs hover:bg-yellowColor/90 focus-visible:outline-yellowColor"
+                  : "text-primaryColor ring-1 ring-primaryColor/20 ring-inset hover:ring-primaryColor/30 focus-visible:outline-primaryColor",
                 "mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10"
               )}
             >

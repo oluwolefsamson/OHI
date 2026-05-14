@@ -1,5 +1,6 @@
 import React from "react";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
+import SectionHeader from "../SectionHeader";
 
 const VideoSection = () => {
   const { config } = useLandingPageConfig();
@@ -8,16 +9,13 @@ const VideoSection = () => {
   return (
     <section id="videos" className="py-24 bg-slate-50/60">
       <div className="container">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primaryColor">
-            Videos
-          </p>
-          <h2 className="heading text-center mt-4">{video.title}</h2>
-          <p className="text__para text-center">{video.description}</p>
-        </div>
+        <SectionHeader
+          title={video.title}
+          description={video.description}
+        />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <article className="relative overflow-hidden rounded-[32px] min-h-[440px] shadow-xl">
+          <article className="relative overflow-hidden rounded-[32px] min-h-[320px] sm:min-h-[440px] shadow-xl">
             <img
               src={video.lead.poster}
               alt={video.lead.title}
@@ -56,7 +54,7 @@ const VideoSection = () => {
                 className="group overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex flex-col sm:flex-row">
-                  <div className="relative min-h-[180px] sm:w-[42%]">
+                  <div className="relative min-h-[160px] sm:min-h-[180px] sm:w-[42%]">
                     <img
                       src={item.poster}
                       alt={item.title}

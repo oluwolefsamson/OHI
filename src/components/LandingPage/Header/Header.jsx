@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
-import CropWiseLogo from "../Logo/logo";
+import Logo from "../Logo/Logo";
 import { Skeleton } from "../../ui/skeleton";
 
 const navlinks = [
@@ -64,7 +64,9 @@ const Header = () => {
       <header className="header flex items-center" ref={headerRef}>
         <div className="container">
           <div className="flex items-center justify-between">
-            <CropWiseLogo />
+            <div className="flex justify-start">
+              <Logo />
+            </div>
 
             <div className="navigation hidden md:flex items-center gap-6">
               <ul className="menu flex items-center gap-[2.7rem]">
@@ -74,8 +76,8 @@ const Header = () => {
                       to={link.path}
                     className={({ isActive }) =>
                         isActive
-                          ? "text-primaryColor text-[16px] leading-7 font-[600]"
-                          : "text-textColor text-[16px] leading-7 font-[500] hover:text-primaryColor"
+                      ? "text-yellowColor text-[16px] leading-7 font-[600]"
+                          : "text-textColor text-[16px] leading-7 font-[500] hover:text-yellowColor"
                       }
                     >
                       {link.label}
@@ -88,7 +90,7 @@ const Header = () => {
             <div className="flex items-center gap-4">
               <NavLink
                 to="/admin/login"
-                className="bg-primaryColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px] hover:bg-primaryColorDark transition-colors"
+                className="bg-green-600 py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px] hover:bg-green-700 transition-colors"
               >
                 Admin Login
               </NavLink>
@@ -116,7 +118,7 @@ const Header = () => {
         <div className="p-5 flex flex-col h-full">
           <div className="flex justify-end">
             <button
-              className="text-gray-500 hover:text-primaryColor text-xl"
+              className="text-gray-500 hover:text-yellowColor text-xl"
               onClick={closeDrawer}
             >
               ×
@@ -130,8 +132,8 @@ const Header = () => {
                   to={link.path}
                   className={({ isActive }) =>
                     isActive
-                      ? "text-primaryColor text-[16px] font-[600]"
-                      : "text-textColor text-[16px] font-[500] hover:text-primaryColor"
+                      ? "text-yellowColor text-[16px] font-[600]"
+                      : "text-textColor text-[16px] font-[500] hover:text-yellowColor"
                   }
                   onClick={closeDrawer}
                 >

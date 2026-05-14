@@ -1,7 +1,7 @@
 import React from "react";
 import LogoImg from "../../../assets/images/logo.png";
 
-const CropWiseLogo = ({ className = "" }) => {
+const Logo = ({ className = "" }) => {
   return (
     <img
       src={LogoImg}
@@ -11,4 +11,4 @@ const CropWiseLogo = ({ className = "" }) => {
   );
 };
 
-export default CropWiseLogo;
+export default Logo;

@@ -29,7 +29,7 @@ export function NavSecondary({ items, collapsed }) {
                         : "gap-2 py-2 w-full rounded-md"
                     } ${
                       isActive
-                        ? "bg-green-600 text-white hover:bg-green-700 hover:text-white"
+                        ? "bg-yellowColor text-black hover:bg-yellowColor/90 hover:text-black"
                         : collapsed
                           ? "bg-gray-200 text-gray-800 hover:bg-gray-300"
                           : "text-gray-800 hover:bg-gray-100"

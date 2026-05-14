@@ -1,5 +1,6 @@
 import React from "react";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
+import SectionHeader from "../SectionHeader";
 
 export const MissionVisionValues = () => {
   const { config } = useLandingPageConfig();
@@ -8,12 +9,13 @@ export const MissionVisionValues = () => {
   return (
     <section id="values" className="py-24">
       <div className="container">
-        <div className="xl:w-[540px] mx-auto text-center">
-          <h2 className="heading">{profile.title}</h2>
-          <p className="text__para">{profile.description}</p>
-        </div>
+        <SectionHeader
+          title={profile.title}
+          description={profile.description}
+          className="max-w-[540px]"
+        />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 mt-12">
           <div className="rounded-3xl border border-[#D9DCE2] bg-white p-8 shadow-sm">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primaryColor">
               Who we are

@@ -8,8 +8,8 @@ const Feature = () => {
   return (
     <section>
       <div className="container">
-        <div className="flex items-center justify-between flex-col lg:flex-row">
-          <div className="xl:w-[670px]">
+        <div className="flex flex-col items-center justify-between gap-10 lg:flex-row">
+          <div className="w-full lg:flex-1 xl:w-[670px]">
             <h2 className="heading">
               We transform African projects into stories that inspire action.
             </h2>
@@ -29,14 +29,14 @@ const Feature = () => {
             </Link>
           </div>
 
-          <div className="relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0">
+          <div className="relative z-10 w-full flex justify-end mt-[20px] lg:mt-0 lg:flex-1 xl:w-[770px]">
             <img
               src={featureImg}
-              className="w-3/4 rounded-xl"
+              className="w-full max-w-[560px] rounded-xl lg:w-3/4"
               alt="OHI feature"
             />
 
-            <div className="w-[150px] lg:w-[240px] bg-gray-200 absolute bottom-[50px] left-0 md:bottom-[100px] md:left-5 z-20 p-2 pb-3 lg:pt-4 lg:px-4 lg:pb-[26px] rounded-[10px]">
+            <div className="absolute bottom-[18px] left-0 z-20 w-[140px] rounded-[10px] bg-gray-200 p-2 pb-3 md:bottom-[70px] md:left-3 lg:w-[240px] lg:pt-4 lg:px-4 lg:pb-[26px]">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-[6px] lg:gap-3">
                   <p className="text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-headingColor font-[600]">
@@ -51,7 +51,7 @@ const Feature = () => {
                 </span>
               </div>
 
-              <div className="w-[65px] lg:w-[96px] bg-[#CCF0F3] py-1 px-2 lg:py-[6px] lg:px-[10px] text-[8px] leading-[8px] lg:text-[9px] lg:leading-4 text-irisBlueColor font-[500] mt-2 lg:mt-4 rounded-full">
+              <div className="mt-2 w-[72px] rounded-full bg-[#CCF0F3] px-2 py-1 text-[8px] leading-[8px] font-[500] text-irisBlueColor lg:mt-4 lg:w-[96px] lg:px-[10px] lg:py-[6px] lg:text-[9px] lg:leading-4">
                 Verified
               </div>
 

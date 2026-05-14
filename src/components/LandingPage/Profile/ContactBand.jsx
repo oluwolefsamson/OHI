@@ -29,12 +29,12 @@ export const ContactBand = () => {
                 and production solutions.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link to="mailto:contact@olympianhouseintl.com">
-                  <button className="hero_btn1">Email Us</button>
+                  <button className="hero_btn1 w-full sm:w-auto">Email Us</button>
                 </Link>
                 <Link to="https://olympianhouseintl.com" target="_blank" rel="noreferrer">
-                  <button className="hero_btn2">Visit Website</button>
+                  <button className="hero_btn2 w-full sm:w-auto">Visit Website</button>
                 </Link>
               </div>
             </div>

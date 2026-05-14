@@ -9,15 +9,15 @@ const About = () => {
   return (
     <section id="about">
       <div className="container">
-        <div className="flex justify-between gap-[50px] lg:gap-[130px] xl:gap-0 flex-col lg:flex-row">
-          <div className="relative z-10 xl:w-[750px] flex justify-start mt-[50px] lg:mt-0">
+        <div className="flex flex-col justify-between gap-10 lg:flex-row lg:gap-[130px] xl:gap-0">
+          <div className="relative z-10 w-full flex justify-start mt-[30px] lg:mt-0 lg:flex-1 xl:w-[750px]">
             <img
               src={about.image}
-              className="w-3/4 rounded"
+              className="w-full max-w-[560px] rounded lg:w-3/4"
               alt="Olympian House International"
             />
 
-            <div className="w-[150px] lg:w-[240px] bg-gray-200 absolute bottom-[50px] right-0 md:bottom-[100px] md:right-5 z-20 p-2 pb-3 lg:pt-4 lg:px-4 lg:pb-[26px] rounded-[10px]">
+            <div className="absolute bottom-[20px] right-0 z-20 w-[140px] bg-gray-200 p-2 pb-3 rounded-[10px] md:bottom-[60px] md:right-3 lg:w-[240px] lg:bottom-[100px] lg:pt-4 lg:px-4 lg:pb-[26px]">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-[6px] lg:gap-3">
                   <p className="text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-headingColor font-[600]">
@@ -45,7 +45,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2 xl:w-[670px] order-1 lg:order-2">
+          <div className="w-full order-1 lg:w-1/2 lg:order-2 xl:w-[670px]">
             <h2 className="heading">{about.title}</h2>
             {about.paragraphs.map((paragraph) => (
               <p key={paragraph} className="text__para">

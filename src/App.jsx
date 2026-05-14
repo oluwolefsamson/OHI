@@ -12,13 +12,15 @@ function App() {
       <AdminAuthProvider>
         <BrowserRouter>
           <Routers />
-          <Toaster
-            position="bottom-right"
-            richColors
-            closeButton
-            duration={4000}
-            expand={true}
-          />
+          <div className="pointer-events-none fixed inset-0 z-[9999]">
+            <Toaster
+              position="bottom-right"
+              richColors
+              closeButton
+              duration={4000}
+              expand={true}
+            />
+          </div>
         </BrowserRouter>
       </AdminAuthProvider>
     </LandingPageConfigProvider>

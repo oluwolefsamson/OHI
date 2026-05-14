@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import About from "../../components/LandingPage/About/About";
-import { MissionVisionValues } from "../../components/LandingPage/Profile/ProfileSections";
+import { MissionVisionValues } from "../../components/LandingPage/Profile/MissionVisionValues";
 import { ContactBand } from "../../components/LandingPage/Profile/ContactBand";
 import faqImg from "../../../src/assets/images/faqs.jpeg";
 import FaqList from "../../components/LandingPage/Faq/FaqList";
@@ -13,10 +13,11 @@ import GalleryStories from "../../components/LandingPage/Gallery/GalleryStories"
 import VideoSection from "../../components/LandingPage/Video/VideoSection";
 import HomeSupplierList from "../../components/LandingPage/Supplier/HomeSupplierList";
 import ServiceList from "../../components/LandingPage/Services/ServiceList";
-import Billing from "../../components/LandingPage/Billing/Billing";
+import ValueProposition from "../../components/LandingPage/ValueProposition/ValueProposition";
 import { Marquee3D } from "../../components/LandingPage/Marquee/Marquee";
 import { Skeleton } from "../../components/ui/skeleton";
 import { useLandingPageConfig } from "../../context/LandingPageConfigContext";
+import SectionHeader from "../../components/LandingPage/SectionHeader";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -51,12 +52,10 @@ const Home = () => {
 
       <section id="services">
         <div className="container">
-          <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">{config.services.title}</h2>
-            <p className="text__para text-center">
-              {config.services.description}
-            </p>
-          </div>
+          <SectionHeader
+            title={config.services.title}
+            description={config.services.description}
+          />
           <ServiceList />
         </div>
       </section>
@@ -71,7 +70,7 @@ const Home = () => {
 
       <HomeSupplierList />
 
-      <Billing />
+      <ValueProposition />
 
       <MissionVisionValues />
 
@@ -84,7 +83,7 @@ const Home = () => {
               <img
                 src={faqImg}
                 alt="OHI FAQs"
-                className="w-[80%] h-full lg:h-[103vh] md:h-[75vh] object-cover rounded"
+                className="w-full h-[320px] rounded object-cover sm:h-[75vh] lg:h-[103vh]"
               />
             </div>
             <div className="w-full md:w-1/2 flex flex-col justify-center">
@@ -97,10 +96,11 @@ const Home = () => {
 
       <section>
         <div className="container">
-          <div className="xl:w-[470px] mx-auto mb-[80px] lg:mb-[100px] sm:mb-[30px]">
-            <h2 className="heading text-center">{config.voices.title}</h2>
-            <p className="text__para text-center">{config.voices.description}</p>
-          </div>
+          <SectionHeader
+            title={config.voices.title}
+            description={config.voices.description}
+            className="mb-[80px] lg:mb-[100px] sm:mb-[30px]"
+          />
           <Marquee3D />
         </div>
       </section>

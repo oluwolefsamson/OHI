@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { RiLinkedinFill } from "react-icons/ri";
 import { AiFillYoutube, AiFillGithub, AiOutlineInstagram } from "react-icons/ai";
-import CropWiseLogo from "../Logo/logo";
+import Logo from "../Logo/Logo";
 import { Skeleton } from "../../ui/skeleton";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
 
@@ -56,10 +56,14 @@ const Footer = () => {
 
   if (loading) {
     return (
-      <footer id="contact" className="pb-16 pt-10">
+      <footer
+        id="contact"
+        className="bg-no-repeat bg-center bg-cover pb-16 pt-10"
+        style={{ backgroundImage: "var(--ohi-hero-bg)" }}
+      >
         <div className="container">
-          <div className="flex justify-between flex-col md:flex-row flex-wrap gap-[30px]">
-            <div>
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-4">
+            <div className="max-w-[420px]">
               <Skeleton className="w-[120px] h-[40px] rounded-lg mb-4" />
               <Skeleton className="w-[220px] h-[20px] rounded mb-2" />
               <div className="flex items-center gap-3 mt-4">
@@ -95,11 +99,15 @@ const Footer = () => {
   }
 
   return (
-    <footer id="contact" className="pb-16 pt-10">
+    <footer
+      id="contact"
+      className="bg-no-repeat bg-center bg-cover pb-16 pt-10"
+      style={{ backgroundImage: "var(--ohi-hero-bg)" }}
+    >
       <div className="container">
-        <div className="flex justify-between flex-col md:flex-row flex-wrap gap-[30px]">
-          <div>
-            <CropWiseLogo />
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-4">
+          <div className="flex flex-col items-start">
+            <Logo />
             <p className="text-[16px] leading-7 font-[400] text-textColor mt-4 max-w-[320px]">
               {config.footer.description.replace("{year}", year)}
             </p>
@@ -108,7 +116,7 @@ const Footer = () => {
                 <a
                   href={link.path}
                   key={index}
-                  className="w-9 h-9 border border-solid border-[#181A1E] rounded-full flex items-center justify-center group hover:bg-primaryColor hover:border-none"
+                  className="w-9 h-9 border border-solid border-primaryColor/30 rounded-full flex items-center justify-center group hover:bg-primaryColor hover:border-primaryColor"
                   target={link.path.startsWith("http") ? "_blank" : undefined}
                   rel={
                     link.path.startsWith("http")

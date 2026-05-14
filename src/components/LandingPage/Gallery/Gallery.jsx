@@ -1,5 +1,6 @@
 import React from "react";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
+import SectionHeader from "../SectionHeader";
 
 const Gallery = () => {
   const { config } = useLandingPageConfig();
@@ -7,13 +8,11 @@ const Gallery = () => {
   return (
     <section id="gallery" className="py-24">
       <div className="container">
-        <div className="xl:w-[560px] mx-auto text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primaryColor">
-            Gallery
-          </p>
-          <h2 className="heading text-center mt-4">{config.gallery.title}</h2>
-          <p className="text__para text-center">{config.gallery.description}</p>
-        </div>
+        <SectionHeader
+          title={config.gallery.title}
+          description={config.gallery.description}
+          className="max-w-[560px]"
+        />
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[220px] gap-5">
           {config.gallery.items.map((item) => (

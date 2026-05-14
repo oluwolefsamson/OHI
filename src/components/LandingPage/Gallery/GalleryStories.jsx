@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
+import SectionHeader from "../SectionHeader";
 
 const GalleryStories = () => {
   const { config } = useLandingPageConfig();
@@ -8,17 +10,23 @@ const GalleryStories = () => {
   return (
     <section id="gallery-stories" className="py-24 bg-slate-50/60">
       <div className="container">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primaryColor">
-            Gallery Stories
-          </p>
-          <h2 className="heading text-center mt-4">{galleryStories.title}</h2>
-          <p className="text__para text-center">{galleryStories.description}</p>
+        <SectionHeader
+          title={galleryStories.title}
+          description={galleryStories.description}
+        />
+
+        <div className="mt-8 flex justify-center">
+          <Link
+            to="/#gallery"
+            className="inline-flex items-center rounded-full bg-primaryColor px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-primaryColor/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaryColor focus-visible:ring-offset-2"
+          >
+            View More
+          </Link>
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="grid gap-6 sm:grid-cols-2">
-            <article className="relative overflow-hidden rounded-[30px] min-h-[360px] shadow-xl">
+            <article className="relative overflow-hidden rounded-[30px] min-h-[280px] sm:min-h-[360px] shadow-xl">
               <img
                 src={galleryStories.lead.image}
                 alt={galleryStories.lead.title}
@@ -52,7 +60,7 @@ const GalleryStories = () => {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   {galleryStories.supportCards.map((item) => (
                     <div
                       key={item.title}
@@ -83,8 +91,8 @@ const GalleryStories = () => {
             </article>
           </div>
 
-          <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm">
-            <div className="flex items-center justify-between gap-3">
+          <div className="rounded-[30px] border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primaryColor">
                   Gallery strip
@@ -93,7 +101,7 @@ const GalleryStories = () => {
                   {galleryStories.stripTitle}
                 </h3>
               </div>
-              <div className="hidden sm:block rounded-full bg-primaryColor/10 px-4 py-2 text-sm font-semibold text-primaryColor">
+              <div className="self-start rounded-full bg-primaryColor/10 px-4 py-2 text-sm font-semibold text-primaryColor sm:self-auto">
                 {galleryStories.stripBadge}
               </div>
             </div>
@@ -102,9 +110,9 @@ const GalleryStories = () => {
               {galleryStories.stripItems.map((item, index) => (
                 <article
                   key={item.label}
-                  className="group flex items-center gap-4 rounded-[24px] border border-slate-100 p-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  className="group flex flex-col gap-4 rounded-[24px] border border-slate-100 p-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:flex-row sm:items-center"
                 >
-                  <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-2xl">
+                  <div className="relative h-40 w-full shrink-0 overflow-hidden rounded-2xl sm:h-20 sm:w-24">
                     <img
                       src={item.image}
                       alt={item.label}
