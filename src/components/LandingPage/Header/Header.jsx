@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
-import Logo from "../Logo/Logo.jsx";
+import Logo from "../Logo/logo.jsx";
 import { Skeleton } from "../../ui/skeleton";
 
 const navlinks = [

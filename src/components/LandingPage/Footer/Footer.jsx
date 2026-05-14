@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { RiLinkedinFill } from "react-icons/ri";
 import { AiFillYoutube, AiFillGithub, AiOutlineInstagram } from "react-icons/ai";
-import Logo from "../Logo/Logo.jsx";
+import Logo from "../Logo/logo.jsx";
 import { Skeleton } from "../../ui/skeleton";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
 
