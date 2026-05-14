@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import featureImg from "../../../assets/images/feature-img.jpg";
-import videoIcon from "../../../assets/images/video-icon.png";
-import avatarIcon from "../../../assets/images/avatar-icon.jpg";
+import featureImg from "../../../assets/img/BTS-02812.jpg";
+import videoIcon from "../../../assets/img/cropped-logo-ohi-blue.png";
+import avatarIcon from "../../../assets/img/WFP-03555-150x150.jpg";
 
 const Feature = () => {
   return (

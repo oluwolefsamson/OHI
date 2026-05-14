@@ -5,21 +5,21 @@ import hero2 from "../assets/images/HeroImg/hero2.jpg";
 import hero3 from "../assets/images/HeroImg/hero3.jpg";
 import hero4 from "../assets/images/HeroImg/hero4.jpg";
 import hero5 from "../assets/images/HeroImg/hero5.jpg";
-import aboutImg from "../assets/images/about.jpg";
-import aboutCard from "../assets/images/about-card.jpg";
-import featureImg from "../assets/images/feature-img.jpg";
-import faqImg from "../assets/images/faqs.jpeg";
-import rev1 from "../assets/images/rev1.jpg";
-import rev2 from "../assets/images/rev2.jpg";
-import rev4 from "../assets/images/rev4.jpg";
-import supplier1 from "../assets/images/supplier-img01.jpg";
-import supplier2 from "../assets/images/supplier-img02.jpg";
-import supplier3 from "../assets/images/supplier-img03.jpg";
-import videoIcon from "../assets/images/video-icon.png";
-import avatarIcon from "../assets/images/avatar-icon.jpg";
-import icon01 from "../assets/images/icon01.png";
-import icon02 from "../assets/images/icon02.png";
-import icon03 from "../assets/images/icon03.png";
+import aboutImg from "../assets/img/about-us.jpg";
+import aboutCard from "../assets/img/BTS-02864.jpg";
+import featureImg from "../assets/img/BTS-02812.jpg";
+import faqImg from "../assets/img/WFP-03558.jpg";
+import rev1 from "../assets/img/WFP-03555-150x150.jpg";
+import rev2 from "../assets/img/WFP-03556-150x150.jpg";
+import rev4 from "../assets/img/WFP-03558-150x150.jpg";
+import supplier1 from "../assets/img/WFP-03520.jpg";
+import supplier2 from "../assets/img/WFP-03523.jpg";
+import supplier3 from "../assets/img/WFP-03524.jpg";
+import videoIcon from "../assets/img/logo-ohi-blue.png";
+import avatarIcon from "../assets/img/WFP-03558-150x150.jpg";
+import icon01 from "../assets/img/cropped-logo-ohi-blue.png";
+import icon02 from "../assets/img/WFP-03556-150x150.jpg";
+import icon03 from "../assets/img/WFP-03557-150x150.jpg";
 
 export const landingPageDefaults = {
   theme: {
@@ -133,7 +133,7 @@ export const landingPageDefaults = {
       {
         title: "Field stories",
         category: "Documentary coverage",
-        image: hero1,
+        image: supplier1,
         span: "lg:col-span-2 lg:row-span-2",
       },
       {
@@ -154,7 +154,7 @@ export const landingPageDefaults = {
       {
         title: "Mission coverage",
         category: "On-location production",
-        image: hero2,
+        image: supplier1,
       },
       {
         title: "Community engagement",
@@ -164,12 +164,12 @@ export const landingPageDefaults = {
       {
         title: "Investment narratives",
         category: "Private-sector content",
-        image: hero3,
+        image: supplier2,
       },
       {
         title: "Stakeholder confidence",
         category: "Brand trust",
-        image: rev4,
+        image: supplier3,
       },
     ],
   },
@@ -182,13 +182,14 @@ export const landingPageDefaults = {
       category: "Documentary coverage",
       description:
         "Coverage designed to preserve context, tone and the human detail that makes impact credible.",
-      image: hero4,
+      image: featureImg,
     },
     supportIntro: {
       eyebrow: "Why it works",
       title: "Built for institutions that need clarity and trust",
       description:
         "The gallery language mirrors the company profile: clear, professional and grounded in the kind of visual evidence that helps partners communicate with confidence.",
+      image: aboutImg,
     },
     supportCards: [
       {
@@ -211,22 +212,22 @@ export const landingPageDefaults = {
     stripItems: [
       {
         label: "Field production",
-        image: hero5,
+        image: rev1,
         description: "A visual cue for the range of settings OHI can document.",
       },
       {
         label: "Audience trust",
-        image: supplier1,
+        image: rev2,
         description: "A visual cue for the range of settings OHI can document.",
       },
       {
         label: "Project delivery",
-        image: supplier2,
+        image: rev4,
         description: "A visual cue for the range of settings OHI can document.",
       },
       {
         label: "Executive visibility",
-        image: supplier3,
+        image: aboutImg,
         description: "A visual cue for the range of settings OHI can document.",
       },
     ],
@@ -240,7 +241,7 @@ export const landingPageDefaults = {
       category: "Featured film",
       description:
         "A concise branded film for introducing the organisation, its purpose and the kind of stories it tells.",
-      poster: hero5,
+      poster: supplier1,
     },
     clips: [
       {
@@ -248,14 +249,14 @@ export const landingPageDefaults = {
         category: "Story capture",
         description:
           "Short-form documentary moments that keep the human voice at the center of the frame.",
-        poster: hero4,
+        poster: supplier2,
       },
       {
         title: "Partner spotlight",
         category: "Visibility clip",
         description:
           "A credibility-led edit for projects, partners and institutional communication.",
-        poster: aboutImg,
+        poster: supplier3,
       },
       {
         title: "Impact testimonials",
@@ -317,7 +318,7 @@ export const landingPageDefaults = {
         name: "Foundation Lead",
         username: "@impact",
         body: "OHI gives our projects the visibility they deserve and the credibility they need to attract support.",
-        img: rev1,
+        img: rev2,
       },
       {
         name: "Private Sector Partner",

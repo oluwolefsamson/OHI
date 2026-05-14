@@ -24,6 +24,7 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
+  SidebarGroupLabel,
   SidebarMenu,
 } from "../../components/ui/sidebar";
 import { useSidebar } from "../../components/ui/sidebar";
@@ -99,7 +100,7 @@ const data = {
       icon: LayoutDashboardIcon,
     },
     {
-      title: "Footer",
+      title: "Footer settings",
       url: "/dashboard/landing-page#footer-settings",
     },
   ],
@@ -134,7 +135,7 @@ export function AppSidebar(props) {
   if (loading) {
     return (
       <Sidebar collapsible="icon" {...props} className="flex min-h-dvh flex-col">
-        <SidebarHeader className="sticky top-0 z-10 !items-start bg-white/90 backdrop-blur">
+        <SidebarHeader className="sticky top-0 z-10 !items-start border-b border-white/70 bg-white/95 backdrop-blur">
           <SidebarMenu
             className={cn(
               "flex flex-col items-center gap-3 w-full px-3 py-3",
@@ -168,7 +169,7 @@ export function AppSidebar(props) {
           </SidebarMenu>
         </SidebarHeader>
         <div className="flex-1 flex flex-col overflow-hidden">
-          <SidebarContent className="text-gray-700 flex flex-col h-full overflow-y-auto text-sm">
+          <SidebarContent className="flex h-full flex-col overflow-y-auto text-sm text-slate-700">
             <div className="flex flex-col flex-1 min-h-0 gap-2 px-2 py-4">
               <Skeleton className="w-full h-8 mb-2 rounded" />
               <Skeleton className="w-full h-8 mb-2 rounded" />
@@ -198,7 +199,7 @@ export function AppSidebar(props) {
 
   return (
     <Sidebar collapsible="icon" {...props} className="flex min-h-dvh flex-col">
-      <SidebarHeader className="sticky top-0 z-10 !items-start bg-white/90 backdrop-blur">
+      <SidebarHeader className="sticky top-0 z-10 !items-start border-b border-white/70 bg-white/95 backdrop-blur">
         <SidebarMenu
           className={cn(
             "flex flex-col items-center gap-3 w-full",
@@ -214,27 +215,27 @@ export function AppSidebar(props) {
             <OhiLogo className={cn("transition-all", collapsed ? "h-8 w-8" : "h-9 w-32")} />
             {!collapsed && isMobile && openMobile && (
               <button
-                className="ml-auto rounded-full bg-gray-200 p-1 transition-colors hover:bg-gray-200"
+                className="ml-auto rounded-full bg-slate-100 p-1 transition-colors hover:bg-slate-200"
                 onClick={() => setOpenMobile(false)}
                 aria-label="Close sidebar"
               >
-                <X className="h-6 w-6 text-gray-600" />
+                <X className="h-6 w-6 text-slate-600" />
               </button>
             )}
           </div>
 
           <div className="flex items-center justify-center w-full">
             {collapsed ? (
-              <div className="flex items-center justify-center w-10 h-10 p-2 rounded-md bg-gray-200 hover:bg-gray-300 transition-colors duration-200">
-                <Search className="h-5 w-5 text-gray-500" />
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 transition-colors duration-200 hover:bg-slate-200">
+                <Search className="h-5 w-5 text-slate-500" />
               </div>
             ) : (
               <div className="w-full relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
                 <Input
                   type="text"
-                  placeholder="Search OHI dashboard"
-                  className="w-full pl-9 py-2 rounded-full bg-slate-100 text-slate-700 placeholder:text-slate-400 shadow-sm border-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                  placeholder="Search workspace"
+                  className="w-full rounded-full border-white/80 bg-slate-100/90 py-2 pl-9 text-slate-700 shadow-sm placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-[#0f4c81]/20 focus-visible:ring-offset-0"
                   disabled
                 />
               </div>
@@ -244,19 +245,24 @@ export function AppSidebar(props) {
       </SidebarHeader>
 
       <div className="flex-1 flex flex-col overflow-hidden">
-        <SidebarContent className="text-gray-700 flex flex-col h-full overflow-y-auto text-sm">
+        <SidebarContent className="flex h-full flex-col overflow-y-auto text-sm text-slate-700">
           <div className="flex flex-col flex-1 min-h-0">
+            <SidebarGroupLabel className="px-5 pt-5 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500">
+              Workspace
+            </SidebarGroupLabel>
             <NavMain
               items={data.navMain}
+              collapsed={collapsed}
               iconClassName="h-4 w-4"
               textClassName="text-sm"
             />
-            <div className="mt-4 px-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gray-500">
+            <div className="mt-4 px-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
               Editable Sections
             </div>
             <div className="mt-2 flex-1 min-h-0">
               <NavSecondary
                 items={data.navSecondary}
+                collapsed={collapsed}
                 iconClassName="h-4 w-4"
                 textClassName="text-sm"
               />
@@ -265,7 +271,7 @@ export function AppSidebar(props) {
         </SidebarContent>
       </div>
 
-      <SidebarFooter className="border-t border-sidebar-border">
+      <SidebarFooter className="border-t border-white/70 bg-white/80 backdrop-blur">
         <NavUser user={sidebarUser} />
       </SidebarFooter>
     </Sidebar>

@@ -60,6 +60,16 @@ const GalleryStories = () => {
                   </p>
                 </div>
 
+                {galleryStories.supportIntro.image && (
+                  <div className="overflow-hidden rounded-[24px] border border-slate-100 shadow-sm">
+                    <img
+                      src={galleryStories.supportIntro.image}
+                      alt={galleryStories.supportIntro.title}
+                      className="h-44 w-full object-cover sm:h-52"
+                    />
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   {galleryStories.supportCards.map((item) => (
                     <div

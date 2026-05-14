@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { toast } from "sonner";
 import { useLandingPageConfig } from "../../context/LandingPageConfigContext";
+import { ArrowRightIcon, RotateCcwIcon, SparklesIcon } from "lucide-react";
 
 function readFileAsDataUrl(file) {
   return new Promise((resolve, reject) => {
@@ -16,17 +17,21 @@ function SectionCard({ id, title, description, children }) {
   return (
     <section
       id={id}
-      className="scroll-mt-24 rounded-[28px] border border-white/60 bg-white/90 p-6 shadow-[0_18px_50px_rgba(15,23,42,0.08)] backdrop-blur"
+      className="scroll-mt-24 overflow-hidden rounded-[30px] border border-slate-200/80 bg-white/95 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur"
     >
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-headingColor">{title}</h2>
+      <div className="h-1 bg-[linear-gradient(90deg,#0f4c81,#118ab2,#f4b942)]" />
+      <div className="border-b border-slate-100 px-6 py-5">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500">
+          Section editor
+        </p>
+        <h2 className="mt-2 text-2xl font-bold text-headingColor">{title}</h2>
         {description && (
           <p className="mt-2 max-w-3xl text-sm leading-6 text-textColor">
             {description}
           </p>
         )}
       </div>
-      {children}
+      <div className="px-6 py-6">{children}</div>
     </section>
   );
 }
@@ -47,7 +52,7 @@ function TextInput(props) {
   return (
     <input
       {...props}
-      className={`w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none ring-0 transition focus:border-primaryColor ${props.className || ""}`}
+      className={`w-full rounded-2xl border border-slate-200 bg-slate-50/80 px-4 py-3 text-sm outline-none ring-0 transition placeholder:text-slate-400 focus:border-primaryColor focus:bg-white ${props.className || ""}`}
     />
   );
 }
@@ -56,7 +61,7 @@ function TextArea(props) {
   return (
     <textarea
       {...props}
-      className={`w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none ring-0 transition focus:border-primaryColor ${props.className || ""}`}
+      className={`w-full rounded-2xl border border-slate-200 bg-slate-50/80 px-4 py-3 text-sm outline-none ring-0 transition placeholder:text-slate-400 focus:border-primaryColor focus:bg-white ${props.className || ""}`}
     />
   );
 }
@@ -64,12 +69,12 @@ function TextArea(props) {
 function ImageField({ label, value, onChange, hint }) {
   return (
     <Field label={label} hint={hint}>
-      <div className="flex flex-col gap-3 rounded-2xl border border-dashed border-slate-200 bg-slate-50 p-4">
+      <div className="flex flex-col gap-3 rounded-2xl border border-dashed border-slate-200 bg-slate-50/70 p-4">
         <div className="flex items-center gap-4">
           <img
             src={value}
             alt={label}
-            className="h-20 w-20 rounded-xl object-cover ring-1 ring-slate-200"
+            className="h-20 w-20 rounded-2xl object-cover ring-1 ring-slate-200"
           />
           <input
             type="file"
@@ -400,32 +405,72 @@ export default function LandingPageManager() {
 
   return (
     <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
-      <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primaryColor">
-            OHI Homepage Manager
-          </p>
-          <h1 className="mt-3 text-4xl font-bold text-headingColor">
-            Control the public OHI homepage from the dashboard
-          </h1>
-          <p className="mt-3 max-w-3xl text__para">
-            Edit the sections currently wired to the homepage config: hero,
-            about, Why OHI, theme colors, and footer content. Changes are saved
-            to this browser and reflected on the public landing page.
-          </p>
-        </div>
+      <div className="mb-8 overflow-hidden rounded-[32px] border border-slate-200/80 bg-white/95 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur">
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primaryColor">
+              OHI Homepage Manager
+            </p>
+            <h1 className="mt-3 text-4xl font-bold tracking-tight text-headingColor sm:text-5xl">
+              Control the public OHI homepage from one focused editor
+            </h1>
+            <p className="mt-4 max-w-3xl text__para">
+              Edit the sections wired to the homepage config: hero, about,
+              Why OHI, theme colors, gallery, video, mission, values, and
+              footer content. Changes are saved to this browser and reflected
+              on the public landing page.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <button
+                type="button"
+                className="inline-flex items-center gap-2 rounded-full bg-primaryColor px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_40px_rgba(15,76,129,0.24)] transition hover:translate-y-[-1px] hover:brightness-110"
+                onClick={() => {
+                  resetConfig();
+                  toast.success("Homepage content reset to defaults");
+                }}
+              >
+                <RotateCcwIcon className="h-4 w-4" />
+                Reset defaults
+              </button>
+              <Link
+                to="/dashboard/overview"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
+              >
+                Back to overview
+                <ArrowRightIcon className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
 
-        <div className="flex flex-wrap gap-3">
-          <button
-            type="button"
-            className="rounded-full bg-primaryColor px-5 py-3 text-sm font-semibold text-white"
-            onClick={() => {
-              resetConfig();
-              toast.success("Homepage content reset to defaults");
-            }}
-          >
-            Reset Defaults
-          </button>
+          <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+            <div className="rounded-2xl bg-slate-50/80 p-4">
+              <div className="flex items-center gap-2">
+                <SparklesIcon className="h-4 w-4 text-[#0f4c81]" />
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                  Live preview
+                </p>
+              </div>
+              <p className="mt-2 text-sm leading-6 text-textColor">
+                Changes update immediately in the browser.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-slate-50/80 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                Focus
+              </p>
+              <p className="mt-2 text-sm leading-6 text-textColor">
+                Cleaner hierarchy, less repetition, clearer editing flow.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-slate-50/80 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                Scope
+              </p>
+              <p className="mt-2 text-sm leading-6 text-textColor">
+                Homepage, theme settings, and content blocks.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 

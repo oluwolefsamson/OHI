@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import About from "../../components/LandingPage/About/About";
 import { MissionVisionValues } from "../../components/LandingPage/Profile/MissionVisionValues";
 import { ContactBand } from "../../components/LandingPage/Profile/ContactBand";
-import faqImg from "../../../src/assets/images/faqs.jpeg";
+import faqImg from "../../assets/img/WFP-03558.jpg";
 import FaqList from "../../components/LandingPage/Faq/FaqList";
 import Hero from "../../components/LandingPage/Hero/Hero";
 import WhyChoose from "../../components/LandingPage/WhyChoose/WhyChoose";
@@ -78,7 +78,7 @@ const Home = () => {
 
       <section id="faq">
         <div className="container">
-          <div className="flex flex-col md:flex-row justify-between gap-[30px] md:gap-[50px] lg:gap-0 items-stretch">
+          <div className="flex flex-col md:flex-row justify-between gap-[30px] md:gap-[64px] lg:gap-[96px] xl:gap-[120px] items-stretch">
             <div className="w-full md:w-1/2 flex">
               <img
                 src={faqImg}

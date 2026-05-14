@@ -1,6 +1,6 @@
-import supplierImg01 from "../images/supplier-img01.jpg";
-import supplierImg02 from "../images/supplier-img02.jpg";
-import supplierImg03 from "../images/supplier-img03.jpg";
+import supplierImg01 from "../img/WFP-03520.jpg";
+import supplierImg02 from "../img/WFP-03523.jpg";
+import supplierImg03 from "../img/WFP-03524.jpg";
 
 export const suppliers = [
   {

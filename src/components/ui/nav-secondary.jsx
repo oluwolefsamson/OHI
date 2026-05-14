@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   SidebarGroup,
   SidebarGroupContent,
@@ -7,43 +7,55 @@ import {
   SidebarMenuItem,
 } from "../../components/ui/sidebar";
 import { NavLink, useLocation } from "react-router-dom";
+import { cn } from "../../lib/utils";
 
-export function NavSecondary({ items, collapsed }) {
+export function NavSecondary({
+  items,
+  collapsed = false,
+  iconClassName = "h-4 w-4",
+  textClassName = "text-sm",
+}) {
   const location = useLocation();
 
   return (
-    <SidebarGroup className="">
-      {" "}
-      <SidebarGroupContent className="">
+    <SidebarGroup>
+      <SidebarGroupContent>
         <SidebarMenu>
           {items.map((item) => {
             const isActive = `${location.pathname}${location.hash}` === item.url;
 
             return (
               <SidebarMenuItem key={item.title}>
-                <NavLink to={item.url}>
-                  <SidebarMenuButton
-                    className={`flex items-center ${
-                      collapsed
-                        ? "justify-center  rounded-full"
-                        : "gap-2 py-2 w-full rounded-md"
-                    } ${
-                      isActive
-                        ? "bg-yellowColor text-black hover:bg-yellowColor/90 hover:text-black"
-                        : collapsed
-                          ? "bg-gray-200 text-gray-800 hover:bg-gray-300"
-                          : "text-gray-800 hover:bg-gray-100"
-                    } transition-all duration-200`}
-                    style={
-                      !collapsed && isActive
-                        ? { borderRadius: "0 30px 30px 0" }
-                        : {}
-                    }
-                  >
-                    {item.icon ? <item.icon /> : null}
-                    {!collapsed && <span>{item.title}</span>}
-                  </SidebarMenuButton>
-                </NavLink>
+                <SidebarMenuButton
+                  asChild
+                  isActive={isActive}
+                  tooltip={collapsed ? item.title : undefined}
+                  className={cn(
+                    "h-auto w-full transition-all duration-200",
+                    collapsed
+                      ? "justify-center rounded-full px-0 py-2.5"
+                      : "justify-start rounded-2xl px-3 py-2.5",
+                    isActive
+                      ? "bg-[#0f4c81]/10 text-slate-950 ring-1 ring-[#0f4c81]/10"
+                      : "text-slate-600 hover:bg-slate-100/80 hover:text-slate-950"
+                  )}
+                >
+                  <NavLink to={item.url} className="flex w-full items-center gap-3">
+                    {item.icon ? (
+                      <item.icon
+                        className={cn(
+                          iconClassName,
+                          isActive ? "text-[#0f4c81]" : "text-slate-500"
+                        )}
+                      />
+                    ) : null}
+                    {!collapsed && (
+                      <span className={cn("truncate font-medium", textClassName)}>
+                        {item.title}
+                      </span>
+                    )}
+                  </NavLink>
+                </SidebarMenuButton>
               </SidebarMenuItem>
             );
           })}

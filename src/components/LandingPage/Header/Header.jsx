@@ -5,9 +5,9 @@ import Logo from "../Logo/logo.jsx";
 import { Skeleton } from "../../ui/skeleton";
 
 const navlinks = [
-  { path: "/", label: "Home" },
-  { path: "/", label: "About" },
-  { path: "/", label: "Contact" },
+  { path: "/", label: "Home", end: true },
+  { path: "/company-profile", label: "Profile" },
+  { path: "/contact", label: "Contact" },
 ];
 
 const Header = () => {
@@ -74,9 +74,10 @@ const Header = () => {
                   <li key={index}>
                     <NavLink
                       to={link.path}
-                    className={({ isActive }) =>
+                      end={link.end}
+                      className={({ isActive }) =>
                         isActive
-                      ? "text-yellowColor text-[16px] leading-7 font-[600]"
+                          ? "text-yellowColor text-[16px] leading-7 font-[600]"
                           : "text-textColor text-[16px] leading-7 font-[500] hover:text-yellowColor"
                       }
                     >
@@ -130,6 +131,7 @@ const Header = () => {
               <li key={index}>
                 <NavLink
                   to={link.path}
+                  end={link.end}
                   className={({ isActive }) =>
                     isActive
                       ? "text-yellowColor text-[16px] font-[600]"
