@@ -64,7 +64,7 @@ const Header = () => {
       <header className="header flex items-center" ref={headerRef}>
         <div className="container">
           <div className="flex items-center justify-between">
-            <div className="flex flex-1 justify-start items-start">
+            <div className="flex justify-start">
               <Logo />
             </div>
 
