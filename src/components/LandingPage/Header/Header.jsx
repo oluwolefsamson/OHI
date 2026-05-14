@@ -90,7 +90,7 @@ const Header = () => {
             <div className="flex items-center gap-4">
               <NavLink
                 to="/admin/login"
-                className="bg-green-600 py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px] hover:bg-green-700 transition-colors"
+                className="bg-[#16a34a] py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-md hover:bg-[#15803d] transition-colors"
               >
                 Admin Login
               </NavLink>
