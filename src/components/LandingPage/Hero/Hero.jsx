@@ -52,17 +52,17 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="relative flex gap-[20px] h-[400px] lg:h-[700px] justify-center items-center px-8">
-            <div className="relative z-10">
-              <img src={hero.images.hero1} alt="OHI visual story 1" className="w-full rounded" />
+          <div className="relative -mx-5 flex w-screen max-w-none gap-[12px] justify-center items-center px-5 sm:mx-0 sm:w-full sm:px-8 h-[320px] sm:h-[400px] lg:h-[700px]">
+            <div className="relative z-10 w-[31%] sm:w-auto">
+              <img src={hero.images.hero1} alt="OHI visual story 1" className="w-full rounded object-cover h-full" />
             </div>
-            <div className="relative z-10 mt-[30px]">
-              <img src={hero.images.hero2} alt="OHI visual story 2" className="w-full rounded" />
-              <img src={hero.images.hero3} alt="OHI visual story 3" className="w-full my-[30px] rounded" />
-              <img src={hero.images.hero4} alt="OHI visual story 4" className="w-full rounded" />
+            <div className="relative z-10 mt-[18px] w-[36%] sm:mt-[30px] sm:w-auto">
+              <img src={hero.images.hero2} alt="OHI visual story 2" className="w-full rounded object-cover h-full" />
+              <img src={hero.images.hero3} alt="OHI visual story 3" className="w-full my-[20px] sm:my-[30px] rounded object-cover h-full" />
+              <img src={hero.images.hero4} alt="OHI visual story 4" className="w-full rounded object-cover h-full" />
             </div>
-            <div className="relative z-10">
-              <img src={hero.images.hero5} alt="OHI visual story 5" className="w-full rounded" />
+            <div className="relative z-10 w-[31%] sm:w-auto">
+              <img src={hero.images.hero5} alt="OHI visual story 5" className="w-full rounded object-cover h-full" />
             </div>
           </div>
         </div>
