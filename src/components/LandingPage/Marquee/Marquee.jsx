@@ -1,32 +1,32 @@
+import React from "react";
 import { cn } from "../../lib/utils";
-
 import { Marquee } from "../../LandingPage/magicui/marquee";
 import Rev1 from "../../../assets/images/rev1.jpg";
 import Rev4 from "../../../assets/images/rev4.jpg";
 
 const reviews = [
   {
-    name: "Chidi",
-    username: "@chidi",
-    body: "Agrovest has made it much easier for me to track and manage my agricultural investments. The platform provides detailed insights, ensuring my investments are performing optimally.",
+    name: "UN Partner",
+    username: "@development",
+    body: "OHI turns technical program results into stories that stakeholders can understand, trust and act on.",
     img: Rev1,
   },
   {
-    name: "Mariam",
-    username: "@mariam",
-    body: "As an investor, Agrovest has helped me diversify my portfolio into the agricultural sector. The platform's transparent data and real-time tracking have boosted my confidence in sustainable farming investments.",
+    name: "Government Ministry",
+    username: "@public-sector",
+    body: "Their mission coverage and strategic visibility work helps public initiatives reach the audiences that matter.",
     img: Rev4,
   },
   {
-    name: "Kwame",
-    username: "@kwame",
-    body: "Agrovest has taken the complexity out of tracking agricultural prices and returns. Their platform makes it easy to stay on top of my investments and monitor the market trends.",
+    name: "Foundation Lead",
+    username: "@impact",
+    body: "OHI gives our projects the visibility they deserve and the credibility they need to attract support.",
     img: Rev1,
   },
   {
-    name: "Amina",
-    username: "@amina",
-    body: "Investing through Agrovest has been a game changer. The platform offers a clear overview of my returns, and the price tracking tool helps me stay updated on agricultural market conditions.",
+    name: "Private Sector Partner",
+    username: "@investment",
+    body: "They are strong at translating complex initiatives into persuasive, investment-ready visuals.",
     img: Rev4,
   },
 ];
@@ -39,9 +39,7 @@ const ReviewCard = ({ img, name, username, body }) => {
     <figure
       className={cn(
         "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-        // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-        // dark styles
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}
     >

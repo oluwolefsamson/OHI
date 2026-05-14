@@ -1,29 +1,29 @@
 const faqs = [
   {
-    question: "What is Agrovest?",
+    question: "What does OHI do?",
     content:
-      "Agrovest is a platform designed to track agricultural product prices and trends, helping farmers and buyers make informed decisions based on real-time market data. We connect farmers and buyers, offering tools to monitor price trends and market conditions.",
+      "Olympian House International creates development communication, impact storytelling and strategic visibility content for NGOs, DFIs, governments and private-sector partners.",
   },
   {
-    question: "How can I track price trends on Agrovest?",
+    question: "Who does OHI serve?",
     content:
-      "You can easily track the price trends for various agricultural products on Agrovest. Simply sign up, browse the products you're interested in, and access detailed charts and historical data on pricing fluctuations to help you make smarter purchasing or selling decisions.",
+      "We work with development agencies, non-profits, government ministries, municipalities, foundations, DFIs and private-sector social impact projects.",
   },
   {
-    question: "How does Agrovest collect pricing data?",
+    question: "What kinds of content do you produce?",
     content:
-      "Agrovest sources pricing data from a variety of trusted agricultural markets, suppliers, and buyers. We use real-time data collection methods to ensure our pricing information is accurate and up-to-date, giving you a competitive edge in the market.",
+      "Our core work includes documentaries, program visibility films, investment promotion videos, community engagement content, testimonials, reporting films and digital campaign assets.",
   },
   {
-    question: "Can I compare prices across different regions?",
+    question: "Where does OHI operate?",
     content:
-      "Yes! Agrovest allows you to compare price trends across different regions. This feature helps farmers and buyers understand regional price variations and make more informed decisions about where to source or sell their products.",
+      "OHI works across Cameroon and other African countries, supporting projects that need credible storytelling and strategic communication.",
   },
   {
-    question: "Does Agrovest provide market forecasts?",
+    question: "How does OHI approach a project?",
     content:
-      "Yes! Agrovest provides market forecasts based on historical price trends, weather conditions, and agricultural reports. Our forecasting tools help you anticipate future price changes, giving you the insight needed to plan ahead and optimize your investments.",
+      "We start by understanding your objectives, develop a tailored concept and action plan, align on budget and then deliver end-to-end storytelling and production solutions.",
   },
 ];
 
-export default faqs; // Default export
+export default faqs;

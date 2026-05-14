@@ -2,112 +2,80 @@ import supplierImg01 from "../images/supplier-img01.jpg";
 import supplierImg02 from "../images/supplier-img02.jpg";
 import supplierImg03 from "../images/supplier-img03.jpg";
 
-// Data structure aligned with price tracking
 export const suppliers = [
   {
     id: "01",
-    name: "GreenFields Agriculture Ltd.",
-    location: "Kenya",
-    avgPricePerTon: 1500, // Price per ton of crops
+    name: "Development Agencies",
+    location: "NGOs, UN agencies and impact-focused institutions",
+    avgPricePerTon: "Visibility",
     priceTrend: {
-      current: 1500,
-      lastMonth: 1400, // Last month's price
-      lastQuarter: 1300, // Price from 3 months ago
-      trend: "Upward", // Trend direction
-      percentageChange: "7.14%", // Percentage change compared to last month
-      predicted: "1600", // Predicted price for next month
+      trend: "Trusted storytelling",
+      percentageChange: "Strategic communication",
+      predicted: "Credible reporting",
     },
     photo: supplierImg01,
     cropsAvailable: [
-      {
-        crop: "Maize",
-        available: "8,000+ tons",
-        price: 1500, // Price per ton for maize
-        priceTrend: "Upward trend due to increased demand",
-      },
-      {
-        crop: "Organic Tomatoes",
-        available: "3,000+ tons",
-        price: 1800, // Price per ton for organic tomatoes
-        priceTrend: "Stable, with slight seasonal fluctuations",
-      },
+      { crop: "Program documentaries", available: "Impact-led", price: 0 },
+      { crop: "Reporting films", available: "Stakeholder-ready", price: 0 },
     ],
     marketInsights: {
-      demand: "Increasing demand for organic crops, particularly tomatoes.",
-      supply: "High supply levels expected due to good weather conditions.",
-      forecast: "Prices expected to rise by 7-10% over the next quarter.",
+      demand: "Clear evidence of change, transparency and human-centered narratives.",
+      supply: "OHI provides content that supports program visibility and accountability.",
+      forecast: "Partnerships deepen when stories are documented with clarity and purpose.",
     },
     about:
-      "GreenFields Agriculture Ltd. specializes in organic farming, providing high-quality maize and tomatoes. Their price tracking system updates in real-time, helping farmers and buyers stay informed about market shifts and trends.",
+      "We support development institutions with documentaries, visibility content and reporting films that communicate real project outcomes.",
+    avgRating: 5,
+    totalReviews: "100+",
   },
   {
     id: "02",
-    name: "Farm Fresh Ghana",
-    location: "Ghana",
-    avgPricePerTon: 1300,
+    name: "Government Ministries",
+    location: "Policy, public programs and national initiatives",
+    avgPricePerTon: "Credibility",
     priceTrend: {
-      current: 1300,
-      lastMonth: 1250,
-      lastQuarter: 1200,
-      trend: "Moderate Fluctuations",
-      percentageChange: "4.00%",
-      predicted: "1350",
+      trend: "Public trust building",
+      percentageChange: "Citizen engagement",
+      predicted: "Policy visibility",
     },
     photo: supplierImg02,
     cropsAvailable: [
-      {
-        crop: "Mangoes",
-        available: "5,000+ tons",
-        price: 1400,
-        priceTrend: "Fluctuating, influenced by seasonal supply",
-      },
-      {
-        crop: "Lettuce",
-        available: "2,000+ tons",
-        price: 1100,
-        priceTrend: "Stable with minor fluctuations",
-      },
+      { crop: "Mission coverage", available: "Nationwide", price: 0 },
+      { crop: "Campaign content", available: "Multi-channel", price: 0 },
     ],
     marketInsights: {
-      demand: "Growing demand for mangoes due to export requirements.",
-      supply:
-        "Supply is moderate, with seasonal fluctuations in lettuce prices.",
-      forecast:
-        "Mango prices expected to increase by 5% over the next quarter due to export demand.",
+      demand: "Narratives that explain policy, show progress and strengthen public confidence.",
+      supply: "We deliver strategic visuals that align with official communication goals.",
+      forecast: "Strong storytelling improves reach, understanding and adoption of initiatives.",
     },
     about:
-      "Farm Fresh Ghana provides fresh, high-quality mangoes, lettuce, and other vegetables. The price tracking platform allows buyers and farmers to follow price trends and adjust purchasing or production strategies accordingly.",
+      "We help ministries and public bodies communicate programs, missions and milestones with clarity, professionalism and consistency.",
+    avgRating: 5,
+    totalReviews: "100+",
   },
   {
     id: "03",
-    name: "Cocoa Pride Farms",
-    location: "Ivory Coast",
-    avgPricePerTon: 2500,
+    name: "Private-Sector Social Impact",
+    location: "DFIs, foundations and corporate partners",
+    avgPricePerTon: "Impact",
     priceTrend: {
-      current: 2500,
-      lastMonth: 2400,
-      lastQuarter: 2350,
-      trend: "Stable with minor fluctuations",
-      percentageChange: "4.17%",
-      predicted: "2450",
+      trend: "Investment storytelling",
+      percentageChange: "Visibility and confidence",
+      predicted: "Partnership growth",
     },
     photo: supplierImg03,
     cropsAvailable: [
-      {
-        crop: "Cocoa Beans",
-        available: "10,000+ tons",
-        price: 2500,
-        priceTrend: "Stable with slight seasonal decreases",
-      },
+      { crop: "Investment films", available: "Tailored", price: 0 },
+      { crop: "Beneficiary stories", available: "Authentic", price: 0 },
     ],
     marketInsights: {
-      demand: "Steady demand for premium cocoa globally.",
-      supply:
-        "Expected moderate fluctuations in supply due to seasonal conditions.",
-      forecast:
-        "Stable prices, with slight decreases expected during the off-season.",
+      demand: "Content that makes projects more investable and partnerships more visible.",
+      supply: "OHI turns complex initiatives into compelling stories that drive action.",
+      forecast: "Strategic visibility improves credibility, traction and stakeholder alignment.",
     },
     about:
-      "Cocoa Pride Farms focuses on producing premium cocoa beans with sustainable farming practices. Their price tracking system helps buyers monitor the cocoa market and anticipate pricing changes, ensuring informed trade decisions.",
+      "We work with DFIs, foundations and socially responsible companies to create stories that support growth, reputation and measurable impact.",
+    avgRating: 5,
+    totalReviews: "95%",
   },
 ];

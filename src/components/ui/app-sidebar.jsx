@@ -8,8 +8,6 @@ import {
   BarChartIcon,
   NewspaperIcon,
   UserIcon,
-  LanguagesIcon,
-  LogOutIcon,
   ArrowUpCircleIcon,
   Search,
   X,
@@ -25,11 +23,9 @@ import {
   SidebarFooter,
   SidebarHeader,
   SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
 } from "../../components/ui/sidebar";
 import { useSidebar } from "../../components/ui/sidebar";
-import LogoImg from "../../assets/images/logo.png";
+import CropWiseLogo from "../LandingPage/Logo/logo";
 
 // Import Skeleton from shadcn/ui
 import { Skeleton } from "../../components/ui/skeleton";
@@ -95,7 +91,7 @@ const data = {
 };
 
 export function AppSidebar(props) {
-  const { state, setState, openMobile, setOpenMobile } = useSidebar();
+  const { state, openMobile, setOpenMobile } = useSidebar();
   const collapsed = state === "collapsed";
   // Detect mobile screen
   const [isMobile, setIsMobile] = React.useState(
@@ -193,22 +189,12 @@ export function AppSidebar(props) {
               collapsed ? "justify-center" : "justify-start"
             )}
           >
-            <img
-              src={LogoImg}
-              alt="Logo"
+            <CropWiseLogo
               className={cn(
-                "rounded-full border-2 border-green-600 transition-all",
-                collapsed ? "h-6 w-6" : "h-8 w-8" // smaller logo
+                "transition-all",
+                collapsed ? "h-8 w-8" : "h-9 w-32"
               )}
             />
-            {!collapsed && (
-              <div
-                className="text-xl font-black text-green-600" // smaller brand text
-                style={{ fontFamily: "'Poiret One', cursive" }}
-              >
-                CropWise
-              </div>
-            )}
             {/* Cancel button for mobile */}
             {!collapsed && isMobile && openMobile && (
               <button

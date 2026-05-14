@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Separator } from "../../components/ui/separator";
 import { SidebarTrigger } from "../../components/ui/sidebar";
 import { Input } from "../../components/ui/input";
-import { Search, X, LogOut } from "lucide-react";
+import { House, Search, User, X } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,56 +13,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../../components/ui/dropdown-menu";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "../../components/ui/alert-dialog";
-import { useAuth } from "@/services/hooks/authentication/useAuthContext";
-import { toast } from "sonner";
 import profileImage from "../../assets/images/ProfileSettingImg/Profile-image.png";
 import headerBg from "../../assets/images/siteHeader-img.png";
 
 export function SiteHeader() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isLogoutOpen, setIsLogoutOpen] = useState(false);
   const navigate = useNavigate();
-  
-  // Use the auth hook to get user data directly
-  const { user, logout, isLoggingOut } = useAuth();
-
-  const handleLogout = async () => {
-    try {
-      await logout();
-      toast.success("Logged out successfully");
-      navigate("/");
-    } catch (error) {
-      console.error("Logout error:", error);
-      toast.error("Failed to logout. Please try again.");
-    } finally {
-      setIsLogoutOpen(false);
-    }
-  };
-
-  // Extract and display only the first name
-  const getFirstName = () => {
-    const fullName = user?.user?.name || user?.name || "";
-    
-    if (!fullName) return "User";
-    
-    // Split the full name into parts
-    const nameParts = fullName.trim().split(/\s+/);
-    
-    // Return the first name (first part)
-    return nameParts[0] || "User";
-  };
-
-  const displayName = getFirstName();
+  const displayName = "Samson";
 
   return (
     <header
@@ -101,9 +58,7 @@ export function SiteHeader() {
         </div>
       </Dialog>
 
-      {/* Header Content */}
       <div className="relative w-full flex items-center justify-between px-4 lg:px-6 z-10">
-        {/* Left Section */}
         <div className="flex items-center gap-4">
           <SidebarTrigger className="h-9 w-9 p-1.5 hover:bg-gray-100 rounded-lg" />
           <Separator orientation="vertical" className="h-6 w-[1px] bg-gray-200" />
@@ -112,7 +67,6 @@ export function SiteHeader() {
           </h1>
         </div>
 
-        {/* Desktop Search Bar */}
         <div className="hidden md:flex flex-1 max-w-2xl mx-8">
           <div className="relative w-full">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
@@ -123,9 +77,7 @@ export function SiteHeader() {
           </div>
         </div>
 
-        {/* Right Section */}
         <div className="flex items-center gap-4">
-          {/* Mobile Search Trigger */}
           <button
             onClick={() => setIsSearchOpen(true)}
             className="md:hidden p-2 hover:bg-gray-100 rounded-full"
@@ -133,9 +85,7 @@ export function SiteHeader() {
             <Search className="h-5 w-5 text-gray-600" />
           </button>
 
-          {/* Notification + User Dropdown */}
           <div className="flex items-center space-x-4">
-            {/* Notification Bell */}
             <button className="relative p-2 rounded-full hover:bg-green-100 transition-colors">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -154,12 +104,11 @@ export function SiteHeader() {
               <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
             </button>
 
-            {/* User Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button className="flex items-center space-x-2 px-4 py-2 rounded-full hover:bg-gray-100 transition-colors">
                   <img
-                    src={user?.user?.photo || user?.photo || profileImage}
+                    src={profileImage}
                     alt="Profile"
                     className="w-8 h-8 rounded-full object-cover border-2 border-dashed bg-gray-200"
                   />
@@ -173,42 +122,24 @@ export function SiteHeader() {
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem
-                  className="cursor-pointer text-red-600 focus:text-red-700"
-                  onClick={() => setIsLogoutOpen(true)}
+                  className="cursor-pointer"
+                  onClick={() => navigate("/dashboard/profile-setting")}
                 >
-                  <LogOut className="mr-2 h-4 w-4" /> 
-                  {isLoggingOut ? "Logging out..." : "Logout"}
+                  <User className="mr-2 h-4 w-4" />
+                  Profile settings
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  className="cursor-pointer"
+                  onClick={() => navigate("/")}
+                >
+                  <House className="mr-2 h-4 w-4" />
+                  Home
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
         </div>
       </div>
-
-      {/* Logout Confirmation Modal */}
-      <AlertDialog open={isLogoutOpen} onOpenChange={setIsLogoutOpen}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Confirm Logout</AlertDialogTitle>
-            <AlertDialogDescription>
-              Are you sure you want to log out of your account? You'll need to
-              sign in again to continue.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel disabled={isLoggingOut}>
-              Cancel
-            </AlertDialogCancel>
-            <AlertDialogAction
-              className="bg-red-600 hover:bg-red-700 text-white disabled:bg-red-400 disabled:cursor-not-allowed"
-              onClick={handleLogout}
-              disabled={isLoggingOut}
-            >
-              {isLoggingOut ? "Logging out..." : "Logout"}
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
     </header>
   );
 }

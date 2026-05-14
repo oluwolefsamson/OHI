@@ -1,3 +1,4 @@
+import React from "react";
 import { AvatarCircles } from "../magicui/avatar-circles";
 
 import Sign2 from "../../../assets/images/sign2.jpg";
@@ -32,5 +33,5 @@ const avatars = [
 ];
 
 export function AvatarCirclesDemo() {
-  return <AvatarCircles numPeople={99} avatarUrls={avatars} />;
+  return <AvatarCircles numPeople={100} avatarUrls={avatars} />;
 }

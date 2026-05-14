@@ -1,7 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import ProtectedRoute from "../components/ProtectedRoute";
-
 import Layout from "../layout/Layout";
 
 // Pages
@@ -26,15 +24,8 @@ const Routers = () => {
         <Route index element={<Home />} />
         <Route path="home" element={<Home />} />
 
-        {/* Protected dashboard */}
-        <Route
-          path="dashboard/*"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        >
+        {/* Dashboard */}
+        <Route path="dashboard/*" element={<Dashboard />}>
           <Route index element={<Overview />} />
           <Route path="crop-price" element={<CropsPrice />} />
           <Route path="market-news" element={<MarketNews />} />

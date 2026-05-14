@@ -126,7 +126,6 @@ export default function DisputePage() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // Here you would send the form data to your backend
     setOpen(false);
     setForm({ crop: "", market: "", price: "", reason: "", proofPhoto: null });
     // Optionally show a toast or update the disputes list

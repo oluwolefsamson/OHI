@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
-import { FaStar } from "react-icons/fa"; // Using FaStar from react-icons for star ratings
-import starIcon from "../../../assets/images/Star.png"; // Optional if you prefer an image-based star
+import { FaStar } from "react-icons/fa";
 
 const HomeSupplierCard = ({ supplier }) => {
   const {
@@ -19,86 +18,87 @@ const HomeSupplierCard = ({ supplier }) => {
   } = supplier;
 
   return (
-    <div className="p-6 bg-white shadow-lg rounded-xl hover:shadow-xl transition-all duration-300 border border-gray-200">
-      {/* Supplier Image */}
-      <div className="relative mb-4">
+    <article className="group overflow-hidden rounded-[30px] bg-white shadow-[0_14px_40px_rgba(15,23,42,0.08)] ring-1 ring-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(15,23,42,0.12)]">
+      <div className="relative h-[240px] overflow-hidden">
         <img
           src={photo}
-          className="w-full h-[220px] object-cover rounded-lg"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           alt={name}
         />
-      </div>
-
-      {/* Supplier Name & Location */}
-      <h2 className="text-2xl font-semibold text-gray-800 hover:text-skyblue transition-all duration-300">
-        {name}
-      </h2>
-      <p className="text-sm text-gray-600 mt-2">{location}</p>
-
-      {/* Rating */}
-      <div className="flex items-center mt-2">
-        <div className="flex items-center">
-          {[...Array(5)].map((_, index) => (
-            <FaStar
-              key={index}
-              className={`text-lg ${index < avgRating ? "text-yellow-500" : "text-gray-300"}`}
-            />
-          ))}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+        <div className="absolute left-5 top-5 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-primaryColor backdrop-blur-sm">
+          {avgPricePerTon}
         </div>
-        <span className="text-sm text-gray-500 ml-2">
-          ({totalReviews} reviews)
-        </span>
       </div>
 
-      {/* Price Trend */}
-      <div className="mt-4">
-        <h3 className="text-lg font-semibold text-gray-800">
-          Price per Ton: <span className="text-skyblue">${avgPricePerTon}</span>
-        </h3>
-        <p className="text-sm text-gray-600">
-          Current price trend:{" "}
-          <span className="font-semibold">{priceTrend.trend}</span> (
-          {priceTrend.percentageChange})
-        </p>
-        <p className="text-xs text-gray-500">
-          Predicted price: ${priceTrend.predicted} next month
-        </p>
-      </div>
+      <div className="p-6">
+        <h2 className="text-2xl font-bold text-headingColor">{name}</h2>
+        <p className="mt-2 text-sm text-textColor">{location}</p>
 
-      {/* Crops Available */}
-      <div className="mt-4">
-        <h4 className="text-md font-semibold text-gray-800">
-          Crops Available:
-        </h4>
-        {cropsAvailable.map((crop) => (
-          <div key={crop.crop} className="flex justify-between mt-2">
-            <span className="text-gray-600">{crop.crop}</span>
-            <span className="text-gray-800 font-semibold">
-              {crop.available}
-            </span>
+        <div className="mt-4 flex items-center gap-2">
+          <div className="flex items-center text-yellow-500">
+            {[...Array(5)].map((_, index) => (
+              <FaStar
+                key={index}
+                className={`text-base ${index < avgRating ? "text-yellow-500" : "text-gray-300"}`}
+              />
+            ))}
           </div>
-        ))}
-      </div>
+          <span className="text-sm text-textColor">({totalReviews})</span>
+        </div>
 
-      {/* Market Insights */}
-      <div className="mt-4">
-        <h4 className="text-md font-semibold text-gray-800">
-          Market Insights:
-        </h4>
-        <p className="text-sm text-gray-600">{marketInsights.demand}</p>
-        <p className="text-sm text-gray-600">{marketInsights.forecast}</p>
-      </div>
+        <div className="mt-5 rounded-[22px] bg-slate-50 p-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primaryColor">
+            Core approach
+          </p>
+          <h3 className="mt-2 text-lg font-semibold text-headingColor">
+            {priceTrend.trend}
+          </h3>
+          <p className="mt-1 text-sm text-textColor">{priceTrend.predicted}</p>
+        </div>
 
-      {/* CTA */}
-      <div className="flex items-center justify-between mt-6">
-        <Link
-          to={`/suppliers/${id}`}
-          className="w-12 h-12 flex items-center bg-green-500 justify-center rounded-full bg-skyblue text-white hover:bg-green-800 transition-all duration-300"
-        >
-          <BsArrowRight className="w-6 h-6" />
-        </Link>
+        <div className="mt-5">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primaryColor">
+            What We Deliver
+          </p>
+          <div className="mt-3 space-y-3">
+            {cropsAvailable.map((item) => (
+              <div
+                key={item.crop}
+                className="flex items-center justify-between gap-4 border-b border-slate-100 pb-3 last:border-b-0 last:pb-0"
+              >
+                <span className="text-sm text-headingColor">{item.crop}</span>
+                <span className="text-sm font-semibold text-headingColor">
+                  {item.available}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-5">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primaryColor">
+            Why it matters
+          </p>
+          <p className="mt-2 text-sm leading-6 text-textColor">
+            {marketInsights.demand}
+          </p>
+          <p className="mt-2 text-sm leading-6 text-textColor">
+            {marketInsights.forecast}
+          </p>
+        </div>
+
+        <div className="mt-6">
+          <Link
+            to="/#contact"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primaryColor text-white transition-transform duration-300 hover:translate-x-1"
+            aria-label={`Contact OHI about ${name}`}
+          >
+            <BsArrowRight className="text-xl" />
+          </Link>
+        </div>
       </div>
-    </div>
+    </article>
   );
 };
 

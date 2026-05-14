@@ -1,50 +1,45 @@
-import { CheckIcon } from "@heroicons/react/20/solid";
+import React from "react";
 
 const tiers = [
   {
-    name: "Basic",
-    id: "tier-basic",
-    href: "#",
-    priceMonthly: "$19",
+    name: "Expertise & Credibility",
+    id: "tier-expertise",
+    href: "#contact",
+    priceMonthly: "01",
     description:
-      "Ideal for casual users looking to track a limited set of prices across categories.",
+      "Seasoned professionals delivering visual content for development institutions, governments, NGOs and corporate brands.",
     features: [
-      "Track up to 5 price categories",
-      "Daily price updates",
-      "Email notifications for price changes",
-      "Basic reporting",
+      "Nearly a decade of experience",
+      "UN, EU and private-sector project exposure",
+      "Trusted delivery across Africa",
     ],
     featured: false,
   },
   {
-    name: "Pro",
-    id: "tier-pro",
-    href: "#",
-    priceMonthly: "$49",
+    name: "Strategic Creativity",
+    id: "tier-strategic",
+    href: "#contact",
+    priceMonthly: "02",
     description:
-      "Best for individuals or businesses that need more comprehensive tracking across multiple markets.",
+      "We combine narrative craft with communication strategy so every film supports a clear organisational objective.",
     features: [
-      "Track unlimited categories",
-      "Real-time price alerts",
-      "Advanced price analysis and insights",
-      "Priority customer support",
-      "Access to in-depth reports and forecasts",
+      "Storytelling grounded in strategy",
+      "Content tailored to audiences and outcomes",
+      "Designed to improve visibility and traction",
     ],
     featured: true,
   },
   {
-    name: "Premium",
-    id: "tier-premium",
-    href: "#",
-    priceMonthly: "$99",
+    name: "Flexible, Value-Based Solutions",
+    id: "tier-flexible",
+    href: "#contact",
+    priceMonthly: "03",
     description:
-      "Designed for enterprises requiring dedicated support, custom pricing solutions, and advanced tracking tools.",
+      "We adapt to your timelines, budgets and communication standards without compromising quality.",
     features: [
-      "Dedicated account manager",
-      "Custom price tracking plans and integrations",
-      "Advanced market analytics and forecasting",
-      "Real-time price tracking with API support",
-      "Exclusive access to premium market insights",
+      "Tailored project scoping",
+      "End-to-end production support",
+      "Results aligned to your goals",
     ],
     featured: false,
   },
@@ -56,19 +51,20 @@ function classNames(...classes) {
 
 export default function Billing() {
   return (
-    <div className="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+    <div
+      id="approach"
+      className="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8"
+    >
       <div className="xl:w-[470px] mx-auto">
-        <h2 className="heading text-center">
-          Choose the Best Price Tracking Plan
-        </h2>
+        <h2 className="heading text-center">Our Value Proposition</h2>
         <p className="text__para text-center">
-          Affordable and flexible plans to track prices across industries and
-          make informed decisions.
+          OHI combines creativity, credibility and flexibility to help projects
+          communicate with clarity and impact.
         </p>
       </div>
 
       <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 lg:max-w-6xl lg:grid-cols-3">
-        {tiers.map((tier, tierIdx) => (
+        {tiers.map((tier) => (
           <div
             key={tier.id}
             className={classNames(
@@ -96,14 +92,6 @@ export default function Billing() {
               >
                 {tier.priceMonthly}
               </span>
-              <span
-                className={classNames(
-                  tier.featured ? "text-gray-400" : "text-gray-500",
-                  "text-base"
-                )}
-              >
-                /month
-              </span>
             </p>
             <p
               className={classNames(
@@ -122,13 +110,15 @@ export default function Billing() {
             >
               {tier.features.map((feature) => (
                 <li key={feature} className="flex gap-x-3">
-                  <CheckIcon
+                  <span
                     className={classNames(
                       tier.featured ? "text-green-400" : "text-green-600",
                       "h-6 w-5 flex-none"
                     )}
                     aria-hidden="true"
-                  />
+                  >
+                    •
+                  </span>
                   {feature}
                 </li>
               ))}
@@ -143,8 +133,7 @@ export default function Billing() {
                 "mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10"
               )}
             >
-              {" "}
-              Get started today{" "}
+              Contact OHI
             </a>
           </div>
         ))}

@@ -1,0 +1,61 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+const contactRows = [
+  { label: "Location", value: "Mendong MAETUR - Yaounde" },
+  { label: "Email", value: "contact@olympianhouseintl.com" },
+  { label: "Email", value: "fbanns1@gmail.com" },
+  { label: "Phone", value: "(+237) 671 646 331" },
+  { label: "WhatsApp", value: "(+237) 691 377 313" },
+];
+
+export const ContactBand = () => {
+  return (
+    <section id="contact" className="py-24">
+      <div className="container">
+        <div className="rounded-[36px] bg-[#0b1220] text-white p-8 lg:p-12 shadow-2xl overflow-hidden relative">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(16,185,129,0.25),_transparent_35%),radial-gradient(circle_at_bottom_left,_rgba(250,204,21,0.18),_transparent_30%)]" />
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.3fr_0.9fr] gap-10 items-start">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">
+                Contact OHI
+              </p>
+              <h2 className="heading text-white mt-4">
+                Give your project the visibility it deserves.
+              </h2>
+              <p className="mt-4 text-white/75 leading-7 max-w-2xl">
+                We begin by understanding your objectives, then shape the
+                concept, align the budget and deliver end-to-end storytelling
+                and production solutions.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link to="mailto:contact@olympianhouseintl.com">
+                  <button className="hero_btn1">Email Us</button>
+                </Link>
+                <Link to="https://olympianhouseintl.com" target="_blank" rel="noreferrer">
+                  <button className="hero_btn2">Visit Website</button>
+                </Link>
+              </div>
+            </div>
+
+            <div className="rounded-[28px] bg-white/10 backdrop-blur-md border border-white/10 p-6">
+              <h3 className="text-xl font-semibold">Contact Details</h3>
+              <div className="mt-5 space-y-4">
+                {contactRows.map((row, index) => (
+                  <div
+                    key={`${row.label}-${index}`}
+                    className="flex items-start justify-between gap-4 border-b border-white/10 pb-3 last:border-b-0 last:pb-0"
+                  >
+                    <span className="text-white/60">{row.label}</span>
+                    <span className="text-right font-medium">{row.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
