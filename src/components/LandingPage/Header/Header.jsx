@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
-import Logo from "../Logo/Logo";
+import Logo from "../Logo/Logo.jsx";
 import { Skeleton } from "../../ui/skeleton";
 
 const navlinks = [
@@ -64,7 +64,7 @@ const Header = () => {
       <header className="header flex items-center" ref={headerRef}>
         <div className="container">
           <div className="flex items-center justify-between">
-            <div className="flex justify-start">
+            <div className="flex flex-1 justify-start items-start">
               <Logo />
             </div>
 
