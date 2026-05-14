@@ -16,9 +16,11 @@ import ServiceList from "../../components/LandingPage/Services/ServiceList";
 import Billing from "../../components/LandingPage/Billing/Billing";
 import { Marquee3D } from "../../components/LandingPage/Marquee/Marquee";
 import { Skeleton } from "../../components/ui/skeleton";
+import { useLandingPageConfig } from "../../context/LandingPageConfigContext";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
+  const { config } = useLandingPageConfig();
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1500);
@@ -50,10 +52,9 @@ const Home = () => {
       <section id="services">
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">Our Services</h2>
+            <h2 className="heading text-center">{config.services.title}</h2>
             <p className="text__para text-center">
-              From documentaries to campaign content, OHI helps organisations
-              communicate with clarity, credibility and purpose.
+              {config.services.description}
             </p>
           </div>
           <ServiceList />
@@ -97,11 +98,8 @@ const Home = () => {
       <section>
         <div className="container">
           <div className="xl:w-[470px] mx-auto mb-[80px] lg:mb-[100px] sm:mb-[30px]">
-            <h2 className="heading text-center">Selected Voices</h2>
-            <p className="text__para text-center">
-              A snapshot of how partners describe OHI&apos;s work across
-              development, public sector and private impact projects.
-            </p>
+            <h2 className="heading text-center">{config.voices.title}</h2>
+            <p className="text__para text-center">{config.voices.description}</p>
           </div>
           <Marquee3D />
         </div>

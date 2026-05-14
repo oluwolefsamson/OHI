@@ -1,38 +1,7 @@
 import React from "react";
 import { cn } from "../../lib/utils";
 import { Marquee } from "../../LandingPage/magicui/marquee";
-import Rev1 from "../../../assets/images/rev1.jpg";
-import Rev4 from "../../../assets/images/rev4.jpg";
-
-const reviews = [
-  {
-    name: "UN Partner",
-    username: "@development",
-    body: "OHI turns technical program results into stories that stakeholders can understand, trust and act on.",
-    img: Rev1,
-  },
-  {
-    name: "Government Ministry",
-    username: "@public-sector",
-    body: "Their mission coverage and strategic visibility work helps public initiatives reach the audiences that matter.",
-    img: Rev4,
-  },
-  {
-    name: "Foundation Lead",
-    username: "@impact",
-    body: "OHI gives our projects the visibility they deserve and the credibility they need to attract support.",
-    img: Rev1,
-  },
-  {
-    name: "Private Sector Partner",
-    username: "@investment",
-    body: "They are strong at translating complex initiatives into persuasive, investment-ready visuals.",
-    img: Rev4,
-  },
-];
-
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
+import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
 
 const ReviewCard = ({ img, name, username, body }) => {
   return (
@@ -58,6 +27,11 @@ const ReviewCard = ({ img, name, username, body }) => {
 };
 
 export function Marquee3D() {
+  const { config } = useLandingPageConfig();
+  const reviews = config.voices.reviews;
+  const firstRow = reviews.slice(0, reviews.length / 2);
+  const secondRow = reviews.slice(reviews.length / 2);
+
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
       <Marquee pauseOnHover className="[--duration:20s]">

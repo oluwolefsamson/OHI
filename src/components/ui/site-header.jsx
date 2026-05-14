@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { useNavigate } from "react-router-dom";
@@ -15,11 +16,13 @@ import {
 } from "../../components/ui/dropdown-menu";
 import profileImage from "../../assets/images/ProfileSettingImg/Profile-image.png";
 import headerBg from "../../assets/images/siteHeader-img.png";
+import { useAdminAuth } from "../../context/AdminAuthContext";
 
 export function SiteHeader() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const navigate = useNavigate();
-  const displayName = "Samson";
+  const { user, logout } = useAdminAuth();
+  const displayName = user?.name || "OHI Admin";
 
   return (
     <header
@@ -48,7 +51,7 @@ export function SiteHeader() {
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                 <Input
-                  placeholder="Search markets, crops, or news..."
+                  placeholder="Search OHI content..."
                   className="pl-9 rounded-full bg-gray-50 border-0 focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-0"
                   autoFocus
                 />
@@ -58,11 +61,11 @@ export function SiteHeader() {
         </div>
       </Dialog>
 
-      <div className="relative w-full flex items-center justify-between px-4 lg:px-6 z-10">
-        <div className="flex items-center gap-4">
+      <div className="relative z-10 flex w-full items-center justify-between gap-3 px-4 sm:px-5 lg:px-6">
+        <div className="flex min-w-0 items-center gap-3 sm:gap-4">
           <SidebarTrigger className="h-9 w-9 p-1.5 hover:bg-gray-100 rounded-lg" />
           <Separator orientation="vertical" className="h-6 w-[1px] bg-gray-200" />
-          <h1 className="text-sm md:text-lg font-semibold text-gray-700">
+          <h1 className="truncate text-sm font-semibold text-gray-700 md:text-lg">
             Welcome {displayName}!
           </h1>
         </div>
@@ -71,7 +74,7 @@ export function SiteHeader() {
           <div className="relative w-full">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
             <Input
-              placeholder="Search markets, crops, or news..."
+              placeholder="Search OHI content..."
               className="pl-9 rounded-full bg-gray-50 border-0 focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-0"
             />
           </div>
@@ -80,13 +83,13 @@ export function SiteHeader() {
         <div className="flex items-center gap-4">
           <button
             onClick={() => setIsSearchOpen(true)}
-            className="md:hidden p-2 hover:bg-gray-100 rounded-full"
+            className="rounded-full p-2 hover:bg-gray-100 md:hidden"
           >
             <Search className="h-5 w-5 text-gray-600" />
           </button>
 
-          <div className="flex items-center space-x-4">
-            <button className="relative p-2 rounded-full hover:bg-green-100 transition-colors">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <button className="relative rounded-full p-2 transition-colors hover:bg-green-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 text-gray-600"
@@ -106,13 +109,13 @@ export function SiteHeader() {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="flex items-center space-x-2 px-4 py-2 rounded-full hover:bg-gray-100 transition-colors">
+                <button className="flex items-center gap-2 rounded-full px-3 py-2 transition-colors hover:bg-gray-100 sm:px-4">
                   <img
                     src={profileImage}
                     alt="Profile"
                     className="w-8 h-8 rounded-full object-cover border-2 border-dashed bg-gray-200"
                   />
-                  <span className="text-sm md:text-lg font-semibold text-gray-700">
+                  <span className="hidden text-sm font-semibold text-gray-700 sm:inline md:text-lg">
                     {displayName}
                   </span>
                 </button>
@@ -134,6 +137,16 @@ export function SiteHeader() {
                 >
                   <House className="mr-2 h-4 w-4" />
                   Home
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  className="cursor-pointer"
+                  onClick={() => {
+                    logout();
+                    navigate("/admin/login", { replace: true });
+                  }}
+                >
+                  <X className="mr-2 h-4 w-4" />
+                  Log out
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

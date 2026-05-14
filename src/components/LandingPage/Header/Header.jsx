@@ -87,10 +87,10 @@ const Header = () => {
 
             <div className="flex items-center gap-4">
               <NavLink
-                to="/dashboard"
+                to="/admin/login"
                 className="bg-primaryColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px] hover:bg-primaryColorDark transition-colors"
               >
-                Dashboard
+                Admin Login
               </NavLink>
 
               <span className="md:hidden" onClick={toggleDrawer}>

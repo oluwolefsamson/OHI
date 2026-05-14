@@ -1,4 +1,5 @@
-"use client";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import {
   BellIcon,
@@ -28,9 +29,17 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "../../components/ui/sidebar";
+import { useAdminAuth } from "../../context/AdminAuthContext";
 
 export function NavUser({ user }) {
   const { isMobile } = useSidebar();
+  const navigate = useNavigate();
+  const { logout } = useAdminAuth();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/admin/login", { replace: true });
+  };
 
   return (
     <SidebarMenu>
@@ -90,7 +99,7 @@ export function NavUser({ user }) {
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={handleLogout}>
               <LogOutIcon />
               Log out
             </DropdownMenuItem>

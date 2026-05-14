@@ -4,6 +4,7 @@ import { RiLinkedinFill } from "react-icons/ri";
 import { AiFillYoutube, AiFillGithub, AiOutlineInstagram } from "react-icons/ai";
 import CropWiseLogo from "../Logo/logo";
 import { Skeleton } from "../../ui/skeleton";
+import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
 
 const socialLinks = [
   {
@@ -46,6 +47,7 @@ const quickLinks03 = [
 const Footer = () => {
   const [loading, setLoading] = useState(true);
   const year = new Date().getFullYear();
+  const { config } = useLandingPageConfig();
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1500);
@@ -99,9 +101,7 @@ const Footer = () => {
           <div>
             <CropWiseLogo />
             <p className="text-[16px] leading-7 font-[400] text-textColor mt-4 max-w-[320px]">
-              Copyright © {year} Olympian House International. Development
-              communication, impact storytelling and strategic visibility
-              across Africa.
+              {config.footer.description.replace("{year}", year)}
             </p>
             <div className="flex items-center gap-3 mt-4">
               {socialLinks.map((link, index) => (

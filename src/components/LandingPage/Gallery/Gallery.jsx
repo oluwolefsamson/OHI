@@ -1,58 +1,9 @@
 import React from "react";
-import hero1 from "../../../assets/images/HeroImg/hero1.jpg";
-import hero2 from "../../../assets/images/HeroImg/hero2.jpg";
-import hero3 from "../../../assets/images/HeroImg/hero3.jpg";
-import aboutImg from "../../../assets/images/about.jpg";
-import featureImg from "../../../assets/images/feature-img.jpg";
-import faqImg from "../../../assets/images/faqs.jpeg";
-import rev1 from "../../../assets/images/rev1.jpg";
-import rev4 from "../../../assets/images/rev4.jpg";
-
-const galleryItems = [
-  {
-    title: "Field stories",
-    category: "Documentary coverage",
-    image: hero1,
-    span: "lg:col-span-2 lg:row-span-2",
-  },
-  {
-    title: "Development visibility",
-    category: "Program reporting",
-    image: aboutImg,
-  },
-  {
-    title: "Impact moments",
-    category: "Human-centered storytelling",
-    image: featureImg,
-  },
-  {
-    title: "Partner voices",
-    category: "Testimonials",
-    image: rev1,
-  },
-  {
-    title: "Mission coverage",
-    category: "On-location production",
-    image: hero2,
-  },
-  {
-    title: "Community engagement",
-    category: "Strategic visibility",
-    image: faqImg,
-  },
-  {
-    title: "Investment narratives",
-    category: "Private-sector content",
-    image: hero3,
-  },
-  {
-    title: "Stakeholder confidence",
-    category: "Brand trust",
-    image: rev4,
-  },
-];
+import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
 
 const Gallery = () => {
+  const { config } = useLandingPageConfig();
+
   return (
     <section id="gallery" className="py-24">
       <div className="container">
@@ -60,15 +11,12 @@ const Gallery = () => {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primaryColor">
             Gallery
           </p>
-          <h2 className="heading text-center mt-4">Selected Visual Moments</h2>
-          <p className="text__para text-center">
-            A curated view of OHI&apos;s production language across development
-            communication, mission coverage and partner storytelling.
-          </p>
+          <h2 className="heading text-center mt-4">{config.gallery.title}</h2>
+          <p className="text__para text-center">{config.gallery.description}</p>
         </div>
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[220px] gap-5">
-          {galleryItems.map((item) => (
+          {config.gallery.items.map((item) => (
             <article
               key={item.title}
               className={`group relative overflow-hidden rounded-[28px] shadow-lg ${item.span || ""}`}

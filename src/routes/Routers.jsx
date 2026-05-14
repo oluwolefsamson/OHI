@@ -6,15 +6,11 @@ import Layout from "../layout/Layout";
 import Home from "../pages/LandingPage/Home";
 import ErrorPage from "../pages/LandingPage/ErrorPage";
 import Dashboard from "../pages/Client-Dashboard/Dashboard";
-import CropsPrice from "../pages/Client-Dashboard/Crops&Price";
-import MarketNews from "../pages/Client-Dashboard/MarketNews";
-import NearbyMarkets from "../pages/Client-Dashboard/NearbyMarkets";
-import PriceAlert from "../pages/Client-Dashboard/PriceAlert";
-import PriceTrend from "../pages/Client-Dashboard/PriceTrend";
 import ProfileSetting from "../pages/Client-Dashboard/ProfileSetting";
-import SubmitPrice from "../pages/Client-Dashboard/SubmitPrice";
 import { Overview } from "../pages/Client-Dashboard/Overview";
-import Dispute from "../pages/Client-Dashboard/Dispute";
+import LandingPageManager from "../pages/Client-Dashboard/LandingPageManager";
+import AdminLogin from "../pages/Client-Dashboard/AdminLogin";
+import { RequireAdminAuth } from "../components/ui/RequireAdminAuth";
 
 const Routers = () => {
   return (
@@ -23,18 +19,21 @@ const Routers = () => {
         {/* Public */}
         <Route index element={<Home />} />
         <Route path="home" element={<Home />} />
+        <Route path="admin/login" element={<AdminLogin />} />
 
         {/* Dashboard */}
-        <Route path="dashboard/*" element={<Dashboard />}>
-          <Route index element={<Overview />} />
-          <Route path="crop-price" element={<CropsPrice />} />
-          <Route path="market-news" element={<MarketNews />} />
-          <Route path="nearby-market" element={<NearbyMarkets />} />
-          <Route path="price-alert" element={<PriceAlert />} />
-          <Route path="price-trend" element={<PriceTrend />} />
-          <Route path="dispute" element={<Dispute />} />
+        <Route
+          path="dashboard/*"
+          element={
+            <RequireAdminAuth>
+              <Dashboard />
+            </RequireAdminAuth>
+          }
+        >
+          <Route index element={<LandingPageManager />} />
+          <Route path="overview" element={<Overview />} />
           <Route path="profile-setting" element={<ProfileSetting />} />
-          <Route path="submit-price" element={<SubmitPrice />} />
+          <Route path="landing-page" element={<LandingPageManager />} />
         </Route>
 
         {/* 404 */}

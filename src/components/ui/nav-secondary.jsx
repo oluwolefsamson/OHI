@@ -17,7 +17,7 @@ export function NavSecondary({ items, collapsed }) {
       <SidebarGroupContent className="">
         <SidebarMenu>
           {items.map((item) => {
-            const isActive = location.pathname === item.url;
+            const isActive = `${location.pathname}${location.hash}` === item.url;
 
             return (
               <SidebarMenuItem key={item.title}>
@@ -40,7 +40,7 @@ export function NavSecondary({ items, collapsed }) {
                         : {}
                     }
                   >
-                    <item.icon />
+                    {item.icon ? <item.icon /> : null}
                     {!collapsed && <span>{item.title}</span>}
                   </SidebarMenuButton>
                 </NavLink>
