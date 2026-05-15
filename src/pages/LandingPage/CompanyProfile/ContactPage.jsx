@@ -135,7 +135,7 @@ const ContactPage = () => {
             {config.footer.description.replace("{year}", new Date().getFullYear())}
           </p>
           <div className="mt-6">
-            <Link to="/about">
+            <Link to="/company-profile">
               <button className="btn inline-flex items-center gap-2">
                 Review profile <ArrowRight className="h-4 w-4" />
               </button>

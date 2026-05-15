@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  BookOpen,
   BriefcaseBusiness,
   Handshake,
   MapPinned,
@@ -12,6 +11,16 @@ import {
 import ProfilePageShell from "../../../components/LandingPage/Profile/ProfilePageShell";
 import SectionHeader from "../../../components/LandingPage/SectionHeader";
 import { Marquee } from "../../../components/LandingPage/magicui/marquee";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../../../components/ui/card";
+import { Button } from "../../../components/ui/button";
+import { Separator } from "../../../components/ui/separator";
 import ifrcLogo from "../../../assets/img/International_Federation_of_Red_Cross_and_Red_Crescent_Societies_Logo.png";
 import corafLogo from "../../../assets/img/logo-coraf.png";
 import sunKingLogo from "../../../assets/img/Sun-King_New_Logo-02.png";
@@ -24,12 +33,6 @@ import portfolioImage05 from "../../../assets/img/WFP-03527.jpg";
 import portfolioImage06 from "../../../assets/img/WFP-03534.jpg";
 
 const profilePages = [
-  {
-    label: "About OHI",
-    path: "/about",
-    description: "The founding story, mission, vision, and values behind the brand.",
-    icon: BookOpen,
-  },
   {
     label: "Services",
     path: "/services",
@@ -159,26 +162,49 @@ const CompanyProfile = () => {
     >
       <SectionHeader
         title="Start with the section that matches your goal"
-        description="The profile has been split into focused pages so each part reads clearly while keeping the same visual language as the landing page."
+        description="The profile is split into focused pages so each part reads clearly while keeping the same visual language as the landing page."
       />
 
       <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {profilePages.map((page) => (
-          <Link
-            key={page.path}
-            to={page.path}
-            className="group rounded-[28px] border border-[#D9DCE2] bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(15,23,42,0.12)]"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <div className="rounded-2xl bg-primaryColor/10 p-3 text-primaryColor">
-                <page.icon className="h-5 w-5" />
-              </div>
-              <ArrowRight className="h-5 w-5 text-textColor transition group-hover:translate-x-1" />
-            </div>
-            <h2 className="mt-5 text-2xl font-bold text-headingColor">{page.label}</h2>
-            <p className="mt-3 text__para">{page.description}</p>
-          </Link>
-        ))}
+        {profilePages.map((page) => {
+          return (
+            <Card
+              key={page.path}
+              className="group overflow-hidden border-[#D9DCE2] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(15,23,42,0.12)]"
+            >
+              <CardHeader className="space-y-0 pb-4">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB] p-3 text-slate-700 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
+                    <page.icon className="h-5 w-5" />
+                  </div>
+                </div>
+              </CardHeader>
+
+              <CardContent className="space-y-4">
+                <CardTitle className="text-2xl font-semibold tracking-[-0.02em] text-headingColor">
+                  {page.label}
+                </CardTitle>
+                <CardDescription className="text-base leading-7 text-textColor">
+                  {page.description}
+                </CardDescription>
+              </CardContent>
+
+              <CardFooter className="flex items-center justify-between gap-4 pt-0">
+                <Separator className="flex-1 bg-black/10" />
+                <Button
+                  asChild
+                  variant="ghost"
+                  className="group/btn h-10 rounded-full px-0 text-sm font-semibold text-slate-700 hover:bg-transparent hover:text-slate-900"
+                >
+                  <Link to={page.path} className="inline-flex items-center gap-2">
+                    Explore
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          );
+        })}
       </div>
 
       <section id="clients" className="mt-16 rounded-[32px] border border-[#D9DCE2] bg-white p-6 shadow-sm sm:p-8">
@@ -218,9 +244,9 @@ const CompanyProfile = () => {
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {portfolioProjects.map((project) => (
-            <article
+            <Card
               key={project.title}
-              className="group overflow-hidden rounded-[28px] border border-[#D9DCE2] bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(15,23,42,0.12)]"
+              className="group overflow-hidden border-[#D9DCE2] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(15,23,42,0.12)]"
             >
               <div className="relative h-[250px] overflow-hidden">
                 <img
@@ -229,18 +255,27 @@ const CompanyProfile = () => {
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,22,36,0.06)_0%,rgba(5,22,36,0.72)_100%)]" />
-                <div className="absolute left-5 top-5 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-primaryColor backdrop-blur-sm">
-                  {project.category}
-                </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-headingColor">{project.title}</h3>
-                <p className="mt-3 text__para">{project.description}</p>
-                <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primaryColor">
-                  View case style <ArrowRight className="h-4 w-4" />
-                </div>
-              </div>
-            </article>
+
+              <CardHeader className="pb-3">
+                <CardTitle className="text-2xl font-semibold tracking-[-0.02em] text-headingColor">
+                  {project.title}
+                </CardTitle>
+              </CardHeader>
+
+              <CardContent className="pb-6">
+                <CardDescription className="text-base leading-7 text-textColor">
+                  {project.description}
+                </CardDescription>
+              </CardContent>
+
+              <CardFooter className="flex items-center justify-between pt-0">
+                <span className="text-sm font-semibold text-primaryColor">
+                  View case style
+                </span>
+                <ArrowRight className="h-4 w-4 text-primaryColor transition-transform group-hover:translate-x-1" />
+              </CardFooter>
+            </Card>
           ))}
         </div>
       </section>

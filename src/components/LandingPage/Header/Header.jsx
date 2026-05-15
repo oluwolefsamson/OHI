@@ -6,8 +6,11 @@ import { Skeleton } from "../../ui/skeleton";
 
 const navlinks = [
   { path: "/", label: "Home", end: true },
-  { path: "/company-profile", label: "Profile" },
+  { path: "/about", label: "About us" },
   { path: "/contact", label: "Contact" },
+  { path: "/services", label: "Our Services" },
+  { path: "/company-profile#portfolio", label: "Portfolio" },
+  { path: "/blog", label: "Blog" },
 ];
 
 const Header = () => {
@@ -69,7 +72,7 @@ const Header = () => {
             </div>
 
             <div className="navigation hidden md:flex items-center gap-6">
-              <ul className="menu flex items-center gap-[2.7rem]">
+              <ul className="menu flex flex-wrap items-center gap-x-6 gap-y-2">
                 {navlinks.map((link, index) => (
                   <li key={index}>
                     <NavLink
@@ -126,7 +129,7 @@ const Header = () => {
             </button>
           </div>
 
-          <ul className="flex flex-col items-center justify-center gap-4 mt-4">
+          <ul className="flex flex-col items-center justify-center gap-4 mt-4 overflow-y-auto">
             {navlinks.map((link, index) => (
               <li key={index}>
                 <NavLink

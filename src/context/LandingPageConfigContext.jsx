@@ -2,6 +2,13 @@ import React, { createContext, useEffect, useState } from "react";
 import { landingPageDefaults } from "../data/landingPageDefaults";
 
 const STORAGE_KEY = "ohi-landing-page-config";
+const LEGACY_VIDEO_TITLE =
+  "Story-led video production for development and visibility";
+const LEGACY_VIDEO_DESCRIPTION =
+  "A dedicated space for OHI's video work. The layout is ready for local video files or embedded links while preserving the same rounded, editorial look used across the site.";
+const PREVIOUS_VIDEO_TITLE = "Video Stories";
+const PREVIOUS_VIDEO_DESCRIPTION =
+  "A dedicated space for OHI's video work, ready for local video files or embedded links while keeping the same rounded editorial look across the site.";
 
 const LandingPageConfigContext = createContext(null);
 
@@ -38,6 +45,33 @@ function mergeDeep(base, override) {
   return override ?? base;
 }
 
+function normalizeConfig(config) {
+  if (!config?.video) return config;
+
+  const nextVideo = { ...config.video };
+
+  if (nextVideo.title === LEGACY_VIDEO_TITLE) {
+    nextVideo.title = landingPageDefaults.video.title;
+  }
+
+  if (nextVideo.description === LEGACY_VIDEO_DESCRIPTION) {
+    nextVideo.description = landingPageDefaults.video.description;
+  }
+
+  if (nextVideo.title === PREVIOUS_VIDEO_TITLE) {
+    nextVideo.title = landingPageDefaults.video.title;
+  }
+
+  if (nextVideo.description === PREVIOUS_VIDEO_DESCRIPTION) {
+    nextVideo.description = landingPageDefaults.video.description;
+  }
+
+  return {
+    ...config,
+    video: nextVideo,
+  };
+}
+
 function applyThemeVars(theme) {
   if (typeof document === "undefined") return;
 
@@ -53,7 +87,7 @@ function loadConfig() {
   if (typeof window === "undefined") return landingPageDefaults;
 
   const stored = safeParse(window.localStorage.getItem(STORAGE_KEY));
-  return mergeDeep(landingPageDefaults, stored);
+  return normalizeConfig(mergeDeep(landingPageDefaults, stored));
 }
 
 export function LandingPageConfigProvider({ children }) {
@@ -62,6 +96,17 @@ export function LandingPageConfigProvider({ children }) {
   useEffect(() => {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(config));
     applyThemeVars(config.theme);
+  }, [config]);
+
+  useEffect(() => {
+    if (
+      config?.video?.title === LEGACY_VIDEO_TITLE ||
+      config?.video?.description === LEGACY_VIDEO_DESCRIPTION ||
+      config?.video?.title === PREVIOUS_VIDEO_TITLE ||
+      config?.video?.description === PREVIOUS_VIDEO_DESCRIPTION
+    ) {
+      setConfig((current) => normalizeConfig(current));
+    }
   }, [config]);
 
   useEffect(() => {

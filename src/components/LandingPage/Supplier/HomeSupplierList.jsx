@@ -33,8 +33,8 @@ const HomeSupplierList = () => {
     >
       <div className="container mx-auto px-4 sm:px-5 lg:px-20">
         <SectionHeader
-          title="OHI partners with institutions and brands that need stories with credibility, clarity and measurable impact"
-          description="The client strip uses moving images so the section feels alive and editorial instead of static."
+          title="Trusted Partners"
+          description="OHI partners with institutions and brands that need stories with credibility, clarity and measurable impact."
           className="max-w-4xl"
         />
 

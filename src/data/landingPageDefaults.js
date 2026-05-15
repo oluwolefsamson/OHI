@@ -233,9 +233,9 @@ export const landingPageDefaults = {
     ],
   },
   video: {
-    title: "Story-led video production for development and visibility",
+    title: "Video Work",
     description:
-      "A dedicated space for OHI's video work. The layout is ready for local video files or embedded links while preserving the same rounded, editorial look used across the site.",
+      "OHI presents its video work here, with room for local files or embedded links, all framed in the same rounded editorial style used across the site.",
     lead: {
       title: "OHI overview reel",
       category: "Featured film",

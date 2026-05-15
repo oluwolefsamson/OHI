@@ -28,33 +28,35 @@ export default function ProfilePageShell({
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,22,36,0.84)_0%,rgba(5,22,36,0.58)_46%,rgba(5,22,36,0.22)_100%)]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(5,193,255,0.14),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(249,161,27,0.12),transparent_30%)]" />
 
-            <div className="relative z-10 flex min-h-[460px] flex-col justify-center px-5 py-8 sm:px-8 lg:min-h-[540px] lg:px-12 lg:py-10 xl:px-16">
-              <div className="max-w-2xl">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-white/80">
-                  {eyebrow}
-                </p>
-                <h1 className="mt-3 max-w-xl text-3xl font-extrabold uppercase leading-[0.95] tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl xl:text-[4rem]">
-                  {title}
-                </h1>
-                <p className="mt-4 max-w-lg text-sm leading-6 text-white/78 sm:text-base">
-                  {description}
-                </p>
+            <div className="relative z-10 flex min-h-[460px] flex-col justify-center py-8 lg:min-h-[540px] lg:py-10">
+              <div className="container">
+                <div className="max-w-2xl">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-white/80">
+                    {eyebrow}
+                  </p>
+                  <h1 className="mt-3 max-w-xl text-3xl font-extrabold uppercase leading-[0.95] tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl xl:text-[4rem]">
+                    {title}
+                  </h1>
+                  <p className="mt-4 max-w-lg text-sm leading-6 text-white/78 sm:text-base">
+                    {description}
+                  </p>
 
-                <div className="mt-6 flex flex-wrap items-center gap-3">
-                  {primaryCta ? (
-                    <Link to={primaryCta.href}>
-                      <button className="hero_btn1 !mt-0 inline-flex items-center gap-2 bg-[#ff8f1f] text-white shadow-[0_18px_42px_rgba(255,143,31,0.28)] hover:brightness-110">
-                        {primaryCta.label}
-                      </button>
-                    </Link>
-                  ) : null}
-                  {secondaryCta ? (
-                    <Link to={secondaryCta.href}>
-                      <button className="hero_btn2 !mt-0 inline-flex items-center gap-2 border-white/20 bg-white text-[#0b3550] shadow-[0_18px_42px_rgba(255,255,255,0.16)] hover:bg-white/95">
-                        {secondaryCta.label}
-                      </button>
-                    </Link>
-                  ) : null}
+                  <div className="mt-6 flex flex-wrap items-center gap-3">
+                    {primaryCta ? (
+                      <Link to={primaryCta.href}>
+                        <button className="hero_btn1 !mt-0 inline-flex items-center gap-2 bg-[#ff8f1f] text-white shadow-[0_18px_42px_rgba(255,143,31,0.28)] hover:brightness-110">
+                          {primaryCta.label}
+                        </button>
+                      </Link>
+                    ) : null}
+                    {secondaryCta ? (
+                      <Link to={secondaryCta.href}>
+                        <button className="hero_btn2 !mt-0 inline-flex items-center gap-2 border-white/20 bg-white text-[#0b3550] shadow-[0_18px_42px_rgba(255,255,255,0.16)] hover:bg-white/95">
+                          {secondaryCta.label}
+                        </button>
+                      </Link>
+                    ) : null}
+                  </div>
                 </div>
               </div>
 
