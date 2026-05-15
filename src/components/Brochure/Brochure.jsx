@@ -6,22 +6,34 @@ import { EffectCards } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { ArrowRight, Download } from "lucide-react";
-import portfolioImage01 from "../../assets/img/WFP-03520.jpg";
-import portfolioImage02 from "../../assets/img/WFP-03523.jpg";
-import portfolioImage03 from "../../assets/img/WFP-03524.jpg";
-import portfolioImage04 from "../../assets/img/WFP-03525.jpg";
-import portfolioImage05 from "../../assets/img/WFP-03527.jpg";
-import portfolioImage06 from "../../assets/img/WFP-03534.jpg";
+import brochurePage01 from "../../assets/company-profile-img/OHI Company Profile EN (1)_page-0001.jpg";
+import brochurePage02 from "../../assets/company-profile-img/OHI Company Profile EN (1)_page-0002.jpg";
+import brochurePage03 from "../../assets/company-profile-img/OHI Company Profile EN (1)_page-0003.jpg";
+import brochurePage04 from "../../assets/company-profile-img/OHI Company Profile EN (1)_page-0004.jpg";
+import brochurePage05 from "../../assets/company-profile-img/OHI Company Profile EN (1)_page-0005.jpg";
+import brochurePage06 from "../../assets/company-profile-img/OHI Company Profile EN (1)_page-0006.jpg";
+import brochurePage07 from "../../assets/company-profile-img/OHI Company Profile EN (1)_page-0007.jpg";
+import brochurePage08 from "../../assets/company-profile-img/OHI Company Profile EN (1)_page-0008.jpg";
+import brochurePage09 from "../../assets/company-profile-img/OHI Company Profile EN (1)_page-0009.jpg";
+import brochurePage10 from "../../assets/company-profile-img/OHI Company Profile EN (1)_page-0010.jpg";
+import brochurePage11 from "../../assets/company-profile-img/OHI Company Profile EN (1)_page-0011.jpg";
+import brochurePage12 from "../../assets/company-profile-img/OHI Company Profile EN (1)_page-0012.jpg";
 
 const Brochure = () => {
   const slides = useMemo(
     () => [
-      { src: portfolioImage01, alt: "Portfolio brochure cover" },
-      { src: portfolioImage02, alt: "Coverage highlights spread" },
-      { src: portfolioImage03, alt: "Business protection overview" },
-      { src: portfolioImage04, alt: "Personal insurance plans" },
-      { src: portfolioImage05, alt: "Claims support and service" },
-      { src: portfolioImage06, alt: "Risk assessment and advisory" },
+      { src: brochurePage01, alt: "OHI company profile page 1" },
+      { src: brochurePage02, alt: "OHI company profile page 2" },
+      { src: brochurePage03, alt: "OHI company profile page 3" },
+      { src: brochurePage04, alt: "OHI company profile page 4" },
+      { src: brochurePage05, alt: "OHI company profile page 5" },
+      { src: brochurePage06, alt: "OHI company profile page 6" },
+      { src: brochurePage07, alt: "OHI company profile page 7" },
+      { src: brochurePage08, alt: "OHI company profile page 8" },
+      { src: brochurePage09, alt: "OHI company profile page 9" },
+      { src: brochurePage10, alt: "OHI company profile page 10" },
+      { src: brochurePage11, alt: "OHI company profile page 11" },
+      { src: brochurePage12, alt: "OHI company profile page 12" },
     ],
     []
   );
@@ -30,10 +42,9 @@ const Brochure = () => {
   const showSkeleton = loadedCount === 0;
 
   const handleDownload = () => {
-    const brochureUrl = "/EquilibriumInsuranceBrochure.pdf";
     const link = document.createElement("a");
-    link.href = brochureUrl;
-    link.download = "EquilibriumInsuranceBrochure.pdf";
+    link.href = "/OHI-Company-Profile.pdf";
+    link.download = "OHI-Company-Profile.pdf";
     link.click();
   };
 
@@ -53,38 +64,38 @@ const Brochure = () => {
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="space-y-7">
             <div className="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/85 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-700 shadow-sm backdrop-blur">
-              Portfolio brochure
+              Company profile brochure
             </div>
 
             <div className="space-y-4">
               <h2 className="text-3xl font-semibold leading-tight tracking-tight text-headingColor md:text-4xl">
-                A brochure-style preview of work, packaged for quick review and easy sharing.
+                Browse the OHI company profile as a page-by-page Swiper brochure.
               </h2>
               <p className="max-w-xl text-base leading-7 text-textColor">
-                This section brings the brochure experience directly into the portfolio, letting visitors scan a compact visual story without leaving the page.
+                The full brochure is presented as a card swiper so visitors can move through the company profile without leaving the page.
               </p>
             </div>
 
             <div className="grid max-w-xl grid-cols-3 gap-4 rounded-2xl border border-slate-900/10 bg-white/85 p-5 text-center text-sm shadow-[0_12px_30px_rgba(15,23,42,0.08)] backdrop-blur">
               <div>
-                <p className="text-2xl font-semibold">6</p>
-                <p className="text-slate-600">Preview pages</p>
+                <p className="text-2xl font-semibold">12</p>
+                <p className="text-slate-600">Brochure pages</p>
               </div>
               <div>
-                <p className="text-2xl font-semibold">PDF</p>
-                <p className="text-slate-600">Download ready</p>
+                <p className="text-2xl font-semibold">Card</p>
+                <p className="text-slate-600">Swiper effect</p>
               </div>
               <div>
-                <p className="text-2xl font-semibold">1</p>
-                <p className="text-slate-600">Section added</p>
+                <p className="text-2xl font-semibold">OHI</p>
+                <p className="text-slate-600">Profile deck</p>
               </div>
             </div>
 
             <ul className="space-y-3 text-slate-700">
               {[
+                "Uses the images from the company profile folder in order",
                 "Keeps the brochure experience inside the portfolio flow",
-                "Uses a card swiper for a compact, premium visual preview",
-                "Includes a download action and contact path for follow-up",
+                "Includes a download action for the first page and a contact path for follow-up",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
@@ -96,11 +107,11 @@ const Brochure = () => {
             <div className="flex flex-wrap items-center gap-4">
               <button
                 onClick={handleDownload}
-                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-emerald-700 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:-translate-y-0.5 hover:shadow-[0_12px_20px_rgba(5,150,105,0.25)] focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2"
+                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-emerald-700 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:-translate-y-0.5 hover:bg-[#0f4d1d] hover:shadow-[0_12px_20px_rgba(15,77,29,0.28)] focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2"
               >
-                <span className="absolute inset-0 translate-x-full bg-emerald-300 transition-transform duration-300 group-hover:translate-x-0" />
+                <span className="absolute inset-0 translate-x-full bg-[#0f4d1d] transition-transform duration-300 group-hover:translate-x-0" />
                 <Download className="relative h-4 w-4" />
-                <span className="relative">Download brochure</span>
+                <span className="relative">Download company profile</span>
               </button>
               <Link to="/contact">
                 <button className="inline-flex items-center gap-2 rounded-full border border-slate-900/15 bg-white/85 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-900/30 hover:text-slate-900">
@@ -156,7 +167,7 @@ const Brochure = () => {
             <div className="mt-6 rounded-2xl border border-slate-900/10 bg-white/85 p-4 text-sm text-slate-700 shadow-[0_18px_30px_rgba(15,23,42,0.08)] backdrop-blur">
               <p className="font-semibold text-slate-900">What's inside</p>
               <p className="mt-2">
-                Coverage options, project highlights, and a step-by-step guide to choosing the right next move.
+                A 12-page visual company profile covering the work, approach, services, and contact details.
               </p>
             </div>
           </div>
