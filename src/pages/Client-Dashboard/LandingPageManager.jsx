@@ -3,6 +3,17 @@ import { Link, useLocation } from "react-router-dom";
 import { toast } from "sonner";
 import { useLandingPageConfig } from "../../context/LandingPageConfigContext";
 import { ArrowRightIcon, RotateCcwIcon, SparklesIcon } from "lucide-react";
+import { Button } from "../../components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../../components/ui/card";
+import { Input } from "../../components/ui/input";
+import { Label } from "../../components/ui/label";
+import { Textarea } from "../../components/ui/textarea";
 
 function readFileAsDataUrl(file) {
   return new Promise((resolve, reject) => {
@@ -15,53 +26,53 @@ function readFileAsDataUrl(file) {
 
 function SectionCard({ id, title, description, children }) {
   return (
-    <section
+    <Card
       id={id}
-      className="scroll-mt-24 overflow-hidden rounded-[30px] border border-slate-200/80 bg-white/95 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur"
+      className="scroll-mt-24 overflow-hidden border-border/80 bg-card/95 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur"
     >
       <div className="h-1 bg-[linear-gradient(90deg,#0f4c81,#118ab2,#f4b942)]" />
-      <div className="border-b border-slate-100 px-6 py-5">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500">
+      <CardHeader className="border-b border-border/60 px-6 py-5">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-muted-foreground">
           Section editor
         </p>
-        <h2 className="mt-2 text-2xl font-bold text-headingColor">{title}</h2>
+        <CardTitle className="mt-2 text-2xl text-foreground">{title}</CardTitle>
         {description && (
-          <p className="mt-2 max-w-3xl text-sm leading-6 text-textColor">
+          <CardDescription className="mt-2 max-w-3xl text-sm leading-6">
             {description}
-          </p>
+          </CardDescription>
         )}
-      </div>
-      <div className="px-6 py-6">{children}</div>
-    </section>
+      </CardHeader>
+      <CardContent className="px-6 py-6">{children}</CardContent>
+    </Card>
   );
 }
 
 function Field({ label, children, hint }) {
   return (
     <label className="block">
-      <span className="mb-2 block text-sm font-semibold text-headingColor">
+      <Label className="mb-2 block text-sm font-semibold text-foreground">
         {label}
-      </span>
+      </Label>
       {children}
-      {hint && <span className="mt-2 block text-xs text-textColor">{hint}</span>}
+      {hint && <span className="mt-2 block text-xs text-muted-foreground">{hint}</span>}
     </label>
   );
 }
 
 function TextInput(props) {
   return (
-    <input
+    <Input
       {...props}
-      className={`w-full rounded-2xl border border-slate-200 bg-slate-50/80 px-4 py-3 text-sm outline-none ring-0 transition placeholder:text-slate-400 focus:border-primaryColor focus:bg-white ${props.className || ""}`}
+      className={`w-full rounded-2xl ${props.className || ""}`}
     />
   );
 }
 
 function TextArea(props) {
   return (
-    <textarea
+    <Textarea
       {...props}
-      className={`w-full rounded-2xl border border-slate-200 bg-slate-50/80 px-4 py-3 text-sm outline-none ring-0 transition placeholder:text-slate-400 focus:border-primaryColor focus:bg-white ${props.className || ""}`}
+      className={`w-full rounded-2xl ${props.className || ""}`}
     />
   );
 }
@@ -69,18 +80,18 @@ function TextArea(props) {
 function ImageField({ label, value, onChange, hint }) {
   return (
     <Field label={label} hint={hint}>
-      <div className="flex flex-col gap-3 rounded-2xl border border-dashed border-slate-200 bg-slate-50/70 p-4">
+      <div className="flex flex-col gap-3 rounded-2xl border border-dashed border-border bg-muted/40 p-4">
         <div className="flex items-center gap-4">
           <img
             src={value}
             alt={label}
             className="h-20 w-20 rounded-2xl object-cover ring-1 ring-slate-200"
           />
-          <input
+          <Input
             type="file"
             accept="image/*"
             onChange={onChange}
-            className="block w-full text-sm text-textColor file:mr-4 file:rounded-full file:border-0 file:bg-primaryColor file:px-4 file:py-2 file:text-white hover:file:cursor-pointer"
+            className="block w-full text-sm text-foreground file:mr-4 file:rounded-full file:border-0 file:bg-primaryColor file:px-4 file:py-2 file:text-white hover:file:cursor-pointer"
           />
         </div>
       </div>
@@ -415,15 +426,13 @@ export default function LandingPageManager() {
               Control the public OHI homepage from one focused editor
             </h1>
             <p className="mt-4 max-w-3xl text__para">
-              Edit the sections wired to the homepage config: hero, about,
-              Why OHI, theme colors, gallery, video, mission, values, and
-              footer content. Changes are saved to this browser and reflected
-              on the public landing page.
+              Edit the homepage sections from one place. Changes save in this
+              browser and show on the public site.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <button
+              <Button
                 type="button"
-                className="inline-flex items-center gap-2 rounded-full bg-primaryColor px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_40px_rgba(15,76,129,0.24)] transition hover:translate-y-[-1px] hover:brightness-110"
+                className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold shadow-[0_16px_40px_rgba(15,76,129,0.24)] transition hover:translate-y-[-1px] hover:brightness-110"
                 onClick={() => {
                   resetConfig();
                   toast.success("Homepage content reset to defaults");
@@ -431,14 +440,13 @@ export default function LandingPageManager() {
               >
                 <RotateCcwIcon className="h-4 w-4" />
                 Reset defaults
-              </button>
-              <Link
-                to="/dashboard/overview"
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
-              >
-                Back to overview
-                <ArrowRightIcon className="h-4 w-4" />
-              </Link>
+              </Button>
+              <Button asChild variant="outline" className="rounded-full px-5 py-3 text-sm font-semibold">
+                <Link to="/dashboard/overview">
+                  Back to overview
+                  <ArrowRightIcon className="h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           </div>
 
@@ -477,22 +485,22 @@ export default function LandingPageManager() {
       <SectionCard
         id="what-can-be-edited"
         title="What can be edited now"
-        description="These are the homepage sections that are connected to the admin config today."
+        description="The sections currently connected to the admin config."
       >
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {[
-            "Hero headline, CTA text, stat blocks, and five hero images",
-            "About OHI copy, main image, and overlay card",
-            "Why OHI section titles, cards, links, and images",
-            "Who We Serve section title, copy, and service cards",
-            "Gallery grid, gallery stories, and strip items",
-            "Video section title, lead clip, and supporting clips",
-            "Mission, Vision and Values text and value list",
-            "Selected Voices title, description, and review cards",
-            "Primary and accent colors plus hero/header backgrounds",
+            "Hero copy, CTAs, stats, and images",
+            "About copy, image, and overlay card",
+            "Why OHI cards, links, and images",
+            "Who We Serve copy and cards",
+            "Gallery grid, stories, and strip items",
+            "Video section and clips",
+            "Mission, vision, and values",
+            "Selected Voices and reviews",
+            "Colors and background images",
             "Footer copy and contact details",
-            "Logo and favicon assets are managed from the app shell",
-            "FAQ, testimonial, and feature sections are still code-managed",
+            "Logo and favicon are handled in the app shell",
+            "FAQ, testimonial, and feature sections stay code-managed",
           ].map((item) => (
             <div
               key={item}
@@ -508,23 +516,23 @@ export default function LandingPageManager() {
         <SectionCard
           id="theme-settings"
           title="Theme Settings"
-          description="Set the brand colors and page backgrounds used by the public OHI homepage."
+          description="Set the colors and page backgrounds used by the public homepage."
         >
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             <Field label="Primary color">
-              <input
+              <Input
                 type="color"
                 value={config.theme.primaryColor}
                 onChange={(e) => updateTheme("primaryColor", e.target.value)}
-                className="h-12 w-full rounded-xl border border-slate-200 bg-white p-1"
+                className="h-12 w-full rounded-xl bg-background p-1"
               />
             </Field>
             <Field label="Accent color">
-              <input
+              <Input
                 type="color"
                 value={config.theme.accentColor}
                 onChange={(e) => updateTheme("accentColor", e.target.value)}
-                className="h-12 w-full rounded-xl border border-slate-200 bg-white p-1"
+                className="h-12 w-full rounded-xl bg-background p-1"
               />
             </Field>
             <ImageField
@@ -551,7 +559,7 @@ export default function LandingPageManager() {
         <SectionCard
           id="hero-content"
           title="Hero Content"
-          description="Update the headline, call-to-action labels, numbers, and hero gallery images."
+          description="Update the headline, buttons, stats, and hero images."
         >
           <div className="grid gap-6 xl:grid-cols-2">
             <div className="space-y-5">
@@ -631,13 +639,13 @@ export default function LandingPageManager() {
                       />
                     </Field>
                     <Field label="Accent">
-                      <input
+                      <Input
                         type="color"
                         value={stat.accent}
                         onChange={(e) =>
                           updateHeroStat(index, "accent", e.target.value)
                         }
-                        className="h-12 w-full rounded-xl border border-slate-200 bg-white p-1"
+                        className="h-12 w-full rounded-xl bg-background p-1"
                       />
                     </Field>
                   </div>
@@ -728,7 +736,7 @@ export default function LandingPageManager() {
         <SectionCard
           id="about-ohi"
           title="About Section"
-          description="Edit the story block shown below the hero."
+          description="Edit the story block below the hero."
         >
           <div className="grid gap-6 xl:grid-cols-2">
             <div className="space-y-5">
@@ -813,7 +821,7 @@ export default function LandingPageManager() {
         <SectionCard
           id="why-ohi"
           title="Why OHI Section"
-          description="Adjust the three feature cards that sit below the about block."
+          description="Adjust the feature cards below About."
         >
           <div className="space-y-5">
             <Field label="Section title">
@@ -875,7 +883,7 @@ export default function LandingPageManager() {
         <SectionCard
           id="who-we-serve"
           title="Who We Serve"
-          description="Edit the public services block that explains OHI's audience and offering."
+          description="Edit the audience and services block."
         >
           <div className="space-y-5">
             <Field label="Section title">
@@ -916,23 +924,23 @@ export default function LandingPageManager() {
                   </Field>
                   <div className="grid grid-cols-2 gap-4">
                     <Field label="Bg color">
-                      <input
+                      <Input
                         type="color"
                         value={card.bgColor}
                         onChange={(e) =>
                           updateServiceCard(index, "bgColor", e.target.value)
                         }
-                        className="h-12 w-full rounded-xl border border-slate-200 bg-white p-1"
+                        className="h-12 w-full rounded-xl bg-background p-1"
                       />
                     </Field>
                     <Field label="Text color">
-                      <input
+                      <Input
                         type="color"
                         value={card.textColor}
                         onChange={(e) =>
                           updateServiceCard(index, "textColor", e.target.value)
                         }
-                        className="h-12 w-full rounded-xl border border-slate-200 bg-white p-1"
+                        className="h-12 w-full rounded-xl bg-background p-1"
                       />
                     </Field>
                   </div>
@@ -945,7 +953,7 @@ export default function LandingPageManager() {
         <SectionCard
           id="gallery"
           title="Gallery"
-          description="Control the first gallery grid shown on the homepage."
+          description="Control the main gallery grid."
         >
           <div className="space-y-5">
             <Field label="Gallery title">
@@ -1009,7 +1017,7 @@ export default function LandingPageManager() {
         <SectionCard
           id="gallery-stories"
           title="Gallery Stories"
-          description="Edit the second gallery section with story-led cards and strip items."
+          description="Edit the story-led gallery section."
         >
           <div className="space-y-5">
             <Field label="Section title">
@@ -1208,7 +1216,7 @@ export default function LandingPageManager() {
         <SectionCard
           id="video-section"
           title="Video Section"
-          description="Edit the homepage video showcase."
+          description="Edit the homepage video area."
         >
           <div className="space-y-5">
             <Field label="Section title">
@@ -1326,8 +1334,8 @@ export default function LandingPageManager() {
 
         <SectionCard
           id="mission-vision-values"
-          title="Mission, Vision and Values"
-          description="Edit the profile block shown on the landing page."
+          title="Mission, Vision & Values"
+          description="Edit the profile block on the landing page."
         >
           <div className="space-y-5">
             <Field label="Section title">
@@ -1423,7 +1431,7 @@ export default function LandingPageManager() {
         <SectionCard
           id="selected-voices"
           title="Selected Voices"
-          description="Edit the testimonial-style quotes that scroll in the voices section."
+          description="Edit the testimonial-style quotes."
         >
           <div className="space-y-5">
             <Field label="Section title">
@@ -1488,7 +1496,7 @@ export default function LandingPageManager() {
         <SectionCard
           id="footer-settings"
           title="Footer Settings"
-          description="Control the footer copy that appears on the public OHI site."
+          description="Control the footer copy on the public site."
         >
           <div className="grid gap-4 lg:grid-cols-2">
             <Field

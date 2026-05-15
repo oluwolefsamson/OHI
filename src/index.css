@@ -61,9 +61,14 @@ html::-webkit-scrollbar {
       --input: 214.3 31.8% 91.4%;
       --ring: 195 100% 51%;
       --radius: 0.5rem;
-      --sidebar-background: 0 0% 100%; /* White in HSL */
-      --sidebar-foreground: 210 40% 98%; /* Light text */
-      --sidebar-border: 214.3 31.8% 91.4%; /* Border color */
+      --sidebar-background: 0 0% 100%;
+      --sidebar-foreground: 222.2 47.4% 11.2%;
+      --sidebar-primary: 195 100% 51%;
+      --sidebar-primary-foreground: 0 0% 100%;
+      --sidebar-accent: 210 40% 96.1%;
+      --sidebar-accent-foreground: 222.2 47.4% 11.2%;
+      --sidebar-border: 214.3 31.8% 91.4%;
+      --sidebar-ring: 195 100% 51%;
       --ohi-primary: #05c1ff;
       --ohi-accent: #f9a11b;
       --ohi-hero-text: #ffffff;
