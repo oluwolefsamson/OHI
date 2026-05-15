@@ -18,7 +18,7 @@ const Gallery = () => {
           {config.gallery.items.map((item) => (
             <article
               key={item.title}
-              className={`group relative overflow-hidden rounded-[28px] shadow-lg ${item.span || ""}`}
+              className={`group relative overflow-hidden rounded-[18px] shadow-lg ${item.span || ""}`}
             >
               <img
                 src={item.image}

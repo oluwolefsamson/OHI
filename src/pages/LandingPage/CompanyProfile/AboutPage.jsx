@@ -13,7 +13,7 @@ import { Button } from "../../../components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../../components/ui/card";
 import aboutHeroVideo from "../../../assets/img/OHI-video.mp4";
 import aboutVisual from "../../../assets/img/about-us.jpg";
-import portraitOne from "../../../assets/img/BTS-02864.jpg";
+import storyVisual from "../../../assets/img/WFP-03520.jpg";
 import portraitTwo from "../../../assets/img/WFP-03558.jpg";
 import teamImageOne from "../../../assets/img/WFP-03523.jpg";
 import teamImageTwo from "../../../assets/img/WFP-03524.jpg";
@@ -98,7 +98,7 @@ const AboutPage = () => {
             <div className="relative mx-auto w-full max-w-[560px]">
               <div className="relative overflow-hidden bg-white shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
                 <img
-                  src={portraitOne}
+                  src={storyVisual}
                   alt="OHI story visual"
                   className="h-[420px] w-full object-cover sm:h-[500px]"
                 />

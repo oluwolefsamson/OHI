@@ -56,7 +56,14 @@ function stripBundledAssetUrls(value) {
 
 function mergeDeep(base, override) {
   if (Array.isArray(base)) {
-    return Array.isArray(override) && override.length ? override : base;
+    if (!Array.isArray(override) || !override.length) {
+      return base;
+    }
+
+    const merged = base.map((item, index) => mergeDeep(item, override[index]));
+    const extraItems = override.slice(base.length).filter((item) => item !== undefined);
+
+    return extraItems.length ? [...merged, ...extraItems] : merged;
   }
 
   if (base && typeof base === "object") {
