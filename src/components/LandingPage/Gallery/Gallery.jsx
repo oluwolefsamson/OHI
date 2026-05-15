@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import BlurFade from "../../ui/blur-fade";
 import { X } from "lucide-react";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
+import { landingPageDefaults } from "../../../data/landingPageDefaults";
 
 const Gallery = () => {
   const { config } = useLandingPageConfig();
-  const images = config.gallery.items.slice(0, 13);
+  const images = landingPageDefaults.gallery.items.slice(0, 13);
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
