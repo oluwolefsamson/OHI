@@ -46,20 +46,22 @@ export const ContactBand = () => {
               </div>
             </div>
 
-            <div className="rounded-[28px] bg-white/10 backdrop-blur-md border border-white/10 p-6">
-              <h3 className="text-xl font-semibold">Contact Details</h3>
-              <div className="mt-5 space-y-4">
-                {contactRows.map((row, index) => (
-                  <div
-                    key={`${row.label}-${index}`}
-                    className="flex items-start justify-between gap-4 border-b border-white/10 pb-3 last:border-b-0 last:pb-0"
-                  >
-                    <span className="text-white/60">{row.label}</span>
-                    <span className="text-right font-medium">{row.value}</span>
-                  </div>
-                ))}
+              <div className="rounded-[28px] bg-white/10 backdrop-blur-md border border-white/10 p-6">
+                <h3 className="text-xl font-semibold">Contact Details</h3>
+                <div className="mt-5 space-y-4">
+                  {contactRows.map((row, index) => (
+                    <div
+                      key={`${row.label}-${index}`}
+                      className="flex flex-col gap-1 border-b border-white/10 pb-3 last:border-b-0 last:pb-0 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
+                    >
+                      <span className="text-white/60">{row.label}</span>
+                      <span className="max-w-full break-words text-left font-medium sm:max-w-[70%] sm:text-right">
+                        {row.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
           </div>
           </motion.div>
         </Reveal>

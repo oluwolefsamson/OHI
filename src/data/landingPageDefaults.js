@@ -6,11 +6,10 @@ import hero2 from "../assets/images/HeroImg/hero2.jpg";
 import hero3 from "../assets/images/HeroImg/hero3.jpg";
 import hero4 from "../assets/images/HeroImg/hero4.jpg";
 import hero5 from "../assets/images/HeroImg/hero5.jpg";
-import aboutImg from "../assets/img/about-us.jpg";
 import storyImg from "../assets/img/Photography.jpg";
-import aboutCard from "../assets/img/BTS-02864.jpg";
 import featureImg from "../assets/img/BTS-02812.jpg";
-import faqImg from "../assets/img/WFP-03558.jpg";
+import aboutCard from "../assets/img/BTS-02864.jpg";
+import faqImg from "../assets/img/FAQ.jpg";
 import rev1 from "../assets/img/WFP-03555-150x150.jpg";
 import rev2 from "../assets/img/WFP-03556-150x150.jpg";
 import rev4 from "../assets/img/WFP-03558-150x150.jpg";
@@ -133,12 +132,11 @@ export const landingPageDefaults = {
         title: "Field stories",
         category: "Documentary coverage",
         image: supplier1,
-        span: "lg:col-span-2 lg:row-span-2",
       },
       {
         title: "Development visibility",
         category: "Program reporting",
-        image: aboutImg,
+        image: featureImg,
       },
       {
         title: "Impact moments",
@@ -153,7 +151,7 @@ export const landingPageDefaults = {
       {
         title: "Mission coverage",
         category: "On-location production",
-        image: supplier1,
+        image: supplier2,
       },
       {
         title: "Community engagement",
@@ -163,12 +161,72 @@ export const landingPageDefaults = {
       {
         title: "Investment narratives",
         category: "Private-sector content",
-        image: supplier2,
+        image: supplier3,
       },
       {
         title: "Stakeholder confidence",
         category: "Brand trust",
-        image: supplier3,
+        image: rev2,
+      },
+      {
+        title: "Story capture",
+        category: "Behind the scenes",
+        image: storyImg,
+      },
+      {
+        title: "Creative setup",
+        category: "Production craft",
+        image: aboutCard,
+      },
+      {
+        title: "Field perspective",
+        category: "Audience connection",
+        image: rev4,
+      },
+      {
+        title: "Documentary detail",
+        category: "Visual archive",
+        image: hero1,
+      },
+      {
+        title: "Institutional film",
+        category: "Development story",
+        image: hero2,
+      },
+      {
+        title: "Strategic outreach",
+        category: "Partner engagement",
+        image: hero3,
+      },
+      {
+        title: "Audience focus",
+        category: "Beneficiary insight",
+        image: hero4,
+      },
+      {
+        title: "Event coverage",
+        category: "Community moments",
+        image: hero5,
+      },
+      {
+        title: "Program launch",
+        category: "Narrative capture",
+        image: supplier1,
+      },
+      {
+        title: "Impact frame",
+        category: "Progress snapshot",
+        image: supplier2,
+      },
+      {
+        title: "Visual identity",
+        category: "Brand story",
+        image: faqImg,
+      },
+      {
+        title: "Editorial archive",
+        category: "Storytelling system",
+        image: featureImg,
       },
     ],
   },
@@ -188,7 +246,7 @@ export const landingPageDefaults = {
       title: "Built for institutions that need clarity and trust",
       description:
         "The gallery language mirrors the company profile: clear, professional and grounded in the kind of visual evidence that helps partners communicate with confidence.",
-      image: aboutImg,
+      image: featureImg,
     },
     supportCards: [
       {
@@ -226,7 +284,7 @@ export const landingPageDefaults = {
       },
       {
         label: "Executive visibility",
-        image: aboutImg,
+        image: featureImg,
         description: "A visual cue for the range of settings OHI can document.",
       },
     ],

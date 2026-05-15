@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import About from "../../components/LandingPage/About/About";
 import { MissionVisionValues } from "../../components/LandingPage/Profile/MissionVisionValues";
 import { ContactBand } from "../../components/LandingPage/Profile/ContactBand";
-import faqImg from "../../assets/img/WFP-03558.jpg";
+import faqImg from "../../assets/img/FAQ.jpg";
 import FaqList from "../../components/LandingPage/Faq/FaqList";
 import Hero from "../../components/LandingPage/Hero/Hero";
 import WhyChoose from "../../components/LandingPage/WhyChoose/WhyChoose";
@@ -83,7 +83,7 @@ const Home = () => {
               <img
                 src={faqImg}
                 alt="OHI FAQs"
-                className="w-full h-[320px] rounded object-cover sm:h-[75vh] lg:h-[103vh]"
+                className="w-full h-[280px] rounded object-cover sm:h-[400px] md:h-[520px] lg:h-[680px]"
               />
             </div>
             <div className="w-full md:w-1/2 flex flex-col justify-center">

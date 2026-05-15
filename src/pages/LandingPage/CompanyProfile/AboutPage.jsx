@@ -11,7 +11,7 @@ import { Button } from "../../../components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../../components/ui/card";
 import Reveal from "../../../components/ui/reveal";
 import aboutHeroVideo from "../../../assets/img/OHI-video.mp4";
-import aboutVisual from "../../../assets/img/about-us.jpg";
+import aboutVisual from "../../../assets/img/camera-man.jpg";
 import storyVisual from "../../../assets/img/Photography.jpg";
 import portraitTwo from "../../../assets/img/WFP-03558.jpg";
 import teamImageOne from "../../../assets/img/WFP-03523.jpg";

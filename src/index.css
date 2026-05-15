@@ -36,7 +36,7 @@ html::-webkit-scrollbar {
 
 @layer base {
   section {
-    @apply py-[75px];
+    @apply py-[52px] sm:py-[75px];
   }
 
   @layer base {

@@ -11,13 +11,14 @@ const Hero = () => {
   return (
     <section id="home" className="hero__section pt-[60px] 2xl:h-[800px]">
       <div className="container">
-        <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
+        <div className="flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-center lg:gap-[90px]">
           <motion.div
             initial={{ opacity: 0, x: -64 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full"
           >
-            <div className="lg:w-[570px]">
+            <div className="w-full lg:w-[570px]">
               <motion.h1
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -41,15 +42,15 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.26, ease: [0.22, 1, 0.36, 1] }}
-                className="flex gap-3 items-center"
+                className="flex w-full flex-col gap-3 items-stretch sm:flex-row sm:items-center"
               >
                 <Link to={hero.primaryCtaHref}>
-                  <button className="hero_btn1 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(15,23,42,0.15)]">
+                  <button className="hero_btn1 !mt-0 w-full transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(15,23,42,0.15)] sm:w-auto">
                     {hero.primaryCtaLabel}
                   </button>
                 </Link>
                 <Link to={hero.secondaryCtaHref}>
-                  <button className="hero_btn2 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(15,23,42,0.08)]">
+                  <button className="hero_btn2 !mt-0 w-full transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(15,23,42,0.08)] sm:w-auto">
                     {hero.secondaryCtaLabel}
                   </button>
                 </Link>
@@ -65,7 +66,7 @@ const Hero = () => {
               </motion.div>
             </div>
 
-            <div className="mt-[30px] lg:mt-[20px] flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-[30px]">
+            <div className="mt-[30px] flex flex-col items-start gap-5 lg:mt-[20px] lg:flex-row lg:items-center lg:gap-[30px]">
               {hero.stats.map((stat) => (
                 <motion.div
                   key={stat.label}
@@ -128,7 +129,7 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.44, ease: [0.22, 1, 0.36, 1] }}
                 src={hero.images.hero5}
                 alt="OHI visual story 4"
-                className="h-[100px] w-full object-cover transition duration-500 ease-out hover:scale-[1.02] sm:h-[145px] lg:h-[250px]"
+                className="h-[76px] w-full object-cover transition duration-500 ease-out hover:scale-[1.02] sm:h-[108px] lg:h-[150px]"
               />
             </div>
             <motion.div

@@ -72,6 +72,7 @@ const PortfolioPage = () => {
   return (
     <ProfilePageShell
       title="Portfolio"
+      titleClassName="underline decoration-[10px] decoration-[#f59e0b] underline-offset-8"
     >
       <section>
         <SectionHeader
