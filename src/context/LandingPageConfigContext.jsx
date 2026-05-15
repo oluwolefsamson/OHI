@@ -27,6 +27,33 @@ function safeParse(value) {
   }
 }
 
+function stripBundledAssetUrls(value) {
+  if (Array.isArray(value)) {
+    return value
+      .map((item) => stripBundledAssetUrls(item))
+      .filter((item) => item !== undefined);
+  }
+
+  if (value && typeof value === "object") {
+    const result = {};
+
+    for (const [key, nestedValue] of Object.entries(value)) {
+      const cleaned = stripBundledAssetUrls(nestedValue);
+      if (cleaned !== undefined) {
+        result[key] = cleaned;
+      }
+    }
+
+    return result;
+  }
+
+  if (typeof value === "string" && value.startsWith("/assets/")) {
+    return undefined;
+  }
+
+  return value;
+}
+
 function mergeDeep(base, override) {
   if (Array.isArray(base)) {
     return Array.isArray(override) && override.length ? override : base;
@@ -108,7 +135,9 @@ function applyThemeVars(theme) {
 function loadConfig() {
   if (typeof window === "undefined") return landingPageDefaults;
 
-  const stored = safeParse(window.localStorage.getItem(STORAGE_KEY));
+  const stored = stripBundledAssetUrls(
+    safeParse(window.localStorage.getItem(STORAGE_KEY))
+  );
   return normalizeConfig(mergeDeep(landingPageDefaults, stored));
 }
 
@@ -116,7 +145,10 @@ export function LandingPageConfigProvider({ children }) {
   const [config, setConfig] = useState(loadConfig);
 
   useEffect(() => {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(config));
+    window.localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(stripBundledAssetUrls(config))
+    );
     applyThemeVars(config.theme);
   }, [config]);
 
