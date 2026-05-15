@@ -7,6 +7,7 @@ import hero3 from "../assets/images/HeroImg/hero3.jpg";
 import hero4 from "../assets/images/HeroImg/hero4.jpg";
 import hero5 from "../assets/images/HeroImg/hero5.jpg";
 import aboutImg from "../assets/img/about-us.jpg";
+import storyImg from "../assets/img/Photography.jpg";
 import aboutCard from "../assets/img/BTS-02864.jpg";
 import featureImg from "../assets/img/BTS-02812.jpg";
 import faqImg from "../assets/img/WFP-03558.jpg";
@@ -70,7 +71,7 @@ export const landingPageDefaults = {
       "Olympian House International was founded in 2015 by filmmaker and development communication specialist Fombang Banns N. with a simple belief: stories move people, and when people move, change follows.",
       "We make Africa's development and investment journeys visible, relatable and unforgettable by turning complex initiatives into authentic, human-centered visual stories that build confidence, spark collaboration and unlock opportunities.",
     ],
-    image: aboutImg,
+    image: storyImg,
     overlay: {
       since: "Since 2015",
       tagline: "Strategic visibility",
