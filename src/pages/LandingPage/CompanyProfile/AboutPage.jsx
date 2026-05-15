@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight,
   BadgeCheck,
-  Camera,
   HeartHandshake,
   Play,
   Sparkles,
-  Users,
 } from "lucide-react";
 import { Button } from "../../../components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../../components/ui/card";
+import Reveal from "../../../components/ui/reveal";
 import aboutHeroVideo from "../../../assets/img/OHI-video.mp4";
 import aboutVisual from "../../../assets/img/about-us.jpg";
 import storyVisual from "../../../assets/img/Photography.jpg";
@@ -85,9 +84,9 @@ const AboutPage = () => {
 
         <div className="relative container mx-auto px-4 pb-20 pt-28 sm:px-5 lg:px-20 lg:pb-28 lg:pt-32">
           <div className="max-w-4xl">
-            <h1 className="inline-block border-b-[10px] border-[#f59e0b] pb-3 text-5xl font-extrabold leading-none tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
+            <Reveal as="h1" className="inline-block border-b-[10px] border-[#f59e0b] pb-3 text-5xl font-extrabold leading-none tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
               About Us
-            </h1>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -95,12 +94,12 @@ const AboutPage = () => {
       <section className="py-20 lg:py-24">
         <div className="container mx-auto px-4 sm:px-5 lg:px-20">
           <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
-            <div className="relative mx-auto w-full max-w-[560px]">
+            <Reveal className="relative mx-auto w-full max-w-[560px]">
               <div className="relative overflow-hidden bg-white shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
                 <img
                   src={storyVisual}
                   alt="OHI story visual"
-                  className="h-[420px] w-full object-cover sm:h-[500px]"
+                  className="h-[420px] w-full object-cover transition duration-500 ease-out sm:h-[500px]"
                 />
               </div>
 
@@ -118,23 +117,30 @@ const AboutPage = () => {
                   Business Trust Us
                 </p>
               </div>
-            </div>
+            </Reveal>
 
             <div className="max-w-2xl">
-              <SectionLabel>About Us</SectionLabel>
-              <h2 className="mt-5 text-4xl font-extrabold leading-tight tracking-[-0.03em] text-[#1f2937] sm:text-5xl">
+              <Reveal delay={0.06}>
+                <SectionLabel>About Us</SectionLabel>
+              </Reveal>
+              <Reveal delay={0.08} as="h2" className="mt-5 text-4xl font-extrabold leading-tight tracking-[-0.03em] text-[#1f2937] sm:text-5xl">
                 We Are Business Consultants Dedicated To Driving Your Success
-              </h2>
-              <p className="mt-5 text-lg leading-8 text-textColor">
-                OHI creates development communication that helps institutions, partners,
-                and communities understand the work being done and why it matters.
-              </p>
-              <div className="mt-5 border-l-2 border-[#f59e0b] pl-5 text-base italic leading-8 text-slate-600">
-                We build visual stories that are clear, credible, and designed to move
-                audiences from awareness to action.
-              </div>
+              </Reveal>
+              <Reveal delay={0.12}>
+                <p className="mt-5 text-lg leading-8 text-textColor">
+                  OHI creates development communication that helps institutions, partners,
+                  and communities understand the work being done and why it matters.
+                </p>
+              </Reveal>
+              <Reveal delay={0.16}>
+                <div className="mt-5 border-l-2 border-[#f59e0b] pl-5 text-base italic leading-8 text-slate-600">
+                  We build visual stories that are clear, credible, and designed to move
+                  audiences from awareness to action.
+                </div>
+              </Reveal>
 
-              <div className="mt-8 flex items-start gap-4">
+              <Reveal delay={0.12} className="mt-8">
+                <div className="flex items-start gap-4">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-slate-100 text-[#0f4c81]">
                   <BadgeCheck className="h-5 w-5" />
                 </span>
@@ -145,15 +151,16 @@ const AboutPage = () => {
                     editorial workflow.
                   </p>
                 </div>
-              </div>
+                </div>
+              </Reveal>
 
-              <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Reveal delay={0.18} className="mt-8">
                 <Button asChild className="rounded-none bg-[#f59e0b] px-6 text-white hover:bg-[#d97706]">
                   <Link to="/portfolio" className="inline-flex items-center gap-2">
                     Learn More <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
-              </div>
+              </Reveal>
             </div>
           </div>
         </div>
@@ -169,12 +176,12 @@ const AboutPage = () => {
 
         <div className="relative container mx-auto px-4 sm:px-5 lg:px-20">
           <SectionLabel dark>Our Mission & Vision</SectionLabel>
-          <h2 className="mt-5 max-w-4xl text-4xl font-extrabold leading-tight tracking-[-0.03em] sm:text-5xl">
+          <Reveal as="h2" className="mt-5 max-w-4xl text-4xl font-extrabold leading-tight tracking-[-0.03em] sm:text-5xl">
             Discover The Core Principles That Guide Us
-          </h2>
+          </Reveal>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-            <div className="relative overflow-hidden shadow-[0_20px_60px_rgba(15,23,42,0.28)]">
+            <Reveal className="relative overflow-hidden shadow-[0_20px_60px_rgba(15,23,42,0.28)]" delay={0.08}>
               <img src={aboutVisual} alt="Video preview" className="h-[280px] w-full object-cover" />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,76,129,0.1)_0%,rgba(15,76,129,0.54)_100%)]" />
               <div className="absolute inset-0 flex items-center justify-center">
@@ -182,28 +189,27 @@ const AboutPage = () => {
                   <Play className="h-7 w-7 fill-current" />
                 </div>
               </div>
-            </div>
+            </Reveal>
 
             <div className="grid gap-4 md:grid-cols-2">
               {principles.map((item) => (
-                <Card
-                  key={item.title}
-                  className="border-white/10 bg-white text-slate-800 shadow-[0_18px_50px_rgba(0,0,0,0.16)]"
-                >
-                  <CardHeader className="pb-3">
-                    <div className="flex h-11 w-11 items-center justify-center bg-[#0f4c81]/10 text-[#0f4c81]">
-                      <item.icon className="h-5 w-5" />
-                    </div>
-                    <CardTitle className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-slate-900">
-                      {item.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-base leading-7 text-textColor">
-                      {item.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
+                <Reveal key={item.title} delay={0.1}>
+                  <Card className="border-white/10 bg-white text-slate-800 shadow-[0_18px_50px_rgba(0,0,0,0.16)] transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_22px_56px_rgba(0,0,0,0.2)]">
+                    <CardHeader className="pb-3">
+                      <div className="flex h-11 w-11 items-center justify-center bg-[#0f4c81]/10 text-[#0f4c81]">
+                        <item.icon className="h-5 w-5" />
+                      </div>
+                      <CardTitle className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-slate-900">
+                        {item.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="text-base leading-7 text-textColor">
+                        {item.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -211,15 +217,16 @@ const AboutPage = () => {
           <div className="-mb-16 mt-10 overflow-hidden border border-white/10 bg-[#0b3f6c] shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
             <div className="grid gap-0 sm:grid-cols-2 lg:grid-cols-4">
               {stats.map((stat, index) => (
-                <div
+                <Reveal
                   key={stat.label}
                   className={`p-8 ${index < stats.length - 1 ? "border-b border-white/10 sm:border-b-0 lg:border-r" : ""}`}
+                  delay={0.08 + index * 0.04}
                 >
                   <p className="text-4xl font-extrabold tracking-[-0.03em]">{stat.value}</p>
                   <p className="mt-2 text-sm uppercase tracking-[0.18em] text-white/75">
                     {stat.label}
                   </p>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -230,46 +237,51 @@ const AboutPage = () => {
         <div className="container mx-auto px-4 sm:px-5 lg:px-20">
           <div className="grid items-center gap-10 lg:grid-cols-[0.98fr_1.02fr]">
             <div className="grid gap-4 sm:grid-cols-2">
-              {teamHighlights.map((item) => (
-                <Card
-                  key={item.title}
-                  className="overflow-hidden border-[#D9DCE2] bg-white shadow-sm"
-                >
-                  <div className="h-[300px] overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-2xl font-semibold tracking-[-0.02em] text-headingColor">
-                      {item.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-base leading-7 text-textColor">
-                      {item.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
+              {teamHighlights.map((item, index) => (
+                <Reveal key={item.title} delay={0.08 + index * 0.05}>
+                  <Card className="overflow-hidden border-[#D9DCE2] bg-white shadow-sm transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(15,23,42,0.1)]">
+                    <div className="h-[300px] overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="h-full w-full object-cover transition duration-500 ease-out"
+                      />
+                    </div>
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-2xl font-semibold tracking-[-0.02em] text-headingColor">
+                        {item.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="text-base leading-7 text-textColor">
+                        {item.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                </Reveal>
               ))}
             </div>
 
             <div className="max-w-2xl">
-              <SectionLabel>Meet The Experts</SectionLabel>
-              <h2 className="mt-5 text-4xl font-extrabold leading-tight tracking-[-0.03em] text-[#1f2937] sm:text-5xl">
+              <Reveal>
+                <SectionLabel>Meet The Experts</SectionLabel>
+              </Reveal>
+              <Reveal delay={0.06} as="h2" className="mt-5 text-4xl font-extrabold leading-tight tracking-[-0.03em] text-[#1f2937] sm:text-5xl">
                 Discover Our Team Of Head Business Consultant Experts
-              </h2>
-              <p className="mt-5 max-w-xl text-lg leading-8 text-textColor">
-                OHI combines strategy, production, and editorial craft to help development
-                work communicate with confidence across Africa.
-              </p>
-              <Button asChild className="mt-8 rounded-none bg-[#f59e0b] px-6 text-white hover:bg-[#d97706]">
-                <Link to="/portfolio" className="inline-flex items-center gap-2">
-                  Discover Team <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
+              </Reveal>
+              <Reveal delay={0.12}>
+                <p className="mt-5 max-w-xl text-lg leading-8 text-textColor">
+                  OHI combines strategy, production, and editorial craft to help development
+                  work communicate with confidence across Africa.
+                </p>
+              </Reveal>
+              <Reveal delay={0.18}>
+                <Button asChild className="mt-8 rounded-none bg-[#f59e0b] px-6 text-white transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#d97706]">
+                  <Link to="/portfolio" className="inline-flex items-center gap-2">
+                    Discover Team <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </Reveal>
             </div>
           </div>
         </div>
@@ -281,18 +293,22 @@ const AboutPage = () => {
 
         <div className="relative container mx-auto px-4 py-20 text-white sm:px-5 lg:px-20 lg:py-24">
           <div className="max-w-2xl">
-            <h2 className="text-4xl font-extrabold leading-tight tracking-[-0.03em] sm:text-5xl">
+            <Reveal as="h2" className="text-4xl font-extrabold leading-tight tracking-[-0.03em] sm:text-5xl">
               Let's Discuss Your Business Goals & Schedule A Free Consultation Today
-            </h2>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-white/80">
-              OHI is ready to turn your next project, campaign, or report into a story
-              that people will remember and trust.
-            </p>
-            <Button asChild className="mt-8 rounded-none bg-[#f59e0b] px-6 text-white hover:bg-[#d97706]">
-              <Link to="/contact" className="inline-flex items-center gap-2">
-                Get a Quotation <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
+            </Reveal>
+            <Reveal delay={0.06}>
+              <p className="mt-5 max-w-xl text-lg leading-8 text-white/80">
+                OHI is ready to turn your next project, campaign, or report into a story
+                that people will remember and trust.
+              </p>
+            </Reveal>
+            <Reveal delay={0.12}>
+              <Button asChild className="mt-8 rounded-none bg-[#f59e0b] px-6 text-white transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#d97706]">
+                <Link to="/contact" className="inline-flex items-center gap-2">
+                  Get a Quotation <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </Reveal>
           </div>
         </div>
       </section>

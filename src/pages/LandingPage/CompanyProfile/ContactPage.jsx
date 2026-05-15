@@ -2,6 +2,7 @@ import React from "react";
 import Contact from "../../../components/Contact/Contact";
 import ContactMap from "../../../components/ContactMap/ContactMap";
 import ContactForm from "../../../components/ContactForm/ContactForm";
+import Reveal from "../../../components/ui/reveal";
 import contactHeroVideo from "../../../assets/img/OHI-video.mp4";
 
 const ContactPage = () => {
@@ -22,9 +23,9 @@ const ContactPage = () => {
 
         <div className="relative container mx-auto px-4 pb-20 pt-28 sm:px-5 lg:px-20 lg:pb-28 lg:pt-32">
           <div className="max-w-4xl">
-            <h1 className="inline-block border-b-[10px] border-[#f59e0b] pb-3 text-5xl font-extrabold leading-none tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
+            <Reveal as="h1" className="inline-block border-b-[10px] border-[#f59e0b] pb-3 text-5xl font-extrabold leading-none tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
               Contact Us
-            </h1>
+            </Reveal>
           </div>
         </div>
       </section>

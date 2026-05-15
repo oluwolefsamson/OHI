@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import profileHeroVideo from "../../../assets/img/OHI-video.mp4";
+import Reveal from "../../ui/reveal";
 
 export default function ProfilePageShell({
   eyebrow,
@@ -39,11 +40,12 @@ export default function ProfilePageShell({
               <div className="absolute inset-x-0 top-0 h-2 bg-[#0f4c81]" />
               <div className="relative container mx-auto min-h-[340px] px-4 pb-20 pt-28 sm:min-h-[400px] sm:px-5 lg:min-h-[460px] lg:px-20 lg:pb-28 lg:pt-32">
                 <div className="max-w-4xl">
-                  <h1
+                  <Reveal
+                    as="h1"
                     className={`inline-block border-b-[10px] border-[#f59e0b] pb-3 text-4xl font-extrabold leading-none tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl ${titleClassName}`.trim()}
                   >
                     {title}
-                  </h1>
+                  </Reveal>
                 </div>
               </div>
             </>
@@ -65,42 +67,54 @@ export default function ProfilePageShell({
                 <div className="container">
                   <div className="max-w-2xl">
                     {eyebrow ? (
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-white/80">
-                        {eyebrow}
-                      </p>
+                      <Reveal delay={0.04}>
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-white/80">
+                          {eyebrow}
+                        </p>
+                      </Reveal>
                     ) : null}
-                    <h1
-                      className={`mt-3 max-w-xl text-3xl font-extrabold uppercase leading-[0.95] tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl xl:text-[4rem] ${titleClassName}`.trim()}
-                    >
-                      {title}
-                    </h1>
-                    <p className="mt-4 max-w-lg text-sm leading-6 text-white/78 sm:text-base">
-                      {description}
-                    </p>
+                    <Reveal delay={0.08}>
+                      <h1
+                        className={`mt-3 max-w-xl text-3xl font-extrabold uppercase leading-[0.95] tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl xl:text-[4rem] ${titleClassName}`.trim()}
+                      >
+                        {title}
+                      </h1>
+                    </Reveal>
+                    <Reveal delay={0.14}>
+                      <p className="mt-4 max-w-lg text-sm leading-6 text-white/78 sm:text-base">
+                        {description}
+                      </p>
+                    </Reveal>
 
                     <div className="mt-6 flex flex-wrap items-center gap-3">
                       {primaryCta ? (
-                        <Link to={primaryCta.href}>
-                          <button className="hero_btn1 !mt-0 inline-flex items-center gap-2 bg-[#ff8f1f] text-white shadow-[0_18px_42px_rgba(255,143,31,0.28)] hover:brightness-110">
-                            {primaryCta.label}
-                          </button>
-                        </Link>
+                        <Reveal delay={0.16} className="inline-flex">
+                          <Link to={primaryCta.href}>
+                            <button className="hero_btn1 !mt-0 inline-flex items-center gap-2 bg-[#ff8f1f] text-white shadow-[0_18px_42px_rgba(255,143,31,0.28)] transition duration-300 ease-out hover:-translate-y-0.5 hover:brightness-110">
+                              {primaryCta.label}
+                            </button>
+                          </Link>
+                        </Reveal>
                       ) : null}
                       {secondaryCta ? (
-                        <Link to={secondaryCta.href}>
-                          <button className="hero_btn2 !mt-0 inline-flex items-center gap-2 border-white/20 bg-white text-[#0b3550] shadow-[0_18px_42px_rgba(255,255,255,0.16)] hover:bg-white/95">
-                            {secondaryCta.label}
-                          </button>
-                        </Link>
+                        <Reveal delay={0.22} className="inline-flex">
+                          <Link to={secondaryCta.href}>
+                            <button className="hero_btn2 !mt-0 inline-flex items-center gap-2 border-white/20 bg-white text-[#0b3550] shadow-[0_18px_42px_rgba(255,255,255,0.16)] transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-white/95">
+                              {secondaryCta.label}
+                            </button>
+                          </Link>
+                        </Reveal>
                       ) : null}
                     </div>
                   </div>
                 </div>
 
                 {heroBadge ? (
-                  <div className="absolute bottom-6 right-6 hidden max-w-[280px] rounded-[22px] border border-white/18 bg-white/88 px-4 py-3 text-slate-800 shadow-xl backdrop-blur-md lg:block">
-                    {heroBadge}
-                  </div>
+                  <Reveal className="absolute bottom-6 right-6 hidden max-w-[280px] lg:block" delay={0.28}>
+                    <div className="rounded-[22px] border border-white/18 bg-white/88 px-4 py-3 text-slate-800 shadow-xl backdrop-blur-md">
+                      {heroBadge}
+                    </div>
+                  </Reveal>
                 ) : null}
               </div>
             </>
@@ -110,9 +124,10 @@ export default function ProfilePageShell({
           <div className="container -mt-8 pb-10">
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {statCards.map((card) => (
-                <div
+                <Reveal
                   key={card.label}
-                  className="rounded-[22px] border border-[#D9DCE2] bg-white/96 p-5 shadow-[0_16px_40px_rgba(15,23,42,0.08)] backdrop-blur"
+                  className="rounded-[22px] border border-[#D9DCE2] bg-white/96 p-5 shadow-[0_16px_40px_rgba(15,23,42,0.08)] backdrop-blur transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_20px_45px_rgba(15,23,42,0.12)]"
+                  delay={0.06}
                 >
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primaryColor">
                     {card.eyebrow}
@@ -123,7 +138,7 @@ export default function ProfilePageShell({
                   <p className="mt-2 text-sm leading-6 text-textColor">
                     {card.label}
                   </p>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>

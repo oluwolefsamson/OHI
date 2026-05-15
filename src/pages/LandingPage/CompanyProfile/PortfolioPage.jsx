@@ -5,6 +5,7 @@ import ProfilePageShell from "../../../components/LandingPage/Profile/ProfilePag
 import SectionHeader from "../../../components/LandingPage/SectionHeader";
 import Brochure from "../../../components/Brochure/Brochure";
 import { Marquee } from "../../../components/LandingPage/magicui/marquee";
+import Reveal from "../../../components/ui/reveal";
 import { Badge } from "../../../components/ui/badge";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../../components/ui/card";
 import ifrcLogo from "../../../assets/img/International_Federation_of_Red_Cross_and_Red_Crescent_Societies_Logo.png";
@@ -79,42 +80,41 @@ const PortfolioPage = () => {
         />
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {portfolioProjects.map((project) => (
-            <Card
-              key={project.title}
-              className="group overflow-hidden rounded-[28px] border border-[#E7E0D6] bg-[#fffdf9] shadow-[0_12px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(15,23,42,0.09)]"
-            >
-              <div className="relative h-[240px] overflow-hidden bg-slate-100">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,22,36,0.02)_0%,rgba(5,22,36,0.56)_100%)]" />
-                <Badge className="absolute left-5 top-5 rounded-full border-white/25 bg-white/92 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-yellowColor backdrop-blur-sm">
-                  {project.category}
-                </Badge>
-              </div>
+          {portfolioProjects.map((project, index) => (
+            <Reveal key={project.title} delay={0.05 + index * 0.04}>
+              <Card className="group overflow-hidden rounded-[28px] border border-[#E7E0D6] bg-[#fffdf9] shadow-[0_12px_30px_rgba(15,23,42,0.06)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(15,23,42,0.09)]">
+                <div className="relative h-[240px] overflow-hidden bg-slate-100">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-full w-full object-cover transition duration-500 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,22,36,0.02)_0%,rgba(5,22,36,0.56)_100%)]" />
+                  <Badge className="absolute left-5 top-5 rounded-full border-white/25 bg-white/92 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-yellowColor backdrop-blur-sm">
+                    {project.category}
+                  </Badge>
+                </div>
 
-              <CardHeader className="px-6 pb-2 pt-5">
-                <CardTitle className="text-xl font-semibold tracking-[-0.02em] text-headingColor">
-                  {project.title}
-                </CardTitle>
-              </CardHeader>
+                <CardHeader className="px-6 pb-2 pt-5">
+                  <CardTitle className="text-xl font-semibold tracking-[-0.02em] text-headingColor">
+                    {project.title}
+                  </CardTitle>
+                </CardHeader>
 
-              <CardContent className="px-6 pb-5">
-                <CardDescription className="text-sm leading-7 text-textColor">
-                  {project.description}
-                </CardDescription>
-              </CardContent>
+                <CardContent className="px-6 pb-5">
+                  <CardDescription className="text-sm leading-7 text-textColor">
+                    {project.description}
+                  </CardDescription>
+                </CardContent>
 
-              <CardFooter className="flex items-center justify-between px-6 pb-6 pt-0">
-                <span className="text-sm font-semibold text-yellowColor">
-                  View case style
-                </span>
-                <ArrowRight className="h-4 w-4 text-yellowColor transition-transform group-hover:translate-x-1" />
-              </CardFooter>
-            </Card>
+                <CardFooter className="flex items-center justify-between px-6 pb-6 pt-0">
+                  <span className="text-sm font-semibold text-yellowColor">
+                    View case style
+                  </span>
+                  <ArrowRight className="h-4 w-4 text-yellowColor transition-transform duration-300 ease-out group-hover:translate-x-1" />
+                </CardFooter>
+              </Card>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -151,34 +151,38 @@ const PortfolioPage = () => {
 
       <section className="mt-16 rounded-[32px] border border-[#D9DCE2] bg-white p-6 shadow-sm sm:p-8">
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="rounded-[28px] bg-slate-50 p-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primaryColor">
-              Working method
-            </p>
-            <h3 className="mt-4 text-3xl font-bold text-headingColor">
-              Built for stories that need clarity and momentum
-            </h3>
-            <p className="mt-4 text__para">
-              The portfolio reflects a mix of documentary work, event coverage, and campaign assets designed to travel across reports, presentations, and digital channels.
-            </p>
-          </div>
-
-          <div className="rounded-[28px] border border-[#D9DCE2] bg-[#0f172a] p-6 text-white shadow-sm">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300">
-              Next step
-            </p>
-            <h3 className="mt-4 text-3xl font-bold">Need a similar format for your project?</h3>
-            <p className="mt-4 leading-7 text-white/80">
-              OHI can shape a communication package around your audience, timeline, and intended outcome.
-            </p>
-            <div className="mt-6">
-              <Link to="/contact">
-                <button className="btn inline-flex items-center gap-2">
-                  Start a project <ArrowRight className="h-4 w-4" />
-                </button>
-              </Link>
+          <Reveal delay={0.06}>
+            <div className="rounded-[28px] bg-slate-50 p-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primaryColor">
+                Working method
+              </p>
+              <h3 className="mt-4 text-3xl font-bold text-headingColor">
+                Built for stories that need clarity and momentum
+              </h3>
+              <p className="mt-4 text__para">
+                The portfolio reflects a mix of documentary work, event coverage, and campaign assets designed to travel across reports, presentations, and digital channels.
+              </p>
             </div>
-          </div>
+          </Reveal>
+
+          <Reveal delay={0.12}>
+            <div className="rounded-[28px] border border-[#D9DCE2] bg-[#0f172a] p-6 text-white shadow-sm transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(15,23,42,0.18)]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300">
+                Next step
+              </p>
+              <h3 className="mt-4 text-3xl font-bold">Need a similar format for your project?</h3>
+              <p className="mt-4 leading-7 text-white/80">
+                OHI can shape a communication package around your audience, timeline, and intended outcome.
+              </p>
+              <div className="mt-6">
+                <Link to="/contact">
+                  <button className="btn inline-flex items-center gap-2 transition duration-300 ease-out hover:-translate-y-0.5">
+                    Start a project <ArrowRight className="h-4 w-4" />
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
     </ProfilePageShell>

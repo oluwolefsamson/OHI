@@ -13,6 +13,7 @@ import wfp03558Img from "../../../assets/img/WFP-03558.jpg";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
 import ProfilePageShell from "../../../components/LandingPage/Profile/ProfilePageShell";
 import SectionHeader from "../../../components/LandingPage/SectionHeader";
+import Reveal from "../../../components/ui/reveal";
 
 const ServicesPage = () => {
   const { config } = useLandingPageConfig();
@@ -89,18 +90,17 @@ const ServicesPage = () => {
           description="The company profile describes OHI as a partner for organisations that need clear, credible, and human-centered storytelling."
         />
         <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {services.cards.map((card) => (
-            <article
-              key={card.name}
-              className="rounded-[28px] border border-[#D9DCE2] bg-white p-6 shadow-sm"
-            >
-              <div
-                className="h-2 w-20 rounded-full"
-                style={{ backgroundColor: card.textColor }}
-              />
-              <h3 className="mt-5 text-2xl font-bold text-headingColor">{card.name}</h3>
-              <p className="text__para">{card.desc}</p>
-            </article>
+          {services.cards.map((card, index) => (
+            <Reveal key={card.name} delay={0.04 + index * 0.04}>
+              <article className="rounded-[28px] border border-[#D9DCE2] bg-white p-6 shadow-sm transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
+                <div
+                  className="h-2 w-20 rounded-full"
+                  style={{ backgroundColor: card.textColor }}
+                />
+                <h3 className="mt-5 text-2xl font-bold text-headingColor">{card.name}</h3>
+                <p className="text__para">{card.desc}</p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -119,11 +119,13 @@ const ServicesPage = () => {
               Each format is chosen to match the communication objective, whether the goal is public awareness, stakeholder trust, donor reporting, or investor confidence.
             </p>
             <div className="mt-6 space-y-3">
-              {serviceFormats.map((item) => (
-                <div key={item} className="flex items-center gap-3 rounded-2xl bg-white/75 px-4 py-3">
+              {serviceFormats.map((item, index) => (
+                <Reveal key={item} delay={0.05 + index * 0.03}>
+                  <div className="flex items-center gap-3 rounded-2xl bg-white/75 px-4 py-3 transition duration-300 ease-out hover:bg-white/90">
                   <VideoIcon className="h-4 w-4 text-[#f97316]" />
                   <span className="text-sm font-medium text-slate-800">{item}</span>
-                </div>
+                  </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -167,38 +169,37 @@ const ServicesPage = () => {
 
           <div className="mt-10 space-y-5">
             {serviceShowcase.map((item, index) => (
-              <article
-                key={item.title}
-                className="overflow-hidden rounded-[24px] bg-white shadow-[0_12px_30px_rgba(15,23,42,0.08)]"
-              >
-                <div className="grid items-stretch md:grid-cols-2">
-                  <div
-                    className={`relative min-h-[220px] md:min-h-[200px] ${
-                      index % 2 === 1 ? "md:order-2" : ""
-                    }`}
-                  >
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                  <div
-                    className={`flex items-center p-6 sm:p-8 ${
-                      index % 2 === 1 ? "md:order-1" : ""
-                    }`}
-                  >
-                    <div className="max-w-xl">
-                      <h3 className="text-2xl font-semibold tracking-[-0.02em] text-[#ff7a1a]">
-                        {item.title}
-                      </h3>
-                      <p className="mt-3 text-sm leading-7 text-slate-700 sm:text-[15px]">
-                        {item.description}
-                      </p>
+              <Reveal key={item.title} delay={0.06 + index * 0.05}>
+                <article className="overflow-hidden rounded-[24px] bg-white shadow-[0_12px_30px_rgba(15,23,42,0.08)] transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(15,23,42,0.12)]">
+                  <div className="grid items-stretch md:grid-cols-2">
+                    <div
+                      className={`relative min-h-[220px] md:min-h-[200px] ${
+                        index % 2 === 1 ? "md:order-2" : ""
+                      }`}
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="h-full w-full object-cover transition duration-500 ease-out"
+                      />
+                    </div>
+                    <div
+                      className={`flex items-center p-6 sm:p-8 ${
+                        index % 2 === 1 ? "md:order-1" : ""
+                      }`}
+                    >
+                      <div className="max-w-xl">
+                        <h3 className="text-2xl font-semibold tracking-[-0.02em] text-[#ff7a1a]">
+                          {item.title}
+                        </h3>
+                        <p className="mt-3 text-sm leading-7 text-slate-700 sm:text-[15px]">
+                          {item.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>
