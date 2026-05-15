@@ -6,7 +6,7 @@ import { landingPageDefaults } from "../../../data/landingPageDefaults";
 
 const Gallery = () => {
   const { config } = useLandingPageConfig();
-  const images = landingPageDefaults.gallery.items.slice(0, 13);
+  const images = (config.gallery?.items || landingPageDefaults.gallery.items).slice(0, 13);
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
