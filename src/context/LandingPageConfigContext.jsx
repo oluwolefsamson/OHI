@@ -90,6 +90,15 @@ function normalizeConfig(config) {
   if (!config?.video) return config;
 
   const nextVideo = { ...config.video };
+  const nextWhyChoose = config.whyChoose?.cards
+    ? {
+        ...config.whyChoose,
+        cards: config.whyChoose.cards.map((card, index) => ({
+          ...card,
+          icon: landingPageDefaults.whyChoose.cards[index]?.icon ?? card.icon,
+        })),
+      }
+    : null;
 
   if (nextVideo.title === LEGACY_VIDEO_TITLE) {
     nextVideo.title = landingPageDefaults.video.title;
@@ -124,6 +133,7 @@ function normalizeConfig(config) {
   return {
     ...config,
     video: nextVideo,
+    ...(nextWhyChoose ? { whyChoose: nextWhyChoose } : {}),
     ...(nextHero ? { hero: { ...config.hero, images: nextHero } } : {}),
   };
 }

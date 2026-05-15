@@ -865,15 +865,21 @@ export default function LandingPageManager() {
                       }
                     />
                   </Field>
-                  <ImageField
-                    label={`Card ${index + 1} image`}
-                    value={card.image}
-                    onChange={(e) =>
-                      handleImageUpload(e, (value) =>
-                        updateWhyChooseCard(index, "image", value)
-                      )
-                    }
-                  />
+                  <div className="rounded-2xl border border-dashed border-slate-200 bg-white p-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                      Card {index + 1} media icon
+                    </p>
+                    <div className="mt-3 flex items-center gap-3">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primaryColor/10 text-primaryColor">
+                        {card.icon ? (
+                          <card.icon className="h-6 w-6" aria-hidden="true" />
+                        ) : null}
+                      </div>
+                      <p className="text-sm leading-6 text-slate-600">
+                        This icon is permanent and follows the code defaults.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>

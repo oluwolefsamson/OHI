@@ -13,7 +13,7 @@ import { Button } from "../../../components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../../components/ui/card";
 import aboutHeroVideo from "../../../assets/img/OHI-video.mp4";
 import aboutVisual from "../../../assets/img/about-us.jpg";
-import storyVisual from "../../../assets/img/WFP-03520.jpg";
+import storyVisual from "../../../assets/img/Photography.jpg";
 import portraitTwo from "../../../assets/img/WFP-03558.jpg";
 import teamImageOne from "../../../assets/img/WFP-03523.jpg";
 import teamImageTwo from "../../../assets/img/WFP-03524.jpg";

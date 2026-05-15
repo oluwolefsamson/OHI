@@ -1,3 +1,4 @@
+import { Camera, Clapperboard, Film } from "lucide-react";
 import heroBg from "../assets/images/hero-bg.png";
 import headerBg from "../assets/images/mask.png";
 import hero1 from "../assets/images/HeroImg/hero1.jpg";
@@ -17,9 +18,6 @@ import supplier2 from "../assets/img/WFP-03523.jpg";
 import supplier3 from "../assets/img/WFP-03524.jpg";
 import videoIcon from "../assets/img/logo-ohi-blue.png";
 import avatarIcon from "../assets/img/WFP-03558-150x150.jpg";
-import icon01 from "../assets/img/cropped-logo-ohi-blue.png";
-import icon02 from "../assets/img/WFP-03556-150x150.jpg";
-import icon03 from "../assets/img/WFP-03557-150x150.jpg";
 
 export const landingPageDefaults = {
   theme: {
@@ -339,21 +337,21 @@ export const landingPageDefaults = {
         title: "Development Communication",
         description:
           "We help projects explain themselves clearly so communities, institutions and partners can understand the value being created.",
-        image: icon01,
+        icon: Camera,
         href: "/#contact",
       },
       {
         title: "Impact Storytelling",
         description:
           "Our narratives turn program results and lived experiences into persuasive stories that move decision-makers to action.",
-        image: icon02,
+        icon: Film,
         href: "/#services",
       },
       {
         title: "Strategic Visibility",
         description:
           "We deliver content that supports credibility, strengthens stakeholder alignment and expands the reach of important projects.",
-        image: icon03,
+        icon: Clapperboard,
         href: "/#approach",
       },
     ],

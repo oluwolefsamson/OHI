@@ -20,7 +20,9 @@ const WhyChoose = () => {
           {whyChoose.cards.map((card) => (
             <div key={card.title} className="rounded-[24px] border border-slate-100 bg-white/60 py-[30px] px-4 sm:px-5 shadow-sm">
               <div className="flex items-center justify-center">
-                <img src={card.image} alt={card.title} className="h-[84px] sm:h-[100px] w-auto" />
+                <div className="flex h-[84px] w-[84px] items-center justify-center rounded-2xl bg-primaryColor/10 sm:h-[100px] sm:w-[100px]">
+                  <card.icon className="h-11 w-11 text-primaryColor sm:h-12 sm:w-12" aria-hidden="true" />
+                </div>
               </div>
 
               <div className="mt-[30px]">
