@@ -9,6 +9,13 @@ const LEGACY_VIDEO_DESCRIPTION =
 const PREVIOUS_VIDEO_TITLE = "Video Stories";
 const PREVIOUS_VIDEO_DESCRIPTION =
   "A dedicated space for OHI's video work, ready for local video files or embedded links while keeping the same rounded editorial look across the site.";
+const LEGACY_HERO_URL_MARKERS = {
+  hero1: "9056693",
+  hero2: "6774952",
+  hero3: "35165485",
+  hero4: "33693142",
+  hero5: "35353626",
+};
 
 const LandingPageConfigContext = createContext(null);
 
@@ -66,9 +73,24 @@ function normalizeConfig(config) {
     nextVideo.description = landingPageDefaults.video.description;
   }
 
+  const nextHero = config.hero?.images
+    ? { ...config.hero.images }
+    : null;
+
+  if (nextHero) {
+    for (const [key, marker] of Object.entries(LEGACY_HERO_URL_MARKERS)) {
+      const value = nextHero[key];
+
+      if (typeof value === "string" && value.includes(marker)) {
+        nextHero[key] = landingPageDefaults.hero.images[key];
+      }
+    }
+  }
+
   return {
     ...config,
     video: nextVideo,
+    ...(nextHero ? { hero: { ...config.hero, images: nextHero } } : {}),
   };
 }
 

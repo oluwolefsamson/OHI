@@ -56,13 +56,13 @@ const Hero = () => {
             <div className="relative z-10 w-[31%] sm:w-auto">
               <img src={hero.images.hero1} alt="OHI visual story 1" className="w-full rounded object-cover h-full" />
             </div>
-            <div className="relative z-10 mt-[18px] w-[36%] sm:mt-[30px] sm:w-auto">
-              <img src={hero.images.hero2} alt="OHI visual story 2" className="w-full rounded object-cover h-full" />
-              <img src={hero.images.hero3} alt="OHI visual story 3" className="w-full my-[20px] sm:my-[30px] rounded object-cover h-full" />
-              <img src={hero.images.hero4} alt="OHI visual story 4" className="w-full rounded object-cover h-full" />
+            <div className="relative  z-10 mt-[18px] w-[36%] sm:mt-[30px] sm:w-auto">
+              <img src={hero.images.hero5} alt="OHI visual story 2" className="w-[600px] h-[250px] rounded object-cover" />
+              <img src={hero.images.hero3} alt="OHI visual story 3" className="w-[600px] h-[150px] my-[20px] sm:my-[30px] rounded object-cover" />
+              <img src={hero.images.hero5} alt="OHI visual story 4" className="w-[600px] h-[250px] rounded object-cover" />
             </div>
             <div className="relative z-10 w-[31%] sm:w-auto">
-              <img src={hero.images.hero5} alt="OHI visual story 5" className="w-full rounded object-cover h-full" />
+              <img src={hero.images.hero1} alt="OHI visual story 5" className="w-full rounded object-cover h-full" />
             </div>
           </div>
         </div>
