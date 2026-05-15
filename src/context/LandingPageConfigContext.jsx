@@ -90,6 +90,19 @@ function normalizeConfig(config) {
   if (!config?.video) return config;
 
   const nextVideo = { ...config.video };
+  const nextTheme = config.theme
+    ? {
+        ...config.theme,
+        heroBgImage: landingPageDefaults.theme.heroBgImage,
+        headerBgImage: landingPageDefaults.theme.headerBgImage,
+      }
+    : null;
+  const nextAbout = config.about
+    ? {
+        ...config.about,
+        image: landingPageDefaults.about.image,
+      }
+    : null;
   const nextWhyChoose = config.whyChoose?.cards
     ? {
         ...config.whyChoose,
@@ -132,6 +145,8 @@ function normalizeConfig(config) {
 
   return {
     ...config,
+    ...(nextTheme ? { theme: nextTheme } : {}),
+    ...(nextAbout ? { about: nextAbout } : {}),
     video: nextVideo,
     ...(nextWhyChoose ? { whyChoose: nextWhyChoose } : {}),
     ...(nextHero ? { hero: { ...config.hero, images: nextHero } } : {}),

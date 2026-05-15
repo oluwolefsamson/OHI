@@ -535,24 +535,37 @@ export default function LandingPageManager() {
                 className="h-12 w-full rounded-xl bg-background p-1"
               />
             </Field>
-            <ImageField
-              label="Hero background"
-              value={config.theme.heroBgImage}
-              onChange={(e) =>
-                handleImageUpload(e, (value) => updateTheme("heroBgImage", value))
-              }
-              hint="This powers the background behind the hero section."
-            />
-            <ImageField
-              label="Header background"
-              value={config.theme.headerBgImage}
-              onChange={(e) =>
-                handleImageUpload(e, (value) =>
-                  updateTheme("headerBgImage", value)
-                )
-              }
-              hint="Used behind the top navigation area."
-            />
+            <div className="rounded-2xl border border-dashed border-slate-200 bg-white p-4 md:col-span-2 xl:col-span-2">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                Hero / Header / Footer backgrounds
+              </p>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                These are permanently set from the code defaults and are no longer editable in the dashboard.
+              </p>
+              <div className="mt-4 grid gap-4 sm:grid-cols-3">
+                <div className="overflow-hidden rounded-2xl border border-slate-100">
+                  <img
+                    src={config.theme.heroBgImage}
+                    alt="Hero background"
+                    className="h-28 w-full object-cover"
+                  />
+                </div>
+                <div className="overflow-hidden rounded-2xl border border-slate-100">
+                  <img
+                    src={config.theme.headerBgImage}
+                    alt="Header background"
+                    className="h-28 w-full object-cover"
+                  />
+                </div>
+                <div className="overflow-hidden rounded-2xl border border-slate-100">
+                  <img
+                    src={config.theme.heroBgImage}
+                    alt="Footer background"
+                    className="h-28 w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </SectionCard>
 
@@ -759,13 +772,21 @@ export default function LandingPageManager() {
                   />
                 </Field>
               ))}
-              <ImageField
-                label="About image"
-                value={config.about.image}
-                onChange={(e) =>
-                  handleImageUpload(e, (value) => updateAbout("image", value))
-                }
-              />
+              <div className="rounded-2xl border border-dashed border-slate-200 bg-white p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                  About image
+                </p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  This image is permanent and follows the local code default.
+                </p>
+                <div className="mt-4 overflow-hidden rounded-2xl border border-slate-100">
+                  <img
+                    src={config.about.image}
+                    alt="About section"
+                    className="h-40 w-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
 
             <div className="space-y-5 rounded-2xl border border-slate-200 bg-slate-50 p-5">
