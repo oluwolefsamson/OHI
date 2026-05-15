@@ -149,7 +149,7 @@ const AboutPage = () => {
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Button asChild className="rounded-none bg-[#f59e0b] px-6 text-white hover:bg-[#d97706]">
-                  <Link to="/company-profile#portfolio" className="inline-flex items-center gap-2">
+                  <Link to="/portfolio" className="inline-flex items-center gap-2">
                     Learn More <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
@@ -266,7 +266,7 @@ const AboutPage = () => {
                 work communicate with confidence across Africa.
               </p>
               <Button asChild className="mt-8 rounded-none bg-[#f59e0b] px-6 text-white hover:bg-[#d97706]">
-                <Link to="/company-profile#portfolio" className="inline-flex items-center gap-2">
+                <Link to="/portfolio" className="inline-flex items-center gap-2">
                   Discover Team <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>

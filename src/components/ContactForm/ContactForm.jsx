@@ -1,0 +1,192 @@
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { ArrowRight } from "lucide-react";
+import contactFormImg from "../../assets/img/BTS-02864.jpg";
+import { Button } from "../ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "../ui/form";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
+
+export default function ContactForm() {
+  const [status, setStatus] = useState("");
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const form = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = (values) => {
+    const subject = encodeURIComponent(
+      `Website enquiry from ${values.name || "a visitor"}`
+    );
+    const body = encodeURIComponent(
+      `Name: ${values.name}\nEmail: ${values.email}\n\nMessage:\n${values.message}`
+    );
+
+    window.location.href = `mailto:contact@olympianhouseintl.com?subject=${subject}&body=${body}`;
+    setStatus("Opening your email client.");
+    form.reset();
+  };
+
+  return (
+    <section className="relative overflow-hidden bg-background px-6 py-16 text-foreground lg:px-8 lg:py-24">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(15,76,129,0.08),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(245,158,11,0.08),transparent_28%)]" />
+
+      <div className="container mx-auto">
+        <div className="grid items-stretch gap-8 lg:grid-cols-[0.92fr_1.08fr]">
+          <Card className="overflow-hidden border-border/70 bg-card shadow-[0_28px_80px_rgba(15,23,42,0.12)]">
+            <div className="relative h-full min-h-[520px]">
+              {!imageLoaded && (
+                <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-muted via-muted/60 to-muted" />
+              )}
+              <img
+                src={contactFormImg}
+                alt="Contact OHI"
+                onLoad={() => setImageLoaded(true)}
+                className={`h-full min-h-[520px] w-full object-cover transition-opacity duration-300 ${
+                  imageLoaded ? "opacity-100" : "opacity-0"
+                }`}
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,22,36,0.08)_0%,rgba(5,22,36,0.55)_100%)]" />
+            </div>
+          </Card>
+
+          <Card className="border-border/70 bg-card shadow-[0_28px_80px_rgba(15,23,42,0.12)]">
+            <CardHeader className="space-y-3 border-b border-border/60 pb-6">
+              <div className="space-y-2">
+                <CardTitle className="text-3xl font-semibold tracking-[-0.03em]">
+                  Contact Us
+                </CardTitle>
+                <CardDescription className="max-w-xl text-base leading-7">
+                  Send a message and we&apos;ll reply by email.
+                </CardDescription>
+              </div>
+            </CardHeader>
+
+            <CardContent className="pt-6">
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-6"
+                >
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      rules={{ required: "Full name is required." }}
+                      render={({ field }) => (
+                        <FormItem className="sm:col-span-1">
+                          <FormLabel>Full name</FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              placeholder="John Doe"
+                              autoComplete="name"
+                              className="h-11 rounded-xl bg-background"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      rules={{
+                        required: "Email is required.",
+                        pattern: {
+                          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                          message: "Enter a valid email address.",
+                        },
+                      }}
+                      render={({ field }) => (
+                        <FormItem className="sm:col-span-1">
+                          <FormLabel>Email address</FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              type="email"
+                              placeholder="you@example.com"
+                              autoComplete="email"
+                              className="h-11 rounded-xl bg-background"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    rules={{
+                      required: "Please add a message.",
+                      minLength: {
+                        value: 10,
+                        message: "Write at least 10 characters.",
+                      },
+                    }}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Message</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            {...field}
+                            rows={6}
+                            placeholder="Tell us a little about the project or question..."
+                            className="min-h-[160px] rounded-xl bg-background"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <p className="text-sm text-muted-foreground">
+                      We typically respond within one business day.
+                    </p>
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="group w-full rounded-xl bg-[#0f4c81] px-6 text-white hover:bg-[#0b3f6c] sm:w-auto"
+                    >
+                      {form.formState.isSubmitting ? "Sending..." : "Let's talk"}
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                    </Button>
+                  </div>
+                </form>
+              </Form>
+
+              {status ? (
+                <div className="mt-5 rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm text-foreground">
+                  {status}
+                </div>
+              ) : null}
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+}

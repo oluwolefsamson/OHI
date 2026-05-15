@@ -36,12 +36,12 @@ const quickLinks02 = [
   { path: "/#value-proposition", display: "Value Proposition" },
   { path: "/#strengths", display: "Strengths" },
   { path: "/#approach", display: "Our Approach" },
-  { path: "/#contact", display: "Contact Details" },
+  { path: "/contact", display: "Contact Details" },
 ];
 
 const quickLinks03 = [
   { path: "/#faq", display: "Support & FAQs" },
-  { path: "/#contact", display: "Get in Touch" },
+  { path: "/contact", display: "Get in Touch" },
 ];
 
 const Footer = () => {

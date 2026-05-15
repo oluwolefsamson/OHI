@@ -4,6 +4,7 @@ import {
   ArrowRight,
   BriefcaseBusiness,
   Handshake,
+  Image,
   MapPinned,
   ShieldCheck,
   Sparkles,
@@ -38,6 +39,12 @@ const profilePages = [
     path: "/services",
     description: "The production formats and storytelling services OHI delivers.",
     icon: BriefcaseBusiness,
+  },
+  {
+    label: "Portfolio",
+    path: "/portfolio",
+    description: "Selected work and case-style examples from OHI's visual archive.",
+    icon: Image,
   },
   {
     label: "Who We Serve",
@@ -129,36 +136,8 @@ const CompanyProfile = () => {
       eyebrow="Olympian House International"
       title="Development communication production company"
       description="Authentic Stories. Real Impact. African Excellence."
-      primaryCta={{ label: "Our Portfolio", href: "/company-profile#portfolio" }}
+      primaryCta={{ label: "Our Portfolio", href: "/portfolio" }}
       secondaryCta={{ label: "Contact OHI", href: "/contact" }}
-      heroBadge={
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primaryColor">
-            Since 2015
-          </p>
-          <p className="mt-1 text-sm leading-6 text-textColor">
-            Story-led production for NGOs, DFIs, governments, and private-sector
-            partners.
-          </p>
-        </div>
-      }
-      statCards={[
-        {
-          eyebrow: "Focus",
-          value: "Development",
-          label: "Clear communication for projects that need credibility and reach.",
-        },
-        {
-          eyebrow: "Style",
-          value: "Human",
-          label: "Authentic, people-centered visuals and narratives.",
-        },
-        {
-          eyebrow: "Output",
-          value: "Strategic",
-          label: "Content designed to inform, inspire, and mobilize action.",
-        },
-      ]}
     >
       <SectionHeader
         title="Start with the section that matches your goal"

@@ -7,11 +7,11 @@ import Home from "../pages/LandingPage/Home";
 import CompanyProfile from "../pages/LandingPage/CompanyProfile/CompanyProfile";
 import AboutPage from "../pages/LandingPage/CompanyProfile/AboutPage";
 import ServicesPage from "../pages/LandingPage/CompanyProfile/ServicesPage";
+import PortfolioPage from "../pages/LandingPage/CompanyProfile/PortfolioPage";
 import WhoWeServePage from "../pages/LandingPage/CompanyProfile/WhoWeServePage";
 import ImpactPage from "../pages/LandingPage/CompanyProfile/ImpactPage";
 import ApproachPage from "../pages/LandingPage/CompanyProfile/ApproachPage";
 import ContactPage from "../pages/LandingPage/CompanyProfile/ContactPage";
-import BlogPage from "../pages/LandingPage/BlogPage";
 import ErrorPage from "../pages/LandingPage/ErrorPage";
 import Dashboard from "../pages/Client-Dashboard/Dashboard";
 import ProfileSetting from "../pages/Client-Dashboard/ProfileSetting";
@@ -30,11 +30,11 @@ const Routers = () => {
         <Route path="company-profile" element={<CompanyProfile />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="services" element={<ServicesPage />} />
+        <Route path="portfolio" element={<PortfolioPage />} />
         <Route path="who-we-serve" element={<WhoWeServePage />} />
         <Route path="impact" element={<ImpactPage />} />
         <Route path="approach" element={<ApproachPage />} />
         <Route path="contact" element={<ContactPage />} />
-        <Route path="blog" element={<BlogPage />} />
         <Route path="admin/login" element={<AdminLogin />} />
 
         {/* Dashboard */}
