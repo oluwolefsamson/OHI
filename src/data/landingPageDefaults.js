@@ -242,6 +242,8 @@ export const landingPageDefaults = {
       description:
         "A concise branded film for introducing the organisation, its purpose and the kind of stories it tells.",
       poster: supplier1,
+      embedUrl:
+        "https://player.cloudinary.com/embed/?cloud_name=duk9xwahb&public_id=zdb3xovmicn4o03na0wj",
     },
     clips: [
       {

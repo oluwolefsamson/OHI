@@ -9,7 +9,7 @@ const ContactPage = () => {
     <div className="bg-white">
       <section className="relative overflow-hidden bg-slate-950">
         <video
-          className="absolute inset-0 h-full w-full object-cover opacity-45"
+          className="absolute inset-0 h-full w-full object-cover opacity-80"
           autoPlay
           muted
           loop

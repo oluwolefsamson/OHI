@@ -95,7 +95,7 @@ const Header = () => {
                 to="/admin/login"
                 className="bg-[#16a34a] py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-md hover:bg-[#15803d] transition-colors"
               >
-                Admin Login
+                Login
               </NavLink>
 
               <span className="md:hidden" onClick={toggleDrawer}>

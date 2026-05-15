@@ -16,12 +16,22 @@ const VideoSection = () => {
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <article className="relative overflow-hidden rounded-[32px] min-h-[320px] sm:min-h-[440px] shadow-xl">
-            <img
-              src={video.lead.poster}
-              alt={video.lead.title}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
+            {video.lead.embedUrl ? (
+              <iframe
+                src={video.lead.embedUrl}
+                title={video.lead.title}
+                className="absolute inset-0 h-full w-full border-0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            ) : (
+              <img
+                src={video.lead.poster}
+                alt={video.lead.title}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent pointer-events-none" />
 
             <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 text-white">
               <div className="flex items-center gap-3">
@@ -40,10 +50,6 @@ const VideoSection = () => {
               <p className="mt-4 max-w-2xl text-sm text-white/80 sm:text-base">
                 {video.lead.description}
               </p>
-
-              <div className="mt-5 inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur-sm">
-                Connect your video source here
-              </div>
             </div>
           </article>
 

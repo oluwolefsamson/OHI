@@ -1248,6 +1248,15 @@ export default function LandingPageManager() {
                     }
                   />
                 </Field>
+                <Field label="Lead embed URL">
+                  <TextInput
+                    value={config.video.lead.embedUrl || ""}
+                    onChange={(e) =>
+                      updateVideoLead("embedUrl", e.target.value)
+                    }
+                    placeholder="https://player.cloudinary.com/embed/?cloud_name=..."
+                  />
+                </Field>
                 <ImageField
                   label="Lead poster"
                   value={config.video.lead.poster}

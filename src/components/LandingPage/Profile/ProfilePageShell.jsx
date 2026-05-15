@@ -27,7 +27,7 @@ export default function ProfilePageShell({
           {heroVariant === "minimal" ? (
             <>
               <video
-                className="absolute inset-0 h-full w-full object-cover opacity-60"
+                className="absolute inset-0 h-full w-full object-cover opacity-80"
                 autoPlay
                 muted
                 loop
