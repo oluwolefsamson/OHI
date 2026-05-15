@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import Reveal from "../../ui/reveal";
 
 const contactRows = [
   { label: "Location", value: "Mendong MAETUR - Yaounde" },
@@ -13,7 +15,12 @@ export const ContactBand = () => {
   return (
     <section id="contact" className="py-24">
       <div className="container">
-        <div className="rounded-[36px] bg-[#0b1220] text-white p-8 lg:p-12 shadow-2xl overflow-hidden relative">
+        <Reveal distance={40} scale={0.97}>
+          <motion.div
+            className="rounded-[36px] bg-[#0b1220] text-white p-8 lg:p-12 shadow-2xl overflow-hidden relative"
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.25 }}
+          >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(16,185,129,0.25),_transparent_35%),radial-gradient(circle_at_bottom_left,_rgba(250,204,21,0.18),_transparent_30%)]" />
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.3fr_0.9fr] gap-10 items-start">
             <div>
@@ -31,10 +38,10 @@ export const ContactBand = () => {
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link to="mailto:contact@olympianhouseintl.com">
-                  <button className="hero_btn1 w-full sm:w-auto">Email Us</button>
+                  <button className="hero_btn1 w-full sm:w-auto transition duration-300 ease-out hover:-translate-y-1">Email Us</button>
                 </Link>
                 <Link to="https://olympianhouseintl.com" target="_blank" rel="noreferrer">
-                  <button className="hero_btn2 w-full sm:w-auto">Visit Website</button>
+                  <button className="hero_btn2 w-full sm:w-auto transition duration-300 ease-out hover:-translate-y-1">Visit Website</button>
                 </Link>
               </div>
             </div>
@@ -54,7 +61,8 @@ export const ContactBand = () => {
               </div>
             </div>
           </div>
-        </div>
+          </motion.div>
+        </Reveal>
       </div>
     </section>
   );

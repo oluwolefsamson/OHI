@@ -1,6 +1,8 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
 import SectionHeader from "../SectionHeader";
+import Reveal from "../../ui/reveal";
 
 const Gallery = () => {
   const { config } = useLandingPageConfig();
@@ -15,10 +17,13 @@ const Gallery = () => {
         />
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[220px] gap-5">
-          {config.gallery.items.map((item) => (
-            <article
+          {config.gallery.items.map((item, index) => (
+            <Reveal key={item.title} delay={0.05 + index * 0.05} distance={34} scale={0.96}>
+              <motion.article
               key={item.title}
               className={`group relative overflow-hidden rounded-[18px] shadow-lg ${item.span || ""}`}
+              whileHover={{ y: -8, scale: 1.01 }}
+              transition={{ duration: 0.25 }}
             >
               <img
                 src={item.image}
@@ -32,7 +37,8 @@ const Gallery = () => {
                 </p>
                 <h3 className="mt-1 text-xl font-semibold">{item.title}</h3>
               </div>
-            </article>
+              </motion.article>
+            </Reveal>
           ))}
         </div>
       </div>

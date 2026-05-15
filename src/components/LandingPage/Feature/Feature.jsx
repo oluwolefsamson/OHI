@@ -1,15 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import featureImg from "../../../assets/img/BTS-02812.jpg";
 import videoIcon from "../../../assets/img/cropped-logo-ohi-blue.png";
 import avatarIcon from "../../../assets/img/WFP-03555-150x150.jpg";
+import Reveal from "../../ui/reveal";
 
 const Feature = () => {
   return (
     <section>
       <div className="container">
         <div className="flex flex-col items-center justify-between gap-10 lg:flex-row">
-          <div className="w-full lg:flex-1 xl:w-[670px]">
+          <Reveal className="w-full lg:flex-1 xl:w-[670px]" x={-60} distance={34}>
             <h2 className="heading">
               We transform African projects into stories that inspire action.
             </h2>
@@ -25,18 +27,26 @@ const Feature = () => {
               </li>
             </ul>
             <Link to="/#contact">
-              <button className="btn">Talk to OHI</button>
+              <button className="btn transition duration-300 ease-out hover:-translate-y-1">Talk to OHI</button>
             </Link>
-          </div>
+          </Reveal>
 
-          <div className="relative z-10 w-full flex justify-end mt-[20px] lg:mt-0 lg:flex-1 xl:w-[770px]">
-            <img
+          <Reveal className="relative z-10 w-full flex justify-end mt-[20px] lg:mt-0 lg:flex-1 xl:w-[770px]" x={60} distance={34}>
+            <motion.img
               src={featureImg}
               className="w-full max-w-[560px] rounded-xl lg:w-3/4"
               alt="OHI feature"
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.45 }}
             />
 
-            <div className="absolute bottom-[18px] left-0 z-20 w-[140px] rounded-[10px] bg-gray-200 p-2 pb-3 md:bottom-[70px] md:left-3 lg:w-[240px] lg:pt-4 lg:px-4 lg:pb-[26px]">
+            <motion.div
+              initial={{ opacity: 0, y: 24, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.65, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute bottom-[18px] left-0 z-20 w-[140px] rounded-[10px] bg-gray-200 p-2 pb-3 md:bottom-[70px] md:left-3 lg:w-[240px] lg:pt-4 lg:px-4 lg:pb-[26px]"
+            >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-[6px] lg:gap-3">
                   <p className="text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-headingColor font-[600]">
@@ -65,8 +75,8 @@ const Feature = () => {
                   Impact Storytelling
                 </h4>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </Reveal>
         </div>
       </div>
     </section>

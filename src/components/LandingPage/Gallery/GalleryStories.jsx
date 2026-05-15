@@ -1,7 +1,9 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
 import SectionHeader from "../SectionHeader";
+import Reveal from "../../ui/reveal";
 
 const GalleryStories = () => {
   const { config } = useLandingPageConfig();
@@ -15,18 +17,23 @@ const GalleryStories = () => {
           description={galleryStories.description}
         />
 
-        <div className="mt-8 flex justify-center">
+        <Reveal className="mt-8 flex justify-center" distance={24} scale={0.98}>
           <Link
             to="/#gallery"
-            className="inline-flex items-center rounded-full bg-primaryColor px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-primaryColor/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaryColor focus-visible:ring-offset-2"
+            className="inline-flex items-center rounded-full bg-primaryColor px-6 py-3 text-sm font-semibold text-white shadow-lg transition duration-300 ease-out hover:-translate-y-1 hover:bg-primaryColor/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaryColor focus-visible:ring-offset-2"
           >
             View More
           </Link>
-        </div>
+        </Reveal>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="grid gap-6 sm:grid-cols-2">
-            <article className="relative overflow-hidden rounded-[30px] min-h-[280px] sm:min-h-[360px] shadow-xl">
+            <Reveal distance={40} scale={0.97}>
+              <motion.article
+                className="relative overflow-hidden rounded-[30px] min-h-[280px] sm:min-h-[360px] shadow-xl"
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.25 }}
+              >
               <img
                 src={galleryStories.lead.image}
                 alt={galleryStories.lead.title}
@@ -44,9 +51,15 @@ const GalleryStories = () => {
                   {galleryStories.lead.description}
                 </p>
               </div>
-            </article>
+              </motion.article>
+            </Reveal>
 
-            <article className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm">
+            <Reveal delay={0.08} distance={36} scale={0.97}>
+              <motion.article
+                className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm"
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.25 }}
+              >
               <div className="flex h-full flex-col justify-between gap-6">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primaryColor">
@@ -70,14 +83,14 @@ const GalleryStories = () => {
                   </div>
                 )}
 
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  {galleryStories.supportCards.map((item) => (
-                    <div
-                      key={item.title}
-                      className="overflow-hidden rounded-2xl border border-slate-100 bg-slate-50"
-                    >
-                      <div className="relative h-32">
-                        <img
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    {galleryStories.supportCards.map((item) => (
+                      <div
+                        key={item.title}
+                        className="overflow-hidden rounded-2xl border border-slate-100 bg-slate-50 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(15,23,42,0.08)]"
+                      >
+                        <div className="relative h-32">
+                          <img
                           src={item.image}
                           alt={item.title}
                           className="h-full w-full object-cover"
@@ -93,15 +106,21 @@ const GalleryStories = () => {
                         <p className="mt-1 text-sm text-slate-500">
                           {item.description}
                         </p>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </article>
+              </motion.article>
+            </Reveal>
           </div>
 
-          <div className="rounded-[30px] border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
+          <Reveal delay={0.12} distance={40} scale={0.97}>
+            <motion.div
+              className="rounded-[30px] border border-slate-200 bg-white p-5 sm:p-6 shadow-sm"
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.25 }}
+            >
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primaryColor">
@@ -143,7 +162,8 @@ const GalleryStories = () => {
                 </article>
               ))}
             </div>
-          </div>
+            </motion.div>
+          </Reveal>
         </div>
       </div>
     </section>

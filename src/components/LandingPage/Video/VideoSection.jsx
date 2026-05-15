@@ -1,6 +1,8 @@
 import React from "react";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
 import SectionHeader from "../SectionHeader";
+import { motion } from "framer-motion";
+import Reveal from "../../ui/reveal";
 
 const VideoSection = () => {
   const { config } = useLandingPageConfig();
@@ -15,7 +17,12 @@ const VideoSection = () => {
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <article className="relative overflow-hidden rounded-[32px] min-h-[320px] sm:min-h-[440px] shadow-xl">
+          <Reveal distance={40} scale={0.97}>
+            <motion.article
+              className="relative overflow-hidden rounded-[32px] min-h-[320px] sm:min-h-[440px] shadow-xl"
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.25 }}
+            >
             {video.lead.embedUrl ? (
               <iframe
                 src={video.lead.embedUrl}
@@ -51,13 +58,17 @@ const VideoSection = () => {
                 {video.lead.description}
               </p>
             </div>
-          </article>
+            </motion.article>
+          </Reveal>
 
           <div className="grid gap-4">
-            {video.clips.map((item) => (
-              <article
+            {video.clips.map((item, index) => (
+              <Reveal key={item.title} delay={0.06 + index * 0.05} distance={34} scale={0.97}>
+                <motion.article
                 key={item.title}
                 className="group overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.25 }}
               >
                 <div className="flex flex-col sm:flex-row">
                   <div className="relative min-h-[160px] sm:min-h-[180px] sm:w-[42%]">
@@ -87,9 +98,10 @@ const VideoSection = () => {
                     <div className="mt-4 inline-flex rounded-full bg-primaryColor/10 px-3 py-1 text-xs font-semibold text-primaryColor">
                       Ready for playback source
                     </div>
+                    </div>
                   </div>
-                </div>
-              </article>
+                </motion.article>
+              </Reveal>
             ))}
           </div>
         </div>

@@ -1,12 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const ServiceCard = ({ item, index }) => {
   const { name, desc, bgColor, textColor } = item;
 
   return (
-    <div className="py-[30px] px-3 lg:px-5">
+    <motion.div
+      className="py-[30px] px-3 lg:px-5"
+      initial={{ opacity: 0, y: 28, scale: 0.97 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.65, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ y: -6 }}
+    >
       <h2 className="text-[26px] leading-9 text-headingColor font-[700]">
         {name}
       </h2>
@@ -32,7 +40,7 @@ const ServiceCard = ({ item, index }) => {
           {index + 1}
         </span>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { AvatarCirclesDemo } from "../Avatar/Avatar";
 import { Link } from "react-router-dom";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
@@ -11,34 +12,68 @@ const Hero = () => {
     <section id="home" className="hero__section pt-[60px] 2xl:h-[800px]">
       <div className="container">
         <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -64 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
             <div className="lg:w-[570px]">
-              <h1 className="text-4xl font-bold text-gray-800 leading-[3rem] sm:text-5xl lg:text-6xl">
+              <motion.h1
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="text-4xl font-bold text-gray-800 leading-[3rem] sm:text-5xl lg:text-6xl"
+              >
                 <p>{hero.titleLine1}</p>
                 <p>{hero.titleLine2}</p>
-              </h1>
+              </motion.h1>
 
-              <p className="text__para">
+              <motion.p
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+                className="text__para"
+              >
                 {hero.description}
-              </p>
+              </motion.p>
 
-              <div className="flex gap-3 items-center">
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.26, ease: [0.22, 1, 0.36, 1] }}
+                className="flex gap-3 items-center"
+              >
                 <Link to={hero.primaryCtaHref}>
-                  <button className="hero_btn1">{hero.primaryCtaLabel}</button>
+                  <button className="hero_btn1 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(15,23,42,0.15)]">
+                    {hero.primaryCtaLabel}
+                  </button>
                 </Link>
                 <Link to={hero.secondaryCtaHref}>
-                  <button className="hero_btn2">{hero.secondaryCtaLabel}</button>
+                  <button className="hero_btn2 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(15,23,42,0.08)]">
+                    {hero.secondaryCtaLabel}
+                  </button>
                 </Link>
-              </div>
+              </motion.div>
 
-              <div className="pt-[30px]">
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.34, ease: [0.22, 1, 0.36, 1] }}
+                className="pt-[30px]"
+              >
                 <AvatarCirclesDemo />
-              </div>
+              </motion.div>
             </div>
 
             <div className="mt-[30px] lg:mt-[20px] flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-[30px]">
               {hero.stats.map((stat) => (
-                <div key={stat.label} className="flex flex-col gap-2">
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 24, scale: 0.96 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex flex-col gap-2"
+                >
                   <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">
                     {stat.value}
                   </h2>
@@ -47,24 +82,68 @@ const Hero = () => {
                     style={{ backgroundColor: stat.accent, width: stat.barWidth }}
                   />
                   <p className="text__para">{stat.label}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="relative -mx-5 flex w-screen max-w-none gap-[12px] justify-center items-center px-5 sm:mx-0 sm:w-full sm:px-8 h-[320px] sm:h-[400px] lg:h-[700px]">
-            <div className="relative z-10 w-[31%] sm:w-auto">
-              <img src={hero.images.hero1} alt="OHI visual story 1" className="w-full rounded object-cover h-full" />
+          <motion.div
+            initial={{ opacity: 0, x: 72, scale: 0.98 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
+            className="relative grid w-full max-w-[720px] grid-cols-3 gap-2 overflow-visible sm:gap-3 lg:flex lg:min-h-[700px] lg:max-w-none lg:flex-row lg:items-center lg:justify-center lg:gap-[12px]"
+          >
+            <motion.div
+              initial={{ y: 24, rotate: -2 }}
+              animate={{ y: 0, rotate: 0 }}
+              transition={{ duration: 0.8, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+              className="relative z-10 col-span-1 overflow-hidden rounded-2xl lg:w-[31%]"
+            >
+              <img
+                src={hero.images.hero1}
+                alt="OHI visual story 1"
+                className="h-[220px] w-full object-cover transition duration-500 ease-out hover:scale-[1.02] sm:h-[280px] lg:h-full"
+              />
+            </motion.div>
+            <div className="relative z-10 col-span-1 -mt-7 flex flex-col gap-2 overflow-hidden rounded-2xl sm:-mt-8 sm:gap-3 lg:mt-[30px] lg:w-[36%] lg:gap-[20px]">
+              <motion.img
+                initial={{ y: 36, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                src={hero.images.hero5}
+                alt="OHI visual story 2"
+                className="h-[100px] w-full object-cover transition duration-500 ease-out hover:scale-[1.02] sm:h-[145px] lg:h-[250px]"
+              />
+              <motion.img
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.36, ease: [0.22, 1, 0.36, 1] }}
+                src={hero.images.hero3}
+                alt="OHI visual story 3"
+                className="h-[76px] w-full object-cover transition duration-500 ease-out hover:scale-[1.02] sm:h-[108px] lg:h-[150px]"
+              />
+              <motion.img
+                initial={{ y: 36, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.44, ease: [0.22, 1, 0.36, 1] }}
+                src={hero.images.hero5}
+                alt="OHI visual story 4"
+                className="h-[100px] w-full object-cover transition duration-500 ease-out hover:scale-[1.02] sm:h-[145px] lg:h-[250px]"
+              />
             </div>
-            <div className="relative  z-10 mt-[18px] w-[36%] sm:mt-[30px] sm:w-auto">
-              <img src={hero.images.hero5} alt="OHI visual story 2" className="w-[600px] h-[250px] rounded object-cover" />
-              <img src={hero.images.hero3} alt="OHI visual story 3" className="w-[600px] h-[150px] my-[20px] sm:my-[30px] rounded object-cover" />
-              <img src={hero.images.hero5} alt="OHI visual story 4" className="w-[600px] h-[250px] rounded object-cover" />
-            </div>
-            <div className="relative z-10 w-[31%] sm:w-auto">
-              <img src={hero.images.hero1} alt="OHI visual story 5" className="w-full rounded object-cover h-full" />
-            </div>
-          </div>
+            <motion.div
+              initial={{ y: 24, rotate: 2 }}
+              animate={{ y: 0, rotate: 0 }}
+              transition={{ duration: 0.8, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
+              className="relative z-10 col-span-1 overflow-hidden rounded-2xl lg:w-[31%]"
+            >
+              <img
+                src={hero.images.hero1}
+                alt="OHI visual story 5"
+                className="h-[220px] w-full object-cover transition duration-500 ease-out hover:scale-[1.02] sm:h-[280px] lg:h-full"
+              />
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

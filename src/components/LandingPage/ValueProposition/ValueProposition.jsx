@@ -1,5 +1,7 @@
 import React from "react";
+import { motion } from "framer-motion";
 import SectionHeader from "../SectionHeader";
+import Reveal from "../../ui/reveal";
 
 const tiers = [
   {
@@ -62,8 +64,9 @@ export default function ValueProposition() {
       />
 
       <div className="mx-auto mt-12 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-16 lg:max-w-6xl lg:grid-cols-3">
-        {tiers.map((tier) => (
-          <div
+        {tiers.map((tier, index) => (
+          <Reveal key={tier.id} delay={0.06 + index * 0.08} distance={36} scale={0.95}>
+            <motion.div
             key={tier.id}
             className={classNames(
               tier.featured
@@ -71,6 +74,8 @@ export default function ValueProposition() {
                 : "bg-white/60 sm:mx-0 lg:mx-0",
               "rounded-3xl p-6 ring-1 ring-gray-900/10 sm:p-8"
             )}
+            whileHover={{ y: -8, scale: 1.01 }}
+            transition={{ duration: 0.25 }}
           >
             <h3
               id={tier.id}
@@ -128,12 +133,13 @@ export default function ValueProposition() {
                 tier.featured
                   ? "bg-yellowColor text-black shadow-xs hover:bg-yellowColor/90 focus-visible:outline-yellowColor"
                   : "text-primaryColor ring-1 ring-primaryColor/20 ring-inset hover:ring-primaryColor/30 focus-visible:outline-primaryColor",
-                "mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10"
+                "mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold transition duration-300 ease-out hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10"
               )}
             >
               Contact OHI
             </a>
-          </div>
+            </motion.div>
+          </Reveal>
         ))}
       </div>
     </div>
