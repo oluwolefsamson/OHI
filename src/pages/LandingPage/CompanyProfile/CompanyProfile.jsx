@@ -13,6 +13,7 @@ import {
   Users,
 } from "lucide-react";
 import ProfilePageShell from "../../../components/LandingPage/Profile/ProfilePageShell";
+import Brochure from "../../../components/Brochure/Brochure";
 import SectionHeader from "../../../components/LandingPage/SectionHeader";
 import { Marquee } from "../../../components/LandingPage/magicui/marquee";
 import {
@@ -160,11 +161,8 @@ const portfolioProjects = [
 const CompanyProfile = () => {
   return (
     <ProfilePageShell
-      eyebrow="Olympian House International"
-      title="Development communication production company"
-      description="Authentic Stories. Real Impact. African Excellence."
-      primaryCta={{ label: "Our Portfolio", href: "/portfolio" }}
-      secondaryCta={{ label: "Contact OHI", href: "/contact" }}
+      title="Company Profile"
+      titleClassName="underline decoration-[10px] decoration-[#f59e0b] underline-offset-8"
     >
       <section className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="rounded-[32px] border border-[#D9DCE2] bg-white p-6 shadow-sm sm:p-8">
@@ -256,6 +254,8 @@ const CompanyProfile = () => {
           </div>
         </div>
       </section>
+
+      <Brochure />
 
       <div className="mt-14">
         <SectionHeader

@@ -19,38 +19,8 @@ const ImpactPage = () => {
 
   return (
     <ProfilePageShell
-      eyebrow="Why it matters"
-      title="Stories that move projects forward"
-      description="Investors, donors, governments, and communities need credible narratives that explain the value of a project and the change it creates."
-      primaryCta={{ label: "See the approach", href: "/approach" }}
-      secondaryCta={{ label: "Explore services", href: "/services" }}
-      heroBadge={
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primaryColor">
-            Outcome
-          </p>
-          <p className="mt-1 text-sm leading-6 text-textColor">
-            Development communication built to support visibility, trust, and action.
-          </p>
-        </div>
-      }
-      statCards={[
-        {
-          eyebrow: "Impact",
-          value: "Trust",
-          label: "Human-centered content that feels credible to both local and institutional audiences.",
-        },
-        {
-          eyebrow: "Value",
-          value: "Clarity",
-          label: "Complex initiatives explained in simple, persuasive language.",
-        },
-        {
-          eyebrow: "Use",
-          value: "Visibility",
-          label: "Video and visuals that strengthen reporting and outreach.",
-        },
-      ]}
+      title="Why It Matters"
+      titleClassName="underline decoration-[10px] decoration-[#f59e0b] underline-offset-8"
     >
       <section>
         <SectionHeader

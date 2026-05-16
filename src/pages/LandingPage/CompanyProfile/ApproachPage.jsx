@@ -3,7 +3,6 @@ import { ArrowRight, ClipboardList, Handshake, Rocket, WalletCards } from "lucid
 import { Link } from "react-router-dom";
 import ProfilePageShell from "../../../components/LandingPage/Profile/ProfilePageShell";
 import SectionHeader from "../../../components/LandingPage/SectionHeader";
-import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
 
 const steps = [
   {
@@ -29,42 +28,10 @@ const steps = [
 ];
 
 const ApproachPage = () => {
-  const { config } = useLandingPageConfig();
-
   return (
     <ProfilePageShell
-      eyebrow="Our approach"
-      title="A simple workflow that keeps the story focused"
-      description="The profile is explicit about process: understand the objective, shape the concept, align the budget, and deliver the final story."
-      primaryCta={{ label: "Contact OHI", href: "/contact" }}
-      secondaryCta={{ label: "See sectors", href: "/who-we-serve" }}
-      heroBadge={
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primaryColor">
-            Production process
-          </p>
-          <p className="mt-1 text-sm leading-6 text-textColor">
-            Straightforward, collaborative, and aligned to communication goals.
-          </p>
-        </div>
-      }
-      statCards={[
-        {
-          eyebrow: "Step 1",
-          value: "Brief",
-          label: "Understand what the project must communicate.",
-        },
-        {
-          eyebrow: "Step 2",
-          value: "Plan",
-          label: "Turn the brief into a concept and action plan.",
-        },
-        {
-          eyebrow: "Step 3",
-          value: "Deliver",
-          label: "Finish with a polished story asset ready for use.",
-        },
-      ]}
+      title="Our Approach"
+      titleClassName="underline decoration-[10px] decoration-[#f59e0b] underline-offset-8"
     >
       <section>
         <SectionHeader

@@ -10,7 +10,9 @@ export default function ProfilePageShell({
   primaryCta,
   secondaryCta,
   heroBadge,
+  heroBadgeClassName = "bottom-6 right-6 hidden max-w-[280px] lg:block",
   statCards = [],
+  statCardsClassName = "grid gap-4 sm:grid-cols-2 lg:grid-cols-3",
   heroVariant = "default",
   titleClassName = "",
   children,
@@ -110,7 +112,7 @@ export default function ProfilePageShell({
                 </div>
 
                 {heroBadge ? (
-                  <Reveal className="absolute bottom-6 right-6 hidden max-w-[280px] lg:block" delay={0.28}>
+                  <Reveal className={`absolute ${heroBadgeClassName}`.trim()} delay={0.28}>
                     <div className="rounded-[22px] border border-white/18 bg-white/88 px-4 py-3 text-slate-800 shadow-xl backdrop-blur-md">
                       {heroBadge}
                     </div>
@@ -122,7 +124,7 @@ export default function ProfilePageShell({
         </div>
         {statCards.length > 0 ? (
           <div className="container -mt-8 pb-10">
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className={statCardsClassName}>
               {statCards.map((card) => (
                 <Reveal
                   key={card.label}

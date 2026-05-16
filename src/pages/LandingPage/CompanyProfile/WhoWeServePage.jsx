@@ -1,7 +1,6 @@
 import React from "react";
 import { ArrowRight, Globe2, Layers3, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
 import ProfilePageShell from "../../../components/LandingPage/Profile/ProfilePageShell";
 import SectionHeader from "../../../components/LandingPage/SectionHeader";
 
@@ -24,25 +23,11 @@ const strengths = [
 ];
 
 const WhoWeServePage = () => {
-  const { config } = useLandingPageConfig();
-
   return (
     <ProfilePageShell
-      eyebrow="Who we serve"
-      title="Organizations that need credible, human-centered storytelling"
-      description="OHI works with institutions and mission-led brands that need communication assets built for visibility, trust, and action."
-      primaryCta={{ label: "Explore impact", href: "/impact" }}
-      secondaryCta={{ label: "Our approach", href: "/approach" }}
-      heroBadge={
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primaryColor">
-            Institutional focus
-          </p>
-          <p className="mt-1 text-sm leading-6 text-textColor">
-            Built for programs that need confidence, clarity, and public-facing proof.
-          </p>
-        </div>
-      }
+      title="Sectors"
+      titleClassName="underline decoration-[10px] decoration-[#f59e0b] underline-offset-8"
+      statCardsClassName="grid gap-4 md:hidden"
       statCards={[
         {
           eyebrow: "Audience",
