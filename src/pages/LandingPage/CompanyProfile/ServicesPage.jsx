@@ -106,7 +106,7 @@ const ServicesPage = () => {
       </section>
 
       <section
-        className="mt-12 w-screen relative left-1/2 right-1/2 -translate-x-1/2 rounded-[28px] border border-[#D9DCE2] bg-cover bg-center bg-no-repeat p-4 shadow-sm sm:p-6 lg:p-8"
+        className="mt-12 relative w-full rounded-[28px] border border-[#D9DCE2] bg-cover bg-center bg-no-repeat p-4 shadow-sm sm:p-6 lg:p-8"
         style={{ backgroundImage: `url(${pikImg})` }}
       >
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.1fr_0.9fr]">

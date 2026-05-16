@@ -11,6 +11,7 @@ import Feature from "../../components/LandingPage/Feature/Feature";
 import Gallery from "../../components/LandingPage/Gallery/Gallery";
 import GalleryStories from "../../components/LandingPage/Gallery/GalleryStories";
 import VideoSection from "../../components/LandingPage/Video/VideoSection";
+import Brochure from "../../components/Brochure/Brochure";
 import HomeSupplierList from "../../components/LandingPage/Supplier/HomeSupplierList";
 import ServiceList from "../../components/LandingPage/Services/ServiceList";
 import ValueProposition from "../../components/LandingPage/ValueProposition/ValueProposition";
@@ -67,6 +68,8 @@ const Home = () => {
       <GalleryStories />
 
       <VideoSection />
+
+      <Brochure />
 
       <HomeSupplierList />
 

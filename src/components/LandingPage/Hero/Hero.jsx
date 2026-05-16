@@ -42,7 +42,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.26, ease: [0.22, 1, 0.36, 1] }}
-                className="flex w-full flex-col gap-3 items-stretch sm:flex-row sm:items-center"
+                className="flex w-full flex-col gap-3 pt-4 items-stretch sm:flex-row sm:items-center sm:pt-0"
               >
                 <Link to={hero.primaryCtaHref}>
                   <button className="hero_btn1 !mt-0 w-full transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(15,23,42,0.15)] sm:w-auto">
@@ -92,7 +92,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: 72, scale: 0.98 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
-            className="relative grid w-full max-w-[720px] grid-cols-3 gap-2 overflow-visible sm:gap-3 lg:flex lg:min-h-[700px] lg:max-w-none lg:flex-row lg:items-center lg:justify-center lg:gap-[12px]"
+            className="relative grid w-full max-w-[720px] grid-cols-3 gap-2 overflow-visible pt-6 sm:gap-3 sm:pt-0 lg:flex lg:min-h-[700px] lg:max-w-none lg:flex-row lg:items-center lg:justify-center lg:gap-[12px]"
           >
             <motion.div
               initial={{ y: 24, rotate: -2 }}

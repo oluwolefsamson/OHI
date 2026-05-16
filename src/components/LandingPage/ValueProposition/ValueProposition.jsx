@@ -56,7 +56,7 @@ export default function ValueProposition() {
   return (
     <div
       id="approach"
-      className="relative isolate bg-white px-4 py-20 sm:px-6 sm:py-32 lg:px-8"
+      className="relative isolate bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
     >
       <SectionHeader
         title="Our Value Proposition"

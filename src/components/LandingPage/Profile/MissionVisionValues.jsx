@@ -9,7 +9,7 @@ export const MissionVisionValues = () => {
   const { profile } = config;
 
   return (
-    <section id="values" className="py-24">
+    <section id="values" className="py-16 sm:py-20">
       <div className="container">
         <SectionHeader
           title={profile.title}

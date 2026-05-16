@@ -31,7 +31,7 @@ const HomeSupplierList = () => {
   return (
     <section
       id="clients"
-      className="py-24 bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.12),_transparent_34%),linear-gradient(180deg,_#f8fafc_0%,_#ffffff_100%)]"
+      className="py-16 sm:py-20 bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.12),_transparent_34%),linear-gradient(180deg,_#f8fafc_0%,_#ffffff_100%)]"
     >
       <div className="container mx-auto px-4 sm:px-5 lg:px-20">
         <SectionHeader

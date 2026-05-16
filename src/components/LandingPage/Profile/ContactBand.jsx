@@ -13,7 +13,7 @@ const contactRows = [
 
 export const ContactBand = () => {
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="py-16 sm:py-20">
       <div className="container">
         <Reveal distance={40} scale={0.97}>
           <motion.div

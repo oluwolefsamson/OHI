@@ -9,7 +9,7 @@ const VideoSection = () => {
   const { video } = config;
 
   return (
-    <section id="videos" className="py-24 bg-slate-50/60">
+    <section id="videos" className="py-16 sm:py-20 bg-slate-50/60">
       <div className="container">
         <SectionHeader
           title={video.title}

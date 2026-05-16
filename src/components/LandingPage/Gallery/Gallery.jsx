@@ -21,7 +21,7 @@ const Gallery = () => {
   }, []);
 
   return (
-    <section id="gallery" className="px-2 py-24">
+    <section id="gallery" className="px-2 py-16 sm:py-20">
       <div className="container">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="heading font-bold text-black">

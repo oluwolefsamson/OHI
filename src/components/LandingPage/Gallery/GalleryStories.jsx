@@ -10,7 +10,7 @@ const GalleryStories = () => {
   const { galleryStories } = config;
 
   return (
-    <section id="gallery-stories" className="mt-[250px] py-24 bg-slate-50/60">
+    <section id="gallery-stories" className="mt-20 bg-slate-50/60 sm:mt-24 lg:mt-28">
       <div className="container">
         <SectionHeader
           title={galleryStories.title}
