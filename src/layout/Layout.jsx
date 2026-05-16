@@ -19,7 +19,7 @@ const Layout = () => {
   return (
     <>
       {!shouldHideHeaderFooter && <Header />}
-      <main>
+      <main className={shouldHideHeaderFooter ? "" : "pt-[100px]"}>
         <Outlet /> {/* Nested routes render here */}
       </main>
       {!shouldHideHeaderFooter && <Footer />}

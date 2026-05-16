@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
 import Logo from "../Logo/logo.jsx";
@@ -13,37 +13,21 @@ const navlinks = [
 ];
 
 const Header = () => {
-  const headerRef = useRef(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  const handleStickyHeader = () => {
-    if (
-      document.body.scrollTop > 80 ||
-      document.documentElement.scrollTop > 80
-    ) {
-      headerRef.current.classList.add("sticky__header");
-    } else {
-      headerRef.current.classList.remove("sticky__header");
-    }
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", handleStickyHeader);
-
     const timer = setTimeout(() => setLoading(false), 1500);
-    return () => {
-      window.removeEventListener("scroll", handleStickyHeader);
-      clearTimeout(timer);
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   const toggleDrawer = () => setIsDrawerOpen((prev) => !prev);
   const closeDrawer = () => setIsDrawerOpen(false);
+  const headerClassName = "header header--fixed flex items-center";
 
   if (loading) {
     return (
-      <header className="header flex items-center" ref={headerRef}>
+      <header className={headerClassName}>
         <div className="container">
           <div className="flex items-center justify-between">
             <Skeleton className="w-[120px] h-[40px] rounded-lg" />
@@ -63,7 +47,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="header flex items-center" ref={headerRef}>
+      <header className={headerClassName}>
         <div className="container">
           <div className="flex items-center justify-between">
             <div className="flex justify-start">
