@@ -1,34 +1,37 @@
 import React from "react";
 import { AvatarCircles } from "../magicui/avatar-circles";
 
-import Sign2 from "../../../assets/images/sign2.jpg";
-import Sign3 from "../../../assets/images/sign3.jpg";
-import Sign4 from "../../../assets/images/sign4.jpg";
+import CameraMan from "../../../assets/img/camera-man.jpg";
+import Photography from "../../../assets/img/Photography.jpg";
+import FaqImage from "../../../assets/img/FAQ.jpg";
+import Hero1 from "../../../assets/images/HeroImg/hero1.jpg";
+import Hero3 from "../../../assets/images/HeroImg/hero3.jpg";
+import Hero5 from "../../../assets/images/HeroImg/hero5.jpg";
 
 const avatars = [
   {
-    imageUrl: Sign4,
-    profileUrl: "https://unsplash.com/photos/YhiSA2Kxm8A",
+    imageUrl: CameraMan,
+    profileUrl: "/#about",
   },
   {
-    imageUrl: Sign2,
-    profileUrl: "https://unsplash.com/photos/PWBozjMIdI4",
+    imageUrl: Photography,
+    profileUrl: "/#about",
   },
   {
-    imageUrl: Sign3,
-    profileUrl: "https://unsplash.com/photos/rXvxDzjZxvU",
+    imageUrl: FaqImage,
+    profileUrl: "/#about",
   },
   {
-    imageUrl: Sign4,
-    profileUrl: "https://unsplash.com/photos/BXOXnQ26B7o",
+    imageUrl: Hero1,
+    profileUrl: "/#about",
   },
   {
-    imageUrl: Sign2,
-    profileUrl: "https://unsplash.com/photos/4Wv1btdw9Ew",
+    imageUrl: Hero3,
+    profileUrl: "/#about",
   },
   {
-    imageUrl: Sign3,
-    profileUrl: "https://unsplash.com/photos/JgGFomscHho",
+    imageUrl: Hero5,
+    profileUrl: "/#about",
   },
 ];
 
