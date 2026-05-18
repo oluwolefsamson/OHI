@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import profileHeroVideo from "../../../assets/img/OHI-video.mp4";
 import Reveal from "../../ui/reveal";
+import profileHeroCity from "../../../assets/images/profile-hero-city.jpg";
 
 export default function ProfilePageShell({
   eyebrow,
@@ -14,6 +14,8 @@ export default function ProfilePageShell({
   statCards = [],
   statCardsClassName = "grid gap-4 sm:grid-cols-2 lg:grid-cols-3",
   heroVariant = "default",
+  heroImage = profileHeroCity,
+  heroImageAlt = "OHI profile hero",
   titleClassName = "",
   children,
 }) {
@@ -29,15 +31,11 @@ export default function ProfilePageShell({
         >
           {heroVariant === "minimal" ? (
             <>
-              <video
+              <img
+                src={heroImage}
+                alt={heroImageAlt}
                 className="absolute inset-0 h-full w-full object-cover opacity-80"
-                autoPlay
-                muted
-                loop
-                playsInline
-              >
-                <source src={profileHeroVideo} type="video/mp4" />
-              </video>
+              />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,20,36,0.18)_0%,rgba(6,20,36,0.52)_55%,rgba(6,20,36,0.78)_100%)]" />
               <div className="absolute inset-x-0 top-0 h-2 bg-[#0f4c81]" />
               <div className="relative container mx-auto min-h-[460px] px-4 pb-20 pt-28 sm:min-h-[500px] sm:px-5 lg:min-h-[540px] lg:px-20 lg:pb-28 lg:pt-32">
@@ -53,15 +51,11 @@ export default function ProfilePageShell({
             </>
           ) : (
             <>
-              <video
+              <img
+                src={heroImage}
+                alt={heroImageAlt}
                 className="absolute inset-0 h-full w-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-              >
-                <source src={profileHeroVideo} type="video/mp4" />
-              </video>
+              />
               <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,22,36,0.84)_0%,rgba(5,22,36,0.58)_46%,rgba(5,22,36,0.22)_100%)]" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(5,193,255,0.14),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(249,161,27,0.12),transparent_30%)]" />
 

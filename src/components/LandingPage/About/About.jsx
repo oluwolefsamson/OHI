@@ -63,8 +63,10 @@ const About = () => {
               </p>
             ))}
 
-            <Link to="/#contact">
-              <button className="btn transition duration-300 ease-out hover:-translate-y-1">Contact OHI</button>
+            <Link to="/about">
+              <button className="btn transition duration-300 ease-out hover:-translate-y-1">
+                Read the full story
+              </button>
             </Link>
           </Reveal>
         </div>

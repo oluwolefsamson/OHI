@@ -3,6 +3,7 @@ import { ArrowRight, ClipboardList, Handshake, Rocket, WalletCards } from "lucid
 import { Link } from "react-router-dom";
 import ProfilePageShell from "../../../components/LandingPage/Profile/ProfilePageShell";
 import SectionHeader from "../../../components/LandingPage/SectionHeader";
+import approachVisual from "../../../assets/images/Gallery/gallery-06.jpeg";
 
 const steps = [
   {
@@ -38,6 +39,30 @@ const ApproachPage = () => {
           title="How OHI works"
           description="Each project is designed to be practical for DFIs, governments, and institutions that need professional communication support without unnecessary complexity."
         />
+        <div className="mt-10 overflow-hidden rounded-[32px] border border-[#D9DCE2] bg-white shadow-sm">
+          <div className="grid gap-0 lg:grid-cols-[0.98fr_1.02fr]">
+            <div className="relative min-h-[280px] lg:min-h-[340px]">
+              <img
+                src={approachVisual}
+                alt="Production workflow visual"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,22,36,0.08)_0%,rgba(5,22,36,0.52)_100%)]" />
+            </div>
+            <div className="p-6 sm:p-8 lg:p-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primaryColor">
+                Workflow
+              </p>
+              <h3 className="mt-4 text-3xl font-bold tracking-[-0.03em] text-headingColor sm:text-4xl">
+                A practical process built around delivery
+              </h3>
+              <p className="mt-4 max-w-2xl text-base leading-7 text-textColor">
+                The approach section now carries a visual cue from the recent image set
+                while keeping the steps and deliverables easy to scan.
+              </p>
+            </div>
+          </div>
+        </div>
         <div className="mt-12 grid gap-4 lg:grid-cols-4">
           {steps.map((step, index) => (
             <article

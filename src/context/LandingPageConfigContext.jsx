@@ -16,6 +16,12 @@ const LEGACY_HERO_URL_MARKERS = {
   hero4: "33693142",
   hero5: "35353626",
 };
+const LEGACY_HERO_CTA_HREFS = {
+  "/#contact": "/contact",
+  "#contact": "/contact",
+  "/#about": "/about",
+  "#about": "/about",
+};
 
 const LandingPageConfigContext = createContext(null);
 
@@ -129,18 +135,30 @@ function normalizeConfig(config) {
     nextVideo.description = landingPageDefaults.video.description;
   }
 
-  const nextHero = config.hero?.images
-    ? { ...config.hero.images }
+  const nextHero = config.hero
+    ? {
+        ...config.hero,
+        ...(config.hero.images ? { images: { ...config.hero.images } } : {}),
+      }
     : null;
 
-  if (nextHero) {
+  if (nextHero?.images) {
     for (const [key, marker] of Object.entries(LEGACY_HERO_URL_MARKERS)) {
-      const value = nextHero[key];
+      const value = nextHero.images[key];
 
       if (typeof value === "string" && value.includes(marker)) {
-        nextHero[key] = landingPageDefaults.hero.images[key];
+        nextHero.images[key] = landingPageDefaults.hero.images[key];
       }
     }
+  }
+
+  if (nextHero) {
+    nextHero.primaryCtaHref =
+      LEGACY_HERO_CTA_HREFS[nextHero.primaryCtaHref] ??
+      nextHero.primaryCtaHref;
+    nextHero.secondaryCtaHref =
+      LEGACY_HERO_CTA_HREFS[nextHero.secondaryCtaHref] ??
+      nextHero.secondaryCtaHref;
   }
 
   return {
@@ -149,7 +167,7 @@ function normalizeConfig(config) {
     ...(nextAbout ? { about: nextAbout } : {}),
     video: nextVideo,
     ...(nextWhyChoose ? { whyChoose: nextWhyChoose } : {}),
-    ...(nextHero ? { hero: { ...config.hero, images: nextHero } } : {}),
+    ...(nextHero ? { hero: nextHero } : {}),
   };
 }
 

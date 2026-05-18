@@ -4,7 +4,7 @@ import { BiLogoGmail } from "react-icons/bi";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
 import { Globe } from "lucide-react";
-import contactImg from "../../assets/img/WFP-03534.jpg";
+import contactImg from "../../assets/images/Gallery/gallery-11.jpeg";
 
 const contactOptions = [
   {

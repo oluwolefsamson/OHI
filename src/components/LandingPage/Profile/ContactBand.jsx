@@ -37,11 +37,15 @@ export const ContactBand = () => {
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <Link to="mailto:contact@olympianhouseintl.com">
-                  <button className="hero_btn1 w-full sm:w-auto transition duration-300 ease-out hover:-translate-y-1">Email Us</button>
+                <Link to="/contact">
+                  <button className="hero_btn1 w-full sm:w-auto transition duration-300 ease-out hover:-translate-y-1">
+                    Contact Page
+                  </button>
                 </Link>
-                <Link to="https://olympianhouseintl.com" target="_blank" rel="noreferrer">
-                  <button className="hero_btn2 w-full sm:w-auto transition duration-300 ease-out hover:-translate-y-1">Visit Website</button>
+                <Link to="/company-profile">
+                  <button className="hero_btn2 w-full sm:w-auto transition duration-300 ease-out hover:-translate-y-1">
+                    View Profile
+                  </button>
                 </Link>
               </div>
             </div>

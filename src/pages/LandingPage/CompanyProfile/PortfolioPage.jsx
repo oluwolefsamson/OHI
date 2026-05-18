@@ -12,12 +12,12 @@ import ifrcLogo from "../../../assets/img/International_Federation_of_Red_Cross_
 import corafLogo from "../../../assets/img/logo-coraf.png";
 import sunKingLogo from "../../../assets/img/Sun-King_New_Logo-02.png";
 import wfpLogo from "../../../assets/img/wfp-logo-extended-blue-en.png";
-import portfolioImage01 from "../../../assets/img/WFP-03520.jpg";
-import portfolioImage02 from "../../../assets/img/WFP-03523.jpg";
-import portfolioImage03 from "../../../assets/img/WFP-03524.jpg";
-import portfolioImage04 from "../../../assets/img/WFP-03525.jpg";
-import portfolioImage05 from "../../../assets/img/WFP-03527.jpg";
-import portfolioImage06 from "../../../assets/img/WFP-03534.jpg";
+import portfolioImage01 from "../../../assets/images/Gallery/gallery-01.jpeg";
+import portfolioImage02 from "../../../assets/images/Gallery/gallery-02.jpeg";
+import portfolioImage03 from "../../../assets/images/Gallery/gallery-03.jpeg";
+import portfolioImage04 from "../../../assets/images/Gallery/gallery-04.jpeg";
+import portfolioImage05 from "../../../assets/images/Gallery/gallery-05.jpeg";
+import portfolioImage06 from "../../../assets/images/Gallery/gallery-06.jpeg";
 
 const brochurePdfHref = "/OHI-Company-Profile.pdf";
 

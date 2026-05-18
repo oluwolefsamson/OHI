@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
 import ProfilePageShell from "../../../components/LandingPage/Profile/ProfilePageShell";
 import SectionHeader from "../../../components/LandingPage/SectionHeader";
+import impactVisual from "../../../assets/images/Gallery/gallery-05.jpeg";
 
 const impactReasons = [
   "Demonstrate impact and transparency",
@@ -27,6 +28,30 @@ const ImpactPage = () => {
           title="Why organizations invest in storytelling"
           description="The profile makes a direct business case for visual communication, not just a creative one."
         />
+        <div className="mt-10 overflow-hidden rounded-[32px] border border-[#D9DCE2] bg-white shadow-sm">
+          <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="p-6 sm:p-8 lg:p-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primaryColor">
+                Visual proof
+              </p>
+              <h3 className="mt-4 text-3xl font-bold tracking-[-0.03em] text-headingColor sm:text-4xl">
+                Stories that help teams show results clearly
+              </h3>
+              <p className="mt-4 max-w-2xl text-base leading-7 text-textColor">
+                The same recent image set now supports the hidden profile pages so the
+                experience feels consistent across the full company profile.
+              </p>
+            </div>
+            <div className="relative min-h-[280px]">
+              <img
+                src={impactVisual}
+                alt="Development storytelling visual"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.04)_0%,rgba(15,23,42,0.42)_100%)]" />
+            </div>
+          </div>
+        </div>
         <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {impactReasons.map((reason) => (
             <div

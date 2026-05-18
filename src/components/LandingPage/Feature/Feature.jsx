@@ -26,8 +26,10 @@ const Feature = () => {
                 3. Strengthen stakeholder alignment and community trust.
               </li>
             </ul>
-            <Link to="/#contact">
-              <button className="btn transition duration-300 ease-out hover:-translate-y-1">Talk to OHI</button>
+            <Link to="/portfolio">
+              <button className="btn transition duration-300 ease-out hover:-translate-y-1">
+                View the portfolio
+              </button>
             </Link>
           </Reveal>
 

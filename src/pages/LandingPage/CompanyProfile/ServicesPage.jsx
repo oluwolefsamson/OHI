@@ -1,15 +1,16 @@
 import React from "react";
 import { ArrowRight, Film, Megaphone, VideoIcon } from "lucide-react";
 import { Link } from "react-router-dom";
-import bts02812Img from "../../../assets/img/BTS-02812.jpg";
-import bts02864Img from "../../../assets/img/BTS-02864.jpg";
-import pikImg from "../../../assets/img/pik.jpg";
-import wfp03520Img from "../../../assets/img/WFP-03520.jpg";
-import wfp03523Img from "../../../assets/img/WFP-03523.jpg";
-import wfp03524Img from "../../../assets/img/WFP-03524.jpg";
-import wfp03527Img from "../../../assets/img/WFP-03527.jpg";
-import wfp03534Img from "../../../assets/img/WFP-03534.jpg";
-import wfp03558Img from "../../../assets/img/WFP-03558.jpg";
+import serviceImage01 from "../../../assets/images/Gallery/gallery-01.jpeg";
+import serviceImage02 from "../../../assets/images/Gallery/gallery-02.jpeg";
+import serviceImage03 from "../../../assets/images/Gallery/gallery-03.jpeg";
+import serviceImage04 from "../../../assets/images/Gallery/gallery-04.jpeg";
+import serviceImage05 from "../../../assets/images/Gallery/gallery-05.jpeg";
+import serviceImage06 from "../../../assets/images/Gallery/gallery-06.jpeg";
+import serviceImage07 from "../../../assets/images/Gallery/gallery-07.jpeg";
+import serviceImage08 from "../../../assets/images/Gallery/gallery-08.jpeg";
+import heroBgImage from "../../../assets/images/hero-bg.png";
+import profileHeroMountain from "../../../assets/images/profile-hero-mountain.jpg";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
 import ProfilePageShell from "../../../components/LandingPage/Profile/ProfilePageShell";
 import SectionHeader from "../../../components/LandingPage/SectionHeader";
@@ -33,49 +34,49 @@ const ServicesPage = () => {
       title: "Impact Documentaries",
       description:
         "We produce high-quality documentaries that humanize data and reveal real impact on the ground. OHI films go beyond storytelling to build trust, credibility, and long-term confidence among investors, donors, and communities.",
-      image: wfp03523Img,
+      image: serviceImage01,
     },
     {
       title: "Development Programme Communication",
       description:
         "OHI helps development programmes communicate their objectives, implementation, and results with clarity and authenticity. Our visuals strengthen transparency, accountability, and stakeholder alignment across the project lifecycle.",
-      image: wfp03558Img,
+      image: serviceImage02,
     },
     {
       title: "Investment & Programme Visibility",
       description:
         "We craft investor-focused films that present projects as credible, bankable, and scalable opportunities. By combining strategic messaging with compelling visuals, OHI helps unlock financing and accelerate decision-making.",
-      image: wfp03520Img,
+      image: serviceImage03,
     },
     {
       title: "ESG & Social Impact Storytelling",
       description:
         "Our content amplifies community voice and local ownership, ensuring projects are seen through the lens of those they serve. OHI storytelling builds legitimacy, social buy-in, and sustainable impact.",
-      image: bts02812Img,
+      image: serviceImage04,
     },
     {
       title: "Donor & Investor Reporting Films",
       description:
         "We capture authentic testimonials that turn beneficiaries into powerful advocates for your work. Each story is handled ethically, with dignity, and aligned with broader impact and investment narratives.",
-      image: bts02864Img,
+      image: serviceImage05,
     },
     {
       title: "Multilingual Field Production",
       description:
         "OHI produces concise, evidence-driven reporting films that communicate results, learning, and accountability. These films support donor relations, renewal, and long-term partnerships.",
-      image: wfp03524Img,
+      image: serviceImage06,
     },
     {
       title: "Event & Mission Coverage",
       description:
         "From high-level forums to field missions, we document moments that matter with professional and strategic intent. OHI ensures your engagements translate into lasting communication value.",
-      image: wfp03527Img,
+      image: serviceImage07,
     },
     {
       title: "Social Media & Digital Campaigns",
       description:
         "We design digital-first content that extends the life and reach of your projects beyond the field. OHI campaigns are tailored to engage policymakers, investors, and communities across platforms.",
-      image: wfp03534Img,
+      image: serviceImage08,
     },
   ];
 
@@ -83,6 +84,8 @@ const ServicesPage = () => {
     <ProfilePageShell
       title="Who We Serve"
       heroVariant="minimal"
+      heroImage={profileHeroMountain}
+      heroImageAlt="OHI services hero"
     >
       <section>
         <SectionHeader
@@ -106,10 +109,10 @@ const ServicesPage = () => {
       </section>
 
       <section
-        className="mt-12 relative w-full rounded-[28px] border border-[#D9DCE2] bg-cover bg-center bg-no-repeat p-4 shadow-sm sm:p-6 lg:p-8"
-        style={{ backgroundImage: `url(${pikImg})` }}
+        className="mt-12 relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-cover bg-center bg-no-repeat py-8 sm:py-10 lg:py-12"
+        style={{ backgroundImage: `url(${heroBgImage})` }}
       >
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="container grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-[28px] border border-white/60 bg-white/78 p-6 text-slate-900 shadow-[0_12px_30px_rgba(15,23,42,0.08)] backdrop-blur-sm">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#f97316]">
               Communication formats

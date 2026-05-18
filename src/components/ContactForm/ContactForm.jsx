@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ArrowRight } from "lucide-react";
-import contactFormImg from "../../assets/img/BTS-02864.jpg";
+import contactFormImg from "../../assets/images/Gallery/contact-social.jpg";
 import { Button } from "../ui/button";
 import {
   Card,
@@ -53,19 +53,19 @@ export default function ContactForm() {
       <div className="container mx-auto">
         <div className="grid items-stretch gap-8 lg:grid-cols-[0.92fr_1.08fr]">
           <Card className="overflow-hidden border-border/70 bg-card shadow-[0_28px_80px_rgba(15,23,42,0.12)]">
-            <div className="relative h-full min-h-[520px]">
+            <div className="relative min-h-[520px] bg-slate-950">
               {!imageLoaded && (
                 <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-muted via-muted/60 to-muted" />
               )}
               <img
                 src={contactFormImg}
-                alt="Contact OHI"
+                alt="Contact OHI social media illustration"
                 onLoad={() => setImageLoaded(true)}
                 className={`h-full min-h-[520px] w-full object-cover transition-opacity duration-300 ${
                   imageLoaded ? "opacity-100" : "opacity-0"
                 }`}
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,22,36,0.08)_0%,rgba(5,22,36,0.55)_100%)]" />
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,22,36,0.08)_0%,rgba(5,22,36,0.35)_100%)]" />
             </div>
           </Card>
 

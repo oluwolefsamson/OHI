@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
 import { landingPageDefaults } from "../../../data/landingPageDefaults";
 import SectionHeader from "../SectionHeader";
@@ -18,15 +17,6 @@ const GalleryStories = () => {
           title={galleryStories.title}
           description={galleryStories.description}
         />
-
-        <Reveal className="mt-8 flex justify-center" distance={24} scale={0.98}>
-          <Link
-            to="/#gallery"
-            className="inline-flex items-center rounded-full bg-primaryColor px-6 py-3 text-sm font-semibold text-white shadow-lg transition duration-300 ease-out hover:-translate-y-1 hover:bg-primaryColor/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaryColor focus-visible:ring-offset-2"
-          >
-            View More
-          </Link>
-        </Reveal>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="grid gap-6 sm:grid-cols-2">

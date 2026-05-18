@@ -1,11 +1,11 @@
 import React from "react";
 import { Card } from "../ui/card";
 import { MapPin } from "lucide-react";
-import mapSectionBg from "../../assets/img/contact-map-bg.jpg";
+import mapSectionBg from "../../assets/images/Gallery/gallery-05.jpeg";
 
 const ContactMap = () => {
   return (
-    <section className="relative overflow-hidden px-6 py-16 lg:px-8">
+    <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden px-6 py-16 lg:px-8">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${mapSectionBg})` }}
@@ -14,8 +14,8 @@ const ContactMap = () => {
       <div className="absolute inset-0 bg-slate-950/55" aria-hidden="true" />
 
       <div className="container relative mx-auto">
-        <div className="flex justify-end">
-          <Card className="w-full overflow-hidden border-white/15 bg-white/10 shadow-[0_28px_80px_rgba(15,23,42,0.2)] backdrop-blur-md lg:w-1/2 lg:max-w-[640px] lg:flex-none lg:ml-auto">
+        <div className="flex">
+          <Card className="w-full overflow-hidden border-white/15 bg-white/10 shadow-[0_28px_80px_rgba(15,23,42,0.2)] backdrop-blur-md">
             <div className="relative h-[520px] overflow-hidden bg-[#dbeafe]">
               <iframe
                 title="OHI office map"

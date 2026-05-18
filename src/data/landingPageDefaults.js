@@ -48,10 +48,10 @@ export const landingPageDefaults = {
     titleLine2: "deserves investment-grade visibility",
     description:
       "Olympian House International (OHI) turns complex development, ESG, and investment programmes into cinematic proof that builds trust, demonstrates results, and mobilises capital, partnerships, and policy action.",
-    primaryCtaLabel: "Contact Us",
-    primaryCtaHref: "/#contact",
+    primaryCtaLabel: "Explore Profile",
+    primaryCtaHref: "/company-profile",
     secondaryCtaLabel: "Our Story",
-    secondaryCtaHref: "/#about",
+    secondaryCtaHref: "/about",
     stats: [
       {
         value: "100+",
@@ -86,14 +86,14 @@ export const landingPageDefaults = {
       "Olympian House International was founded in 2015 by filmmaker and development communication specialist Fombang Banns N. on a conviction that has only deepened over a decade of work: the quality of a story is inseparable from the quality of the capital, partnerships, and policy decisions it attracts.",
       "We make Africa's development and investment journeys visible through strategic, multilingual visual narratives that turn technical programmes into credible proof for institutions, investors, donors, and the communities they serve.",
     ],
-    image: storyImg,
+    image: gallery11,
     overlay: {
       since: "Since 2015",
       tagline: "Investment-grade storytelling",
       trustLabel: "Proof-led",
       role: "Development, Impact & Investment",
       icon: videoIcon,
-      avatar: avatarIcon,
+      avatar: brandOhiLogo,
     },
   },
   services: {
@@ -372,21 +372,21 @@ export const landingPageDefaults = {
         description:
           "We help projects explain themselves clearly so communities, institutions, and partners can understand the value being created.",
         icon: Camera,
-        href: "/#contact",
+        href: "/who-we-serve",
       },
       {
         title: "Evidence-led storytelling",
         description:
           "Our narratives turn programme results and lived experiences into proof that moves decision-makers to action.",
         icon: Film,
-        href: "/#services",
+        href: "/impact",
       },
       {
         title: "Multilingual execution",
         description:
           "We deliver English, French, and Pidgin content that strengthens stakeholder alignment and expands reach.",
         icon: Clapperboard,
-        href: "/#approach",
+        href: "/approach",
       },
     ],
   },

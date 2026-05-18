@@ -53,7 +53,9 @@ const Header = () => {
         <div className="container">
           <div className="flex items-center justify-between">
             <div className="flex justify-start">
-              <Logo />
+              <NavLink to="/" aria-label="Go to home page">
+                <Logo />
+              </NavLink>
             </div>
 
             <div className="navigation hidden md:flex items-center gap-6">

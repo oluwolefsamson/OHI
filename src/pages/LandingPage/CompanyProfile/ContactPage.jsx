@@ -3,21 +3,17 @@ import Contact from "../../../components/Contact/Contact";
 import ContactMap from "../../../components/ContactMap/ContactMap";
 import ContactForm from "../../../components/ContactForm/ContactForm";
 import Reveal from "../../../components/ui/reveal";
-import contactHeroVideo from "../../../assets/img/OHI-video.mp4";
+import contactHeroImage from "../../../assets/images/Gallery/gallery-04.jpeg";
 
 const ContactPage = () => {
   return (
     <div className="bg-white">
       <section className="relative min-h-[460px] overflow-hidden bg-slate-950 sm:min-h-[500px] lg:min-h-[540px]">
-        <video
+        <img
           className="absolute inset-0 h-full w-full object-cover opacity-80"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src={contactHeroVideo} type="video/mp4" />
-        </video>
+          src={contactHeroImage}
+          alt="Contact OHI"
+        />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,20,36,0.34)_0%,rgba(6,20,36,0.72)_55%,rgba(6,20,36,0.95)_100%)]" />
         <div className="absolute inset-x-0 top-0 h-2 bg-[#0f4c81]" />
 

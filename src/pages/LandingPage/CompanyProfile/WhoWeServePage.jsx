@@ -3,6 +3,7 @@ import { ArrowRight, Globe2, Layers3, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProfilePageShell from "../../../components/LandingPage/Profile/ProfilePageShell";
 import SectionHeader from "../../../components/LandingPage/SectionHeader";
+import serveVisual from "../../../assets/images/Gallery/gallery-11.jpeg";
 
 const sectors = [
   "Development finance institutions",
@@ -51,6 +52,30 @@ const WhoWeServePage = () => {
           title="Sectors OHI works with"
           description="These sectors map directly to the profile document and explain the kind of partners OHI is built to support."
         />
+        <div className="mt-10 overflow-hidden rounded-[32px] border border-[#D9DCE2] bg-white shadow-sm">
+          <div className="grid gap-0 lg:grid-cols-[1fr_0.95fr]">
+            <div className="p-6 sm:p-8 lg:p-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primaryColor">
+                Audience fit
+              </p>
+              <h3 className="mt-4 text-3xl font-bold tracking-[-0.03em] text-headingColor sm:text-4xl">
+                Work built for institutions and development teams
+              </h3>
+              <p className="mt-4 max-w-2xl text-base leading-7 text-textColor">
+                The new image treatment gives the sectors page a stronger visual anchor
+                while keeping the text focused on partner fit.
+              </p>
+            </div>
+            <div className="relative min-h-[280px]">
+              <img
+                src={serveVisual}
+                alt="OHI team visual"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.06)_0%,rgba(15,23,42,0.42)_100%)]" />
+            </div>
+          </div>
+        </div>
         <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {sectors.map((sector) => (
             <div

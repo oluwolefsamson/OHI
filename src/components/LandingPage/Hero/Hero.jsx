@@ -14,6 +14,34 @@ const Hero = () => {
   const hero = config.hero;
   const heroImages = hero?.images ?? landingPageDefaults.hero.images;
 
+  const resolveCtaHref = (href, label, fallback) => {
+    if (typeof href === "string") {
+      const trimmed = href.trim();
+      if (trimmed === "/#contact" || trimmed === "#contact") {
+        return "/contact";
+      }
+
+      if (trimmed === "/#about" || trimmed === "#about") {
+        return "/about";
+      }
+
+      if (trimmed && trimmed !== "#") {
+        return trimmed;
+      }
+    }
+
+    const normalizedLabel = (label || "").toLowerCase();
+    if (normalizedLabel.includes("contact")) {
+      return "/contact";
+    }
+
+    if (normalizedLabel.includes("story")) {
+      return "/about";
+    }
+
+    return fallback;
+  };
+
   const resolveHeroImage = (src, fallback) => src || fallback;
   const handleHeroImageError = (fallback) => (event) => {
     if (event.currentTarget.src !== fallback) {
@@ -55,17 +83,27 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.26, ease: [0.22, 1, 0.36, 1] }}
-                className="flex w-full flex-col gap-3 pt-4 items-stretch sm:flex-row sm:items-center sm:pt-0"
+                className="flex w-full flex-col gap-3 pt-8 items-stretch sm:flex-row sm:items-center sm:pt-6"
               >
-                <Link to={hero.primaryCtaHref}>
-                  <button className="hero_btn1 !mt-0 w-full transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(15,23,42,0.15)] sm:w-auto">
-                    {hero.primaryCtaLabel}
-                  </button>
+                <Link
+                  to={resolveCtaHref(
+                    hero.primaryCtaHref,
+                    hero.primaryCtaLabel,
+                    "/company-profile"
+                  )}
+                  className="hero_btn1 !mt-0 inline-flex w-full items-center justify-center transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(15,23,42,0.15)] sm:w-auto"
+                >
+                  {hero.primaryCtaLabel}
                 </Link>
-                <Link to={hero.secondaryCtaHref}>
-                  <button className="hero_btn2 !mt-0 w-full transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(15,23,42,0.08)] sm:w-auto">
-                    {hero.secondaryCtaLabel}
-                  </button>
+                <Link
+                  to={resolveCtaHref(
+                    hero.secondaryCtaHref,
+                    hero.secondaryCtaLabel,
+                    "/about"
+                  )}
+                  className="hero_btn2 !mt-0 inline-flex w-full items-center justify-center transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(15,23,42,0.08)] sm:w-auto"
+                >
+                  {hero.secondaryCtaLabel}
                 </Link>
               </motion.div>
 

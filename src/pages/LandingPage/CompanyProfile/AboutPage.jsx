@@ -10,13 +10,13 @@ import {
 import { Button } from "../../../components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../../components/ui/card";
 import Reveal from "../../../components/ui/reveal";
-import aboutHeroVideo from "../../../assets/img/OHI-video.mp4";
-import aboutVisual from "../../../assets/img/camera-man.jpg";
-import storyVisual from "../../../assets/img/Photography.jpg";
-import portraitTwo from "../../../assets/img/WFP-03558.jpg";
-import teamImageOne from "../../../assets/img/WFP-03523.jpg";
-import teamImageTwo from "../../../assets/img/WFP-03524.jpg";
-import ctaImage from "../../../assets/img/WFP-03520.jpg";
+import aboutVisual from "../../../assets/images/Gallery/gallery-04.jpeg";
+import storyVisual from "../../../assets/images/Gallery/gallery-11.jpeg";
+import portraitTwo from "../../../assets/images/Gallery/gallery-12.jpeg";
+import teamImageOne from "../../../assets/images/Gallery/gallery-09.jpeg";
+import teamImageTwo from "../../../assets/images/HeroImg/hero2.jpeg";
+import ctaImage from "../../../assets/images/Gallery/gallery-06.jpeg";
+import aboutHeroImage from "../../../assets/images/profile-hero-mountain.jpg";
 
 const principles = [
   {
@@ -70,15 +70,11 @@ const AboutPage = () => {
   return (
     <div className="bg-white">
       <section className="relative min-h-[460px] overflow-hidden bg-slate-950 sm:min-h-[500px] lg:min-h-[540px]">
-        <video
+        <img
           className="absolute inset-0 h-full w-full object-cover opacity-80"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src={aboutHeroVideo} type="video/mp4" />
-        </video>
+          src={aboutHeroImage}
+          alt="About OHI hero"
+        />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,20,36,0.34)_0%,rgba(6,20,36,0.72)_55%,rgba(6,20,36,0.95)_100%)]" />
         <div className="absolute inset-x-0 top-0 h-2 bg-[#0f4c81]" />
 
