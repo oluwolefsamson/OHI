@@ -28,7 +28,7 @@ const contactOptions = [
   {
     label: "Website",
     action: "Visit Site",
-    href: "https://olympianhouseintl.com",
+    href: "https://ohi-eight.vercel.app/",
     icon: <Globe size={22} className="text-emerald-700" />,
   },
 ];
