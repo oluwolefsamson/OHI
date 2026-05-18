@@ -16,6 +16,7 @@ export default function ProfilePageShell({
   heroVariant = "default",
   heroImage = profileHeroCity,
   heroImageAlt = "OHI profile hero",
+  heroContentClassName = "",
   titleClassName = "",
   children,
 }) {
@@ -39,7 +40,7 @@ export default function ProfilePageShell({
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,20,36,0.18)_0%,rgba(6,20,36,0.52)_55%,rgba(6,20,36,0.78)_100%)]" />
               <div className="absolute inset-x-0 top-0 h-2 bg-[#0f4c81]" />
               <div className="relative container mx-auto min-h-[460px] px-4 pb-20 pt-28 sm:min-h-[500px] sm:px-5 lg:min-h-[540px] lg:px-20 lg:pb-28 lg:pt-32">
-                <div className="max-w-4xl">
+                <div className={`max-w-4xl ${heroContentClassName}`.trim()}>
                   <Reveal
                     as="h1"
                     className={`inline-block border-b-[10px] border-[#f59e0b] pb-3 text-4xl font-extrabold leading-none tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl ${titleClassName}`.trim()}

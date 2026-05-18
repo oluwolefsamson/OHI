@@ -86,6 +86,7 @@ const ServicesPage = () => {
       heroVariant="minimal"
       heroImage={profileHeroMountain}
       heroImageAlt="OHI services hero"
+      heroContentClassName="mt-16 lg:mt-20 lg:-ml-8"
     >
       <section>
         <SectionHeader
