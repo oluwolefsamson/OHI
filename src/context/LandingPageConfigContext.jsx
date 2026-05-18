@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import { landingPageDefaults } from "../data/landingPageDefaults";
 
 const STORAGE_KEY = "ohi-landing-page-config";
+const IS_PRODUCTION = import.meta.env.PROD;
 const LEGACY_VIDEO_TITLE =
   "Story-led video production for development and visibility";
 const LEGACY_VIDEO_DESCRIPTION =
@@ -185,6 +186,13 @@ function applyThemeVars(theme) {
 function loadConfig() {
   if (typeof window === "undefined") return landingPageDefaults;
 
+  if (IS_PRODUCTION) {
+    // In production, ignore saved local config so every visitor sees the same
+    // deployed landing page content.
+    window.localStorage.removeItem(STORAGE_KEY);
+    return landingPageDefaults;
+  }
+
   const stored = stripBundledAssetUrls(
     safeParse(window.localStorage.getItem(STORAGE_KEY))
   );
@@ -195,10 +203,12 @@ export function LandingPageConfigProvider({ children }) {
   const [config, setConfig] = useState(loadConfig);
 
   useEffect(() => {
-    window.localStorage.setItem(
-      STORAGE_KEY,
-      JSON.stringify(stripBundledAssetUrls(config))
-    );
+    if (!IS_PRODUCTION) {
+      window.localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(stripBundledAssetUrls(config))
+      );
+    }
     applyThemeVars(config.theme);
   }, [config]);
 
