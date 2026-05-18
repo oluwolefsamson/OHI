@@ -3,10 +3,12 @@ import { useLandingPageConfig } from "../../../context/LandingPageConfigContext"
 import SectionHeader from "../SectionHeader";
 import { motion } from "framer-motion";
 import Reveal from "../../ui/reveal";
+import { landingPageDefaults } from "../../../data/landingPageDefaults";
 
 const VideoSection = () => {
   const { config } = useLandingPageConfig();
   const { video } = config;
+  const defaultVideo = landingPageDefaults.video;
 
   return (
     <section id="videos" className="py-16 sm:py-20 bg-slate-50/60">
@@ -23,21 +25,11 @@ const VideoSection = () => {
               whileHover={{ y: -8 }}
               transition={{ duration: 0.25 }}
             >
-            {video.lead.embedUrl ? (
-              <iframe
-                src={video.lead.embedUrl}
-                title={video.lead.title}
-                className="absolute inset-0 h-full w-full border-0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            ) : (
               <img
-                src={video.lead.poster}
+                src={defaultVideo.lead.poster}
                 alt={video.lead.title}
                 className="absolute inset-0 h-full w-full object-cover"
               />
-            )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent pointer-events-none" />
 
             <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 text-white">
@@ -73,7 +65,7 @@ const VideoSection = () => {
                 <div className="flex flex-col sm:flex-row">
                   <div className="relative min-h-[160px] sm:min-h-[180px] sm:w-[42%]">
                     <img
-                      src={item.poster}
+                      src={defaultVideo.clips[index]?.poster ?? item.poster}
                       alt={item.title}
                       className="absolute inset-0 h-full w-full object-cover"
                     />

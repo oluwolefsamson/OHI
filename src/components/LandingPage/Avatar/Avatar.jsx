@@ -4,9 +4,9 @@ import { AvatarCircles } from "../magicui/avatar-circles";
 import CameraMan from "../../../assets/img/camera-man.jpg";
 import Photography from "../../../assets/img/Photography.jpg";
 import FaqImage from "../../../assets/img/FAQ.jpg";
-import Hero1 from "../../../assets/images/HeroImg/hero1.jpg";
-import Hero3 from "../../../assets/images/HeroImg/hero3.jpg";
-import Hero5 from "../../../assets/images/HeroImg/hero5.jpg";
+import Hero1 from "../../../assets/images/HeroImg/hero1.jpeg";
+import Hero3 from "../../../assets/images/HeroImg/hero3.jpeg";
+import Hero5 from "../../../assets/images/HeroImg/hero5.jpeg";
 
 const avatars = [
   {

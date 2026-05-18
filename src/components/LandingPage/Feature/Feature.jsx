@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import featureImg from "../../../assets/img/BTS-02812.jpg";
+import featureImg from "../../../assets/images/transform.jpeg";
 import videoIcon from "../../../assets/img/cropped-logo-ohi-blue.png";
 import avatarIcon from "../../../assets/img/WFP-03555-150x150.jpg";
 import Reveal from "../../ui/reveal";

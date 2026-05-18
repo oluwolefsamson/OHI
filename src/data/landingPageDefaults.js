@@ -1,12 +1,24 @@
 import { Camera, Clapperboard, Film } from "lucide-react";
 import heroBg from "../assets/images/hero-bg.png";
 import headerBg from "../assets/images/mask.png";
-import hero1 from "../assets/images/HeroImg/hero1.jpg";
-import hero2 from "../assets/images/HeroImg/hero2.jpg";
-import hero3 from "../assets/images/HeroImg/hero3.jpg";
-import hero4 from "../assets/images/HeroImg/hero4.jpg";
-import hero5 from "../assets/images/HeroImg/hero5.jpg";
-import storyImg from "../assets/img/Photography.jpg";
+import hero1 from "../assets/images/HeroImg/hero1.jpeg";
+import hero2 from "../assets/images/HeroImg/hero2.jpeg";
+import hero3 from "../assets/images/HeroImg/hero3.jpeg";
+import hero4 from "../assets/images/HeroImg/hero4.jpeg";
+import hero5 from "../assets/images/HeroImg/hero5.jpeg";
+import gallery01 from "../assets/images/Gallery/gallery-01.jpeg";
+import gallery02 from "../assets/images/Gallery/gallery-02.jpeg";
+import gallery03 from "../assets/images/Gallery/gallery-03.jpeg";
+import gallery04 from "../assets/images/Gallery/gallery-04.jpeg";
+import gallery05 from "../assets/images/Gallery/gallery-05.jpeg";
+import gallery06 from "../assets/images/Gallery/gallery-06.jpeg";
+import gallery07 from "../assets/images/Gallery/gallery-07.jpeg";
+import gallery08 from "../assets/images/Gallery/gallery-08.jpeg";
+import gallery09 from "../assets/images/Gallery/gallery-09.jpeg";
+import gallery10 from "../assets/images/Gallery/gallery-10.jpeg";
+import gallery11 from "../assets/images/Gallery/gallery-11.jpeg";
+import gallery12 from "../assets/images/Gallery/gallery-12.jpeg";
+import storyImg from "../assets/images/our-story.jpeg";
 import featureImg from "../assets/img/BTS-02812.jpg";
 import aboutCard from "../assets/img/BTS-02864.jpg";
 import faqImg from "../assets/img/FAQ.jpg";
@@ -18,6 +30,10 @@ import supplier2 from "../assets/img/WFP-03523.jpg";
 import supplier3 from "../assets/img/WFP-03524.jpg";
 import videoIcon from "../assets/img/logo-ohi-blue.png";
 import avatarIcon from "../assets/img/WFP-03558-150x150.jpg";
+import brandOhiLogo from "../assets/img/cropped-logo-ohi-blue.png";
+import brandCorafLogo from "../assets/img/logo-coraf.png";
+import brandWfpLogo from "../assets/img/wfp-logo-extended-blue-en.png";
+import brandSunKingLogo from "../assets/img/Sun-King_New_Logo-02.png";
 
 export const landingPageDefaults = {
   theme: {
@@ -129,138 +145,98 @@ export const landingPageDefaults = {
       "A curated view of OHI's production language across development, investment, ESG, and partner-facing storytelling.",
     items: [
       {
-        title: "Field stories",
-        category: "Documentary coverage",
-        image: supplier1,
+        title: "Community dialogue",
+        category: "Field coverage",
+        image: gallery01,
       },
       {
-        title: "Development visibility",
-        category: "Program reporting",
-        image: featureImg,
+        title: "Interview moment",
+        category: "Story capture",
+        image: gallery02,
       },
       {
-        title: "Impact moments",
-        category: "Human-centered storytelling",
-        image: featureImg,
-      },
-      {
-        title: "Partner voices",
-        category: "Testimonials",
-        image: rev1,
-      },
-      {
-        title: "Mission coverage",
-        category: "On-location production",
-        image: supplier2,
-      },
-      {
-        title: "Community engagement",
-        category: "Strategic visibility",
-        image: faqImg,
-      },
-      {
-        title: "Investment narratives",
-        category: "Private-sector content",
-        image: supplier3,
-      },
-      {
-        title: "Stakeholder confidence",
-        category: "Brand trust",
-        image: rev2,
-      },
-      {
-        title: "Story capture",
+        title: "Production setup",
         category: "Behind the scenes",
-        image: storyImg,
+        image: gallery03,
       },
       {
-        title: "Creative setup",
-        category: "Production craft",
-        image: aboutCard,
+        title: "City perspective",
+        category: "Aerial coverage",
+        image: gallery04,
       },
       {
-        title: "Field perspective",
-        category: "Audience connection",
-        image: rev4,
+        title: "Landscape scale",
+        category: "Aerial storytelling",
+        image: gallery05,
       },
       {
-        title: "Documentary detail",
-        category: "Visual archive",
-        image: hero1,
+        title: "Crew coordination",
+        category: "Field direction",
+        image: gallery06,
       },
       {
-        title: "Institutional film",
-        category: "Development story",
-        image: hero2,
+        title: "Portrait detail",
+        category: "Editorial portrait",
+        image: gallery07,
       },
       {
-        title: "Strategic outreach",
-        category: "Partner engagement",
-        image: hero3,
+        title: "Team portrait",
+        category: "People and purpose",
+        image: gallery08,
       },
       {
-        title: "Audience focus",
-        category: "Beneficiary insight",
-        image: hero4,
-      },
-      {
-        title: "Event coverage",
-        category: "Community moments",
-        image: hero5,
-      },
-      {
-        title: "Program launch",
-        category: "Narrative capture",
-        image: supplier1,
-      },
-      {
-        title: "Impact frame",
-        category: "Progress snapshot",
-        image: supplier2,
+        title: "Traditional gathering",
+        category: "Cultural documentation",
+        image: gallery09,
       },
       {
         title: "Visual identity",
-        category: "Brand story",
-        image: faqImg,
+        category: "Portrait work",
+        image: gallery10,
       },
       {
-        title: "Editorial archive",
-        category: "Storytelling system",
-        image: featureImg,
+        title: "Our story",
+        category: "Team image",
+        image: gallery11,
+      },
+      {
+        title: "Transforming projects",
+        category: "Story-led impact",
+        image: gallery12,
       },
     ],
   },
   galleryStories: {
-    title: "Editorial frames for proof and visibility",
+    title: "Editorial frames for development communication",
     description:
       "A second visual section that shows how OHI carries one story across fieldwork, institutional communication, and investor-facing visibility.",
     lead: {
-      title: "Community reporting",
-      category: "Documentary coverage",
+      title: "Community dialogue",
+      category: "Field coverage",
       description:
-        "Coverage designed to preserve context, tone and the human detail that makes impact credible.",
-      image: featureImg,
+        "Coverage designed to preserve context, tone and the human detail that makes development communication credible.",
+      image: gallery01,
     },
     supportIntro: {
       eyebrow: "Why it works",
       title: "Built for institutions that need credibility, evidence, and reach",
       description:
         "The gallery language mirrors the company profile: clear, professional, and grounded in the kind of visual evidence that helps partners communicate with confidence.",
-      image: featureImg,
+      image: gallery02,
     },
     supportCards: [
       {
-        title: "Institutional visibility",
+        title: "Production setup",
         description:
-          "Cinematic frames that strengthen credibility for partners, programs, and public reporting.",
-        image: aboutCard,
+          "Behind-the-scenes framing that documents the work and the people who make the story possible.",
+        image: gallery03,
         accent: "from-[#0296cc]/85 to-[#05c1ff]/90",
       },
       {
-        title: "Partnership moments",
+        title: "Aerial perspective",
         description:
-          "Coverage that documents presence, engagement, and shared purpose in the field.",
-        image: rev2,
+          "Wide visual context that helps audiences understand place, scale, and momentum.",
+        image: gallery04,
         accent: "from-[#f9a11b]/85 to-[#ffbd4d]/90",
       },
     ],
@@ -268,24 +244,24 @@ export const landingPageDefaults = {
     stripBadge: "OHI visual language",
     stripItems: [
       {
-        label: "Field production",
-        image: rev1,
-        description: "Field settings where evidence, context, and human stories meet.",
+        label: "Landscape scale",
+        image: gallery05,
+        description: "Broad scenes that place the work in its geographic and social context.",
       },
       {
-        label: "Audience trust",
-        image: rev2,
-        description: "Visual proof that supports trust with donors, investors, and communities.",
+        label: "Crew coordination",
+        image: gallery06,
+        description: "Moments of direction, craft, and collaboration captured in the field.",
       },
       {
-        label: "Project delivery",
-        image: rev4,
-        description: "Delivery moments that show results, implementation, and momentum.",
+        label: "Portrait detail",
+        image: gallery07,
+        description: "Closer editorial frames that bring people and expression into focus.",
       },
       {
-        label: "Executive visibility",
-        image: featureImg,
-        description: "High-level communication built for decision-makers and partner briefings.",
+        label: "Team portrait",
+        image: gallery08,
+        description: "Group imagery that carries identity, trust, and shared purpose.",
       },
     ],
   },
@@ -298,9 +274,8 @@ export const landingPageDefaults = {
       category: "Featured film",
       description:
         "A concise branded film for introducing the organisation, its purpose, and the kind of stories it tells.",
-      poster: supplier1,
-      embedUrl:
-        "https://player.cloudinary.com/embed/?cloud_name=duk9xwahb&public_id=zdb3xovmicn4o03na0wj",
+      poster: gallery09,
+      embedUrl: "",
     },
     clips: [
       {
@@ -308,28 +283,28 @@ export const landingPageDefaults = {
         category: "Story capture",
         description:
           "Short-form documentary moments that keep the human voice at the center of the frame.",
-        poster: supplier2,
+        poster: gallery10,
       },
       {
         title: "Partner spotlight",
         category: "Visibility clip",
         description:
           "A credibility-led edit for projects, partners, and institutional communication.",
-        poster: supplier3,
+        poster: gallery11,
       },
       {
         title: "Impact testimonials",
         category: "Voice-led cut",
         description:
           "Testimonial-driven clips that help organizations communicate outcomes clearly.",
-        poster: rev1,
+        poster: gallery12,
       },
       {
         title: "Program highlights",
         category: "Campaign video",
         description:
           "An adaptable short-form format for launches, events, and reporting moments.",
-        poster: rev4,
+        poster: gallery01,
       },
     ],
     icon: videoIcon,
@@ -365,25 +340,25 @@ export const landingPageDefaults = {
         name: "Development Partner",
         username: "@institutional",
         body: "OHI turns technical program results into stories that stakeholders can understand, trust, and act on.",
-        img: rev1,
+        img: brandOhiLogo,
       },
       {
         name: "Government Partner",
         username: "@public-sector",
         body: "Their mission coverage and strategic visibility work helps public initiatives reach the audiences that matter.",
-        img: rev4,
+        img: brandWfpLogo,
       },
       {
         name: "Foundation Lead",
         username: "@impact",
         body: "OHI gives our projects the visibility they deserve and the credibility they need to attract support.",
-        img: rev2,
+        img: brandCorafLogo,
       },
       {
         name: "Private Sector Partner",
         username: "@investment",
         body: "They are strong at translating complex initiatives into persuasive, investment-ready visuals.",
-        img: rev4,
+        img: brandSunKingLogo,
       },
     ],
   },

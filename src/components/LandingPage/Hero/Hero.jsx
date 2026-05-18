@@ -3,10 +3,23 @@ import { motion } from "framer-motion";
 import { AvatarCirclesDemo } from "../Avatar/Avatar";
 import { Link } from "react-router-dom";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
+import { landingPageDefaults } from "../../../data/landingPageDefaults";
+import hero5Portrait from "../../../assets/images/HeroImg/hero5.jpeg";
+import hero2Image from "../../../assets/images/HeroImg/hero2.jpeg";
+import hero3Image from "../../../assets/images/HeroImg/hero3.jpeg";
+import hero4Image from "../../../assets/images/HeroImg/hero4.jpeg";
 
 const Hero = () => {
   const { config } = useLandingPageConfig();
   const hero = config.hero;
+  const heroImages = hero?.images ?? landingPageDefaults.hero.images;
+
+  const resolveHeroImage = (src, fallback) => src || fallback;
+  const handleHeroImageError = (fallback) => (event) => {
+    if (event.currentTarget.src !== fallback) {
+      event.currentTarget.src = fallback;
+    }
+  };
 
   return (
     <section id="home" className="hero__section pt-[60px] 2xl:h-[800px]">
@@ -92,18 +105,19 @@ const Hero = () => {
             initial={{ opacity: 0, x: 72, scale: 0.98 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
-            className="relative grid w-full max-w-[720px] grid-cols-3 gap-2 overflow-visible pt-6 sm:gap-3 sm:pt-0 lg:flex lg:min-h-[700px] lg:max-w-none lg:flex-row lg:items-center lg:justify-center lg:gap-[12px]"
+            className="relative grid w-full max-w-[720px] grid-cols-3 gap-2 overflow-visible pt-6 sm:gap-3 sm:pt-0 lg:flex lg:min-h-[480px] lg:max-w-none lg:flex-row lg:items-center lg:justify-center lg:gap-[12px]"
           >
             <motion.div
               initial={{ y: 24, rotate: -2 }}
               animate={{ y: 0, rotate: 0 }}
               transition={{ duration: 0.8, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-              className="relative z-10 col-span-1 overflow-hidden rounded-2xl lg:w-[31%]"
+              className="relative z-10 col-span-1 h-[220px] overflow-hidden rounded-2xl sm:h-[280px] lg:h-[480px] lg:w-[31%]"
             >
               <img
-                src={hero.images.hero1}
+                src={resolveHeroImage(heroImages.hero1, landingPageDefaults.hero.images.hero1)}
                 alt="OHI visual story 1"
-                className="h-[220px] w-full object-cover transition duration-500 ease-out hover:scale-[1.02] sm:h-[280px] lg:h-full"
+                onError={handleHeroImageError(landingPageDefaults.hero.images.hero1)}
+                className="h-full w-full object-cover transition duration-500 ease-out hover:scale-[1.02]"
               />
             </motion.div>
             <div className="relative z-10 col-span-1 -mt-7 flex flex-col gap-2 overflow-hidden rounded-2xl sm:-mt-8 sm:gap-3 lg:mt-[30px] lg:w-[36%] lg:gap-[20px]">
@@ -111,24 +125,27 @@ const Hero = () => {
                 initial={{ y: 36, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                src={hero.images.hero5}
+                src={hero2Image}
                 alt="OHI visual story 2"
+                onError={handleHeroImageError(hero2Image)}
                 className="h-[100px] w-full object-cover transition duration-500 ease-out hover:scale-[1.02] sm:h-[145px] lg:h-[250px]"
               />
               <motion.img
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.36, ease: [0.22, 1, 0.36, 1] }}
-                src={hero.images.hero3}
+                src={hero3Image}
                 alt="OHI visual story 3"
+                onError={handleHeroImageError(hero3Image)}
                 className="h-[76px] w-full object-cover transition duration-500 ease-out hover:scale-[1.02] sm:h-[108px] lg:h-[150px]"
               />
               <motion.img
                 initial={{ y: 36, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.44, ease: [0.22, 1, 0.36, 1] }}
-                src={hero.images.hero5}
+                src={hero4Image}
                 alt="OHI visual story 4"
+                onError={handleHeroImageError(hero4Image)}
                 className="h-[76px] w-full object-cover transition duration-500 ease-out hover:scale-[1.02] sm:h-[108px] lg:h-[150px]"
               />
             </div>
@@ -136,12 +153,13 @@ const Hero = () => {
               initial={{ y: 24, rotate: 2 }}
               animate={{ y: 0, rotate: 0 }}
               transition={{ duration: 0.8, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
-              className="relative z-10 col-span-1 overflow-hidden rounded-2xl lg:w-[31%]"
+              className="relative z-10 col-span-1 h-[220px] overflow-hidden rounded-2xl sm:h-[280px] lg:h-[480px] lg:w-[31%]"
             >
               <img
-                src={hero.images.hero1}
+                src={hero5Portrait}
                 alt="OHI visual story 5"
-                className="h-[220px] w-full object-cover transition duration-500 ease-out hover:scale-[1.02] sm:h-[280px] lg:h-full"
+                onError={handleHeroImageError(hero5Portrait)}
+                className="h-full w-full object-cover transition duration-500 ease-out hover:scale-[1.02]"
               />
             </motion.div>
           </motion.div>

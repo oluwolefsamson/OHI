@@ -2,6 +2,7 @@ import React from "react";
 import { cn } from "../../lib/utils";
 import { Marquee } from "../../LandingPage/magicui/marquee";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
+import { landingPageDefaults } from "../../../data/landingPageDefaults";
 
 const ReviewCard = ({ img, name, username, body }) => {
   return (
@@ -13,7 +14,13 @@ const ReviewCard = ({ img, name, username, body }) => {
       )}
     >
       <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
+        <img
+          className="rounded-full bg-white object-contain p-1"
+          width="32"
+          height="32"
+          alt=""
+          src={img}
+        />
         <div className="flex flex-col">
           <figcaption className="text-sm font-medium dark:text-white">
             {name}
@@ -29,19 +36,28 @@ const ReviewCard = ({ img, name, username, body }) => {
 export function Marquee3D() {
   const { config } = useLandingPageConfig();
   const reviews = config.voices.reviews;
+  const defaultReviews = landingPageDefaults.voices.reviews;
   const firstRow = reviews.slice(0, reviews.length / 2);
   const secondRow = reviews.slice(reviews.length / 2);
 
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
       <Marquee pauseOnHover className="[--duration:20s]">
-        {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
+        {firstRow.map((review, index) => (
+          <ReviewCard
+            key={review.username}
+            {...review}
+            img={defaultReviews[index]?.img ?? review.img}
+          />
         ))}
       </Marquee>
       <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
+        {secondRow.map((review, index) => (
+          <ReviewCard
+            key={review.username}
+            {...review}
+            img={defaultReviews[firstRow.length + index]?.img ?? review.img}
+          />
         ))}
       </Marquee>
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>

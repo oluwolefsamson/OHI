@@ -6,7 +6,7 @@ import { landingPageDefaults } from "../../../data/landingPageDefaults";
 
 const Gallery = () => {
   const { config } = useLandingPageConfig();
-  const images = (config.gallery?.items || landingPageDefaults.gallery.items).slice(0, 13);
+  const images = landingPageDefaults.gallery.items;
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
@@ -24,9 +24,7 @@ const Gallery = () => {
     <section id="gallery" className="px-2 py-16 sm:py-20">
       <div className="container">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="heading font-bold text-black">
-            {config.gallery.title}
-          </h2>
+          <h2 className="heading font-bold text-black">{config.gallery.title}</h2>
           <p className="text__para mt-5 text-black">
             {config.gallery.description}
           </p>

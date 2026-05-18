@@ -2,12 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useLandingPageConfig } from "../../../context/LandingPageConfigContext";
+import { landingPageDefaults } from "../../../data/landingPageDefaults";
 import SectionHeader from "../SectionHeader";
 import Reveal from "../../ui/reveal";
 
 const GalleryStories = () => {
   const { config } = useLandingPageConfig();
   const { galleryStories } = config;
+  const defaultGalleryStories = landingPageDefaults.galleryStories;
 
   return (
     <section id="gallery-stories" className="mt-20 bg-slate-50/60 sm:mt-24 lg:mt-28">
@@ -35,7 +37,7 @@ const GalleryStories = () => {
                 transition={{ duration: 0.25 }}
               >
               <img
-                src={galleryStories.lead.image}
+                src={defaultGalleryStories.lead.image}
                 alt={galleryStories.lead.title}
                 className="absolute inset-0 h-full w-full object-cover"
               />
@@ -73,10 +75,10 @@ const GalleryStories = () => {
                   </p>
                 </div>
 
-                {galleryStories.supportIntro.image && (
+                {defaultGalleryStories.supportIntro.image && (
                   <div className="overflow-hidden rounded-[24px] border border-slate-100 shadow-sm">
                     <img
-                      src={galleryStories.supportIntro.image}
+                      src={defaultGalleryStories.supportIntro.image}
                       alt={galleryStories.supportIntro.title}
                       className="h-44 w-full object-cover sm:h-52"
                     />
@@ -84,28 +86,28 @@ const GalleryStories = () => {
                 )}
 
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    {galleryStories.supportCards.map((item) => (
+                    {galleryStories.supportCards.map((item, index) => (
                       <div
                         key={item.title}
                         className="overflow-hidden rounded-2xl border border-slate-100 bg-slate-50 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(15,23,42,0.08)]"
                       >
                         <div className="relative h-32">
                           <img
-                          src={item.image}
-                          alt={item.title}
-                          className="h-full w-full object-cover"
-                        />
-                        <div
-                          className={`absolute inset-0 bg-gradient-to-t ${item.accent}`}
-                        />
-                      </div>
-                      <div className="p-4">
-                        <h4 className="text-base font-semibold text-[#1f2e2e]">
-                          {item.title}
-                        </h4>
-                        <p className="mt-1 text-sm text-slate-500">
-                          {item.description}
-                        </p>
+                            src={defaultGalleryStories.supportCards[index]?.image ?? item.image}
+                            alt={item.title}
+                            className="h-full w-full object-cover"
+                          />
+                          <div
+                            className={`absolute inset-0 bg-gradient-to-t ${item.accent}`}
+                          />
+                        </div>
+                        <div className="p-4">
+                          <h4 className="text-base font-semibold text-[#1f2e2e]">
+                            {item.title}
+                          </h4>
+                          <p className="mt-1 text-sm text-slate-500">
+                            {item.description}
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -143,7 +145,7 @@ const GalleryStories = () => {
                 >
                   <div className="relative h-40 w-full shrink-0 overflow-hidden rounded-2xl sm:h-20 sm:w-24">
                     <img
-                      src={item.image}
+                      src={defaultGalleryStories.stripItems[index]?.image ?? item.image}
                       alt={item.label}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
