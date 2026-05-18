@@ -5,20 +5,20 @@ import ProfilePageShell from "../../../components/LandingPage/Profile/ProfilePag
 import SectionHeader from "../../../components/LandingPage/SectionHeader";
 
 const sectors = [
-  "Development agencies",
-  "Nonprofits and NGOs",
-  "Government ministries",
-  "Municipalities and city programs",
-  "Foundations and DFIs",
-  "Private-sector social impact projects",
+  "Development finance institutions",
+  "Multilateral agencies",
+  "Government ministries and agencies",
+  "Bilateral development institutions",
+  "Private-sector ESG teams",
+  "Implementation partners and NGOs",
 ];
 
 const strengths = [
   "Multilingual team working in English, French, and Pidgin.",
-  "Deep expertise in NGO and development-sector communication.",
+  "Deep expertise in NGO, DFI, and development-sector communication.",
   "Storytelling that resonates with communities, policymakers, and investors.",
-  "Experience with documentaries and stakeholder engagement media.",
-  "Led by an award-winning Producer/Director.",
+  "Experience with documentaries, reporting films, and stakeholder engagement media.",
+  "Led by a filmmaker with direct participation in high-level investment forums.",
   "Project management aligned with donor and DFI standards.",
 ];
 
@@ -31,7 +31,7 @@ const WhoWeServePage = () => {
       statCards={[
         {
           eyebrow: "Audience",
-          value: "Public",
+          value: "Institutional",
           label: "Communication for institutions, communities, and stakeholders.",
         },
         {
@@ -85,7 +85,7 @@ const WhoWeServePage = () => {
             <h3 className="text-2xl font-bold">Built for African contexts</h3>
           </div>
           <p className="mt-4 leading-7 text-white/80">
-            The company profile positions OHI as a partner for African development and investment stories, with the flexibility to work across regions, institutions, and audiences.
+            The company profile positions OHI as a partner for African development and investment stories, with the multilingual flexibility to work across regions, institutions, and audiences.
           </p>
           <div className="mt-6 rounded-[24px] bg-white/10 p-5">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/60">

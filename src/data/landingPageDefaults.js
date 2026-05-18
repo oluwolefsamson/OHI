@@ -28,30 +28,30 @@ export const landingPageDefaults = {
     headerBgImage: headerBg,
   },
   hero: {
-    titleLine1: "Together, let's tell",
-    titleLine2: "meaningful stories",
+    titleLine1: "Africa's development story",
+    titleLine2: "deserves investment-grade visibility",
     description:
-      "Olympian House International is a leading African media production company specialising in development communication, impact storytelling and strategic visibility for NGOs, DFIs, governments and private-sector partners.",
+      "Olympian House International (OHI) turns complex development, ESG, and investment programmes into cinematic proof that builds trust, demonstrates results, and mobilises capital, partnerships, and policy action.",
     primaryCtaLabel: "Contact Us",
     primaryCtaHref: "/#contact",
     secondaryCtaLabel: "Our Story",
     secondaryCtaHref: "/#about",
     stats: [
       {
-        value: "2015",
-        label: "Founded in Yaounde",
+        value: "100+",
+        label: "Projects delivered",
         accent: "#f9a11b",
         barWidth: "150px",
       },
       {
-        value: "100+",
-        label: "Projects and partners served",
+        value: "70+",
+        label: "Institutional clients served",
         accent: "#05c1ff",
         barWidth: "150px",
       },
       {
-        value: "1M+",
-        label: "People reached through impact stories",
+        value: "95%",
+        label: "Repeat-client rate",
         accent: "#0296cc",
         barWidth: "100px",
       },
@@ -67,57 +67,57 @@ export const landingPageDefaults = {
   about: {
     title: "Our Story",
     paragraphs: [
-      "Olympian House International was founded in 2015 by filmmaker and development communication specialist Fombang Banns N. with a simple belief: stories move people, and when people move, change follows.",
-      "We make Africa's development and investment journeys visible, relatable and unforgettable by turning complex initiatives into authentic, human-centered visual stories that build confidence, spark collaboration and unlock opportunities.",
+      "Olympian House International was founded in 2015 by filmmaker and development communication specialist Fombang Banns N. on a conviction that has only deepened over a decade of work: the quality of a story is inseparable from the quality of the capital, partnerships, and policy decisions it attracts.",
+      "We make Africa's development and investment journeys visible through strategic, multilingual visual narratives that turn technical programmes into credible proof for institutions, investors, donors, and the communities they serve.",
     ],
     image: storyImg,
     overlay: {
       since: "Since 2015",
-      tagline: "Strategic visibility",
-      trustLabel: "Trusted",
-      role: "Development Communication",
+      tagline: "Investment-grade storytelling",
+      trustLabel: "Proof-led",
+      role: "Development, Impact & Investment",
       icon: videoIcon,
       avatar: avatarIcon,
     },
   },
   services: {
-    title: "Who We Serve",
+    title: "What We Do",
     description:
-      "We work with organisations that need clear, credible and human-centered storytelling across Africa.",
+      "We help DFIs, governments, multilaterals, and private-sector partners turn programmes into proof.",
     cards: [
       {
-        name: "Impact Documentaries",
-        desc: "We produce compelling films that capture real stories, complex realities and measurable change across development and investment projects.",
+        name: "Investment & Programme Visibility",
+        desc: "Films and content packages for DFIs and bilateral institutions that need proof of delivery, stakeholder confidence, and stronger public-facing visibility.",
         bgColor: "rgba(249, 161, 27, 0.14)",
         textColor: "#F9A11B",
       },
       {
-        name: "Development Program Visibility",
-        desc: "We help NGOs, UN agencies and governments showcase program outcomes with clear, credible and stakeholder-ready storytelling.",
+        name: "Impact Documentaries",
+        desc: "Cinematic documentary work that translates programme complexity into human stories, measurable change, and institutional trust.",
         bgColor: "rgba(5, 193, 255, 0.14)",
         textColor: "#05C1FF",
       },
       {
-        name: "Investment Promotion Films",
-        desc: "We translate opportunities into persuasive visuals that support investor confidence and attract strategic partnerships.",
+        name: "ESG & Social Impact Storytelling",
+        desc: "Strategic storytelling for private-sector actors operating in Africa who need to show responsibility, alignment, and real-world contribution.",
         bgColor: "rgba(5, 193, 255, 0.12)",
         textColor: "#0296CC",
       },
       {
-        name: "Community Engagement Content",
-        desc: "We create human-centered content that reflects local voices, builds trust and makes complex initiatives relatable.",
+        name: "Development Programme Communication",
+        desc: "Clear communication for governments and implementing partners across the project lifecycle, from launch to reporting.",
         bgColor: "rgba(249, 161, 27, 0.12)",
         textColor: "#F9A11B",
       },
       {
-        name: "Testimonial & Beneficiary Stories",
-        desc: "We turn lived experiences into authentic narratives that prove impact and strengthen accountability.",
+        name: "Donor & Investor Reporting Films",
+        desc: "Evidence-led films that communicate results, learning, and accountability with the precision institutional audiences expect.",
         bgColor: "rgba(249, 161, 27, 0.14)",
         textColor: "#F9A11B",
       },
       {
-        name: "Digital Campaign Content",
-        desc: "We deliver social media and digital assets that extend reach, sustain engagement and keep your story visible.",
+        name: "Multilingual Field Production",
+        desc: "English, French, and Pidgin coverage that captures field realities and makes stories accessible across audiences.",
         bgColor: "rgba(5, 193, 255, 0.14)",
         textColor: "#05C1FF",
       },
@@ -126,7 +126,7 @@ export const landingPageDefaults = {
   gallery: {
     title: "Selected Visual Moments",
     description:
-      "A curated view of OHI's production language across development communication, mission coverage and partner storytelling.",
+      "A curated view of OHI's production language across development, investment, ESG, and partner-facing storytelling.",
     items: [
       {
         title: "Field stories",
@@ -231,9 +231,9 @@ export const landingPageDefaults = {
     ],
   },
   galleryStories: {
-    title: "Editorial frames for development communication",
+    title: "Editorial frames for proof and visibility",
     description:
-      "A second visual section that shows how OHI can carry one story across fieldwork, institutional communication and partner-facing visibility.",
+      "A second visual section that shows how OHI carries one story across fieldwork, institutional communication, and investor-facing visibility.",
     lead: {
       title: "Community reporting",
       category: "Documentary coverage",
@@ -243,23 +243,23 @@ export const landingPageDefaults = {
     },
     supportIntro: {
       eyebrow: "Why it works",
-      title: "Built for institutions that need clarity and trust",
+      title: "Built for institutions that need credibility, evidence, and reach",
       description:
-        "The gallery language mirrors the company profile: clear, professional and grounded in the kind of visual evidence that helps partners communicate with confidence.",
+        "The gallery language mirrors the company profile: clear, professional, and grounded in the kind of visual evidence that helps partners communicate with confidence.",
       image: featureImg,
     },
     supportCards: [
       {
         title: "Institutional visibility",
         description:
-          "Cinematic frames that strengthen credibility for partners and programs.",
+          "Cinematic frames that strengthen credibility for partners, programs, and public reporting.",
         image: aboutCard,
         accent: "from-[#0296cc]/85 to-[#05c1ff]/90",
       },
       {
         title: "Partnership moments",
         description:
-          "Coverage that documents presence, engagement and shared purpose.",
+          "Coverage that documents presence, engagement, and shared purpose in the field.",
         image: rev2,
         accent: "from-[#f9a11b]/85 to-[#ffbd4d]/90",
       },
@@ -270,34 +270,34 @@ export const landingPageDefaults = {
       {
         label: "Field production",
         image: rev1,
-        description: "A visual cue for the range of settings OHI can document.",
+        description: "Field settings where evidence, context, and human stories meet.",
       },
       {
         label: "Audience trust",
         image: rev2,
-        description: "A visual cue for the range of settings OHI can document.",
+        description: "Visual proof that supports trust with donors, investors, and communities.",
       },
       {
         label: "Project delivery",
         image: rev4,
-        description: "A visual cue for the range of settings OHI can document.",
+        description: "Delivery moments that show results, implementation, and momentum.",
       },
       {
         label: "Executive visibility",
         image: featureImg,
-        description: "A visual cue for the range of settings OHI can document.",
+        description: "High-level communication built for decision-makers and partner briefings.",
       },
     ],
   },
   video: {
-    title: "Video Work",
+    title: "Strategic Visibility Reel",
     description:
       "OHI presents its video work here, with room for local files or embedded links, all framed in the same rounded editorial style used across the site.",
     lead: {
       title: "OHI overview reel",
       category: "Featured film",
       description:
-        "A concise branded film for introducing the organisation, its purpose and the kind of stories it tells.",
+        "A concise branded film for introducing the organisation, its purpose, and the kind of stories it tells.",
       poster: supplier1,
       embedUrl:
         "https://player.cloudinary.com/embed/?cloud_name=duk9xwahb&public_id=zdb3xovmicn4o03na0wj",
@@ -314,7 +314,7 @@ export const landingPageDefaults = {
         title: "Partner spotlight",
         category: "Visibility clip",
         description:
-          "A credibility-led edit for projects, partners and institutional communication.",
+          "A credibility-led edit for projects, partners, and institutional communication.",
         poster: supplier3,
       },
       {
@@ -328,7 +328,7 @@ export const landingPageDefaults = {
         title: "Program highlights",
         category: "Campaign video",
         description:
-          "An adaptable short-form format for launches, events and reporting moments.",
+          "An adaptable short-form format for launches, events, and reporting moments.",
         poster: rev4,
       },
     ],
@@ -337,38 +337,38 @@ export const landingPageDefaults = {
   profile: {
     title: "Mission, Vision and Values",
     description:
-      "The profile is built around clarity, credibility and human-centered impact. These are the principles that shape every OHI project.",
+      "The profile is built around credibility, evidence, and strategic visibility. These are the principles that shape every OHI project.",
     storyTitle: "Our Story",
     storyDescription:
-      "Founded in 2015 by filmmaker and development communication specialist Fombang Banns N., OHI was built on the belief that stories move people and change follows movement.",
+      "Founded in 2015 by filmmaker and development communication specialist Fombang Banns N., OHI was built on the belief that strong stories attract stronger capital, partnerships, and policy attention.",
     missionTitle: "Amplify Africa's stories",
     missionDescription:
-      "To amplify Africa's development stories with authenticity, excellence and strategic clarity, ensuring impactful projects gain the visibility, credibility and support they deserve.",
+      "To amplify Africa's development and investment stories with authenticity, excellence, and strategic clarity so impactful projects gain the visibility, credibility, and support they deserve.",
     visionTitle: "Vision",
     visionDescription:
-      "To be Africa's leading partner in investment-grade and development storytelling.",
+      "To be Africa's leading partner in investment-grade development storytelling and strategic visibility.",
     valuesTitle: "Core values",
     values: [
-      "Authentic storytelling",
+      "Evidence over assumption",
       "Cultural respect and inclusion",
       "Accountability and leadership",
       "Creative excellence",
-      "Collaboration",
+      "Institutional fluency",
     ],
   },
   voices: {
     title: "Selected Voices",
     description:
-      "A snapshot of how partners describe OHI's work across development, public sector and private impact projects.",
+      "A snapshot of how partners describe OHI's work across development, public-sector, and private impact projects.",
     reviews: [
       {
-        name: "UN Partner",
-        username: "@development",
-        body: "OHI turns technical program results into stories that stakeholders can understand, trust and act on.",
+        name: "Development Partner",
+        username: "@institutional",
+        body: "OHI turns technical program results into stories that stakeholders can understand, trust, and act on.",
         img: rev1,
       },
       {
-        name: "Government Ministry",
+        name: "Government Partner",
         username: "@public-sector",
         body: "Their mission coverage and strategic visibility work helps public initiatives reach the audiences that matter.",
         img: rev4,
@@ -390,26 +390,26 @@ export const landingPageDefaults = {
   whyChoose: {
     title: "What OHI Stands For",
     description:
-      "We blend development communication, impact storytelling and strategic visibility to help organisations communicate with clarity and credibility.",
+      "We blend development communication, impact storytelling, and strategic visibility to help organisations communicate with clarity and credibility.",
     cards: [
       {
-        title: "Development Communication",
+        title: "Institutional credibility",
         description:
-          "We help projects explain themselves clearly so communities, institutions and partners can understand the value being created.",
+          "We help projects explain themselves clearly so communities, institutions, and partners can understand the value being created.",
         icon: Camera,
         href: "/#contact",
       },
       {
-        title: "Impact Storytelling",
+        title: "Evidence-led storytelling",
         description:
-          "Our narratives turn program results and lived experiences into persuasive stories that move decision-makers to action.",
+          "Our narratives turn programme results and lived experiences into proof that moves decision-makers to action.",
         icon: Film,
         href: "/#services",
       },
       {
-        title: "Strategic Visibility",
+        title: "Multilingual execution",
         description:
-          "We deliver content that supports credibility, strengthens stakeholder alignment and expands the reach of important projects.",
+          "We deliver English, French, and Pidgin content that strengthens stakeholder alignment and expands reach.",
         icon: Clapperboard,
         href: "/#approach",
       },
@@ -417,7 +417,7 @@ export const landingPageDefaults = {
   },
   footer: {
     description:
-      "Copyright {year} Olympian House International. Development communication, impact storytelling and strategic visibility across Africa.",
+      "Copyright {year} Olympian House International. Development storytelling and strategic visibility across Africa.",
     socialLinks: [
       {
         path: "https://olympianhouseintl.com",

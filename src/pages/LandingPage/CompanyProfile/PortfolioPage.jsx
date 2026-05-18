@@ -19,6 +19,8 @@ import portfolioImage04 from "../../../assets/img/WFP-03525.jpg";
 import portfolioImage05 from "../../../assets/img/WFP-03527.jpg";
 import portfolioImage06 from "../../../assets/img/WFP-03534.jpg";
 
+const brochurePdfHref = "/OHI-Company-Profile.pdf";
+
 const clientLogos = [
   { name: "World Food Programme", image: wfpLogo },
   { name: "Sun King", image: sunKingLogo },
@@ -79,6 +81,16 @@ const PortfolioPage = () => {
           title="Portfolio highlights"
           description="These sample projects reflect the kind of output OHI builds for public, institutional, and private-sector communication goals."
         />
+
+        <div className="mt-6 flex justify-start">
+          <a
+            href={brochurePdfHref}
+            download
+            className="hero_btn1 inline-flex items-center gap-2 transition duration-300 ease-out hover:-translate-y-0.5"
+          >
+            Download Brochure
+          </a>
+        </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {portfolioProjects.map((project, index) => (

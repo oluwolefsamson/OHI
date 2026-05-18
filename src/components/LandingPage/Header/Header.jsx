@@ -12,6 +12,8 @@ const navlinks = [
   { path: "/contact", label: "Contact" },
 ];
 
+const brochurePdfHref = "/OHI-Company-Profile.pdf";
+
 const Header = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -75,6 +77,14 @@ const Header = () => {
             </div>
 
             <div className="flex items-center gap-4">
+              <a
+                href={brochurePdfHref}
+                download
+                className="hidden md:inline-flex h-[44px] items-center justify-center rounded-md border border-[#0f4c81]/20 bg-[#0f4c81] px-6 text-sm font-[600] text-white transition-colors hover:bg-[#0c3e68] hover:text-white"
+              >
+                Download Brochure
+              </a>
+
               <NavLink
                 to="/admin/login"
                 className="bg-[#16a34a] py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-md hover:bg-[#15803d] transition-colors"
@@ -129,6 +139,16 @@ const Header = () => {
                 </NavLink>
               </li>
             ))}
+            <li>
+              <a
+                href={brochurePdfHref}
+                download
+                className="inline-flex h-[44px] items-center justify-center rounded-md border border-[#0f4c81]/20 bg-[#0f4c81] px-6 text-sm font-[600] text-white transition-colors hover:bg-[#0c3e68] hover:text-white"
+                onClick={closeDrawer}
+              >
+                Download Brochure
+              </a>
+            </li>
           </ul>
         </div>
       </div>

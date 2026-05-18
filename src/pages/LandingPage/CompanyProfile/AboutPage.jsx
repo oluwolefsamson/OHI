@@ -40,10 +40,10 @@ const principles = [
 ];
 
 const stats = [
-  { value: "680", label: "Business trust us" },
-  { value: "1,354", label: "Projects done" },
-  { value: "97%", label: "Success rate" },
-  { value: "15Y", label: "Years of experience" },
+  { value: "100+", label: "Projects delivered" },
+  { value: "70+", label: "Institutional clients" },
+  { value: "95%", label: "Repeat-client rate" },
+  { value: "10Y+", label: "Years in the field" },
 ];
 
 const teamHighlights = [
@@ -85,7 +85,7 @@ const AboutPage = () => {
         <div className="relative container mx-auto flex min-h-[460px] items-center px-4 pb-20 pt-28 sm:min-h-[500px] sm:px-5 lg:min-h-[540px] lg:px-20 lg:pb-28 lg:pt-32">
           <div className="max-w-4xl">
             <Reveal as="h1" className="inline-block border-b-[10px] border-[#f59e0b] pb-3 text-5xl font-extrabold leading-none tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
-              About Us
+              About OHI
             </Reveal>
           </div>
         </div>
@@ -112,24 +112,25 @@ const AboutPage = () => {
               </div>
 
               <div className="absolute left-[74px] bottom-[-20px] z-20 w-[160px] bg-[#0f4c81] px-5 py-5 text-white shadow-[0_22px_60px_rgba(15,76,129,0.35)] sm:w-[180px]">
-                <p className="text-4xl font-extrabold leading-none">680</p>
+                <p className="text-4xl font-extrabold leading-none">100+</p>
                 <p className="mt-2 text-xs font-semibold uppercase tracking-[0.22em] text-white/75">
-                  Business Trust Us
+                  Projects Delivered
                 </p>
               </div>
             </Reveal>
 
             <div className="max-w-2xl">
               <Reveal delay={0.06}>
-                <SectionLabel>About Us</SectionLabel>
+                <SectionLabel>About OHI</SectionLabel>
               </Reveal>
               <Reveal delay={0.08} as="h2" className="mt-5 text-4xl font-extrabold leading-tight tracking-[-0.03em] text-[#1f2937] sm:text-5xl">
-                We Are Business Consultants Dedicated To Driving Your Success
+                We turn Africa's development story into strategic visibility
               </Reveal>
               <Reveal delay={0.12}>
                 <p className="mt-5 text-lg leading-8 text-textColor">
                   OHI creates development communication that helps institutions, partners,
-                  and communities understand the work being done and why it matters.
+                  and communities understand the work being done, why it matters, and why it
+                  deserves attention from capital and policy actors.
                 </p>
               </Reveal>
               <Reveal delay={0.16}>
@@ -145,7 +146,7 @@ const AboutPage = () => {
                   <BadgeCheck className="h-5 w-5" />
                 </span>
                 <div>
-                  <p className="text-lg font-semibold text-slate-900">15 Years Of Experience</p>
+                  <p className="text-lg font-semibold text-slate-900">Development and investment fluency</p>
                   <p className="mt-1 max-w-md text-sm leading-6 text-slate-500">
                     OHI combines strategy, production, and field storytelling into one
                     editorial workflow.
@@ -177,7 +178,7 @@ const AboutPage = () => {
         <div className="relative container mx-auto px-4 sm:px-5 lg:px-20">
           <SectionLabel dark>Our Mission & Vision</SectionLabel>
           <Reveal as="h2" className="mt-5 max-w-4xl text-4xl font-extrabold leading-tight tracking-[-0.03em] sm:text-5xl">
-            Discover The Core Principles That Guide Us
+            The core principles that guide OHI
           </Reveal>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
@@ -264,10 +265,10 @@ const AboutPage = () => {
 
             <div className="max-w-2xl">
               <Reveal>
-                <SectionLabel>Meet The Experts</SectionLabel>
+                <SectionLabel>Meet The Team</SectionLabel>
               </Reveal>
               <Reveal delay={0.06} as="h2" className="mt-5 text-4xl font-extrabold leading-tight tracking-[-0.03em] text-[#1f2937] sm:text-5xl">
-                Discover Our Team Of Head Business Consultant Experts
+                A multilingual team fluent in English, French, and Pidgin
               </Reveal>
               <Reveal delay={0.12}>
                 <p className="mt-5 max-w-xl text-lg leading-8 text-textColor">
@@ -294,7 +295,7 @@ const AboutPage = () => {
         <div className="relative container mx-auto px-4 py-20 text-white sm:px-5 lg:px-20 lg:py-24">
           <div className="max-w-2xl">
             <Reveal as="h2" className="text-4xl font-extrabold leading-tight tracking-[-0.03em] sm:text-5xl">
-              Let's Discuss Your Business Goals & Schedule A Free Consultation Today
+              Let us turn your next programme into proof
             </Reveal>
             <Reveal delay={0.06}>
               <p className="mt-5 max-w-xl text-lg leading-8 text-white/80">

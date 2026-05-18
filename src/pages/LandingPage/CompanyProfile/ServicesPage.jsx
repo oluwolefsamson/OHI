@@ -20,12 +20,12 @@ const ServicesPage = () => {
   const { services } = config;
 
   const serviceFormats = [
+    "Investment & programme visibility",
     "Impact documentaries",
-    "Development program visibility",
-    "Investment promotion films",
-    "Community engagement content",
-    "Testimonial and beneficiary stories",
-    "Digital campaign content",
+    "ESG & social impact storytelling",
+    "Development programme communication",
+    "Donor & investor reporting films",
+    "Multilingual field production",
   ];
 
   const serviceShowcase = [
@@ -36,31 +36,31 @@ const ServicesPage = () => {
       image: wfp03523Img,
     },
     {
-      title: "Development Program Visibility",
+      title: "Development Programme Communication",
       description:
-        "OHI helps development programs communicate their objectives, implementation, and results with clarity and authenticity. Our visuals strengthen transparency, accountability, and stakeholder alignment across the project lifecycle.",
+        "OHI helps development programmes communicate their objectives, implementation, and results with clarity and authenticity. Our visuals strengthen transparency, accountability, and stakeholder alignment across the project lifecycle.",
       image: wfp03558Img,
     },
     {
-      title: "Investment Promotion Films",
+      title: "Investment & Programme Visibility",
       description:
         "We craft investor-focused films that present projects as credible, bankable, and scalable opportunities. By combining strategic messaging with compelling visuals, OHI helps unlock financing and accelerate decision-making.",
       image: wfp03520Img,
     },
     {
-      title: "Community Engagement Content",
+      title: "ESG & Social Impact Storytelling",
       description:
         "Our content amplifies community voice and local ownership, ensuring projects are seen through the lens of those they serve. OHI storytelling builds legitimacy, social buy-in, and sustainable impact.",
       image: bts02812Img,
     },
     {
-      title: "Testimonial & Beneficiary Stories",
+      title: "Donor & Investor Reporting Films",
       description:
         "We capture authentic testimonials that turn beneficiaries into powerful advocates for your work. Each story is handled ethically, with dignity, and aligned with broader impact and investment narratives.",
       image: bts02864Img,
     },
     {
-      title: "Donor / Partner Reporting Films",
+      title: "Multilingual Field Production",
       description:
         "OHI produces concise, evidence-driven reporting films that communicate results, learning, and accountability. These films support donor relations, renewal, and long-term partnerships.",
       image: wfp03524Img,
@@ -87,7 +87,7 @@ const ServicesPage = () => {
       <section>
         <SectionHeader
           title="Core services"
-          description="The company profile describes OHI as a partner for organisations that need clear, credible, and human-centered storytelling."
+          description="The company profile describes OHI as a partner for organisations that need clear, credible, and investment-grade storytelling."
         />
         <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {services.cards.map((card, index) => (

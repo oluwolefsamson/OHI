@@ -80,7 +80,7 @@ const Brochure = () => {
           <div className="max-w-2xl">
             <SectionHeader
               title="Company Profile"
-              description="Browse the company profile in a page-by-page Swiper deck."
+              description="Browse the company profile in a page-by-page Swiper deck that presents OHI as a development storytelling partner for institutions, investors, and governments."
               className="mx-0 max-w-xl text-left"
             />
 
@@ -91,9 +91,7 @@ const Brochure = () => {
                   Strategic overview
                 </Badge>
                 <p className="mt-4 text-sm leading-7 text-textColor">
-                  The profile is built to explain who OHI is, what the team
-                  delivers, and why the work matters for development
-                  communication.
+                  The profile is built to explain who OHI is, what the team delivers, and why the work matters for investment-grade storytelling and development communication.
                 </p>
               </div>
 
@@ -103,8 +101,7 @@ const Brochure = () => {
                   Page-by-page
                 </Badge>
                 <p className="mt-4 text-sm leading-7 text-textColor">
-                  The deck on the right lets visitors browse the brochure in a
-                  focused, visual sequence.
+                  The deck on the right lets visitors browse the brochure in a focused, visual sequence.
                 </p>
               </div>
 
@@ -114,8 +111,7 @@ const Brochure = () => {
                   Built for stakeholders
                 </Badge>
                 <p className="mt-4 text-sm leading-7 text-textColor">
-                  The layout helps donors, partners, and teams scan the story
-                  quickly before diving into the pages.
+                  The layout helps donors, partners, and teams scan the story quickly before diving into the pages.
                 </p>
               </div>
 
@@ -125,8 +121,7 @@ const Brochure = () => {
                   Easy to explore
                 </Badge>
                 <p className="mt-4 text-sm leading-7 text-textColor">
-                  Start with the summary on the left, then use the Swiper on the
-                  right to browse the full brochure.
+                  Start with the summary on the left, then use the Swiper on the right to browse the full brochure.
                 </p>
               </div>
             </div>

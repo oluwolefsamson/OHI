@@ -36,7 +36,7 @@ const ApproachPage = () => {
       <section>
         <SectionHeader
           title="How OHI works"
-          description="Each project is designed to be practical for clients that need professional communication support without unnecessary complexity."
+          description="Each project is designed to be practical for DFIs, governments, and institutions that need professional communication support without unnecessary complexity."
         />
         <div className="mt-12 grid gap-4 lg:grid-cols-4">
           {steps.map((step, index) => (
@@ -64,7 +64,7 @@ const ApproachPage = () => {
           </p>
           <h3 className="mt-4 text-3xl font-bold">Aligned with donor and DFI standards</h3>
           <p className="mt-4 leading-7 text-white/80">
-            The profile notes a project management approach that aligns with communication standards expected by development partners and institutional teams.
+            The profile notes a project management approach that aligns with communication standards expected by development partners, DFIs, and institutional teams.
           </p>
         </div>
 
@@ -75,7 +75,7 @@ const ApproachPage = () => {
           <div className="mt-5 space-y-3">
             {[
               "Documentary films and mission coverage",
-              "Visibility content for programs and institutions",
+              "Visibility content for programmes and institutions",
               "Testimonial stories and beneficiary-focused edits",
               "Campaign-ready outputs for digital channels",
               "Stakeholder communication assets for reporting and presentations",

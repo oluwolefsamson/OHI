@@ -47,7 +47,7 @@ const ImpactPage = () => {
             <h3 className="text-2xl font-bold">What OHI helps you achieve</h3>
           </div>
           <p className="mt-4 leading-7 text-white/80">
-            OHI transforms African projects across industries into compelling stories that inspire action, visibility, and lasting impact.
+            OHI transforms African projects into compelling stories that inspire action, visibility, trust, and lasting impact.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {config.hero.stats.map((stat) => (
@@ -65,7 +65,7 @@ const ImpactPage = () => {
             <h3 className="text-2xl font-bold text-headingColor">The communication payoff</h3>
           </div>
           <p className="text__para">
-            Good storytelling helps a program look like a program that can be trusted, funded, shared, and scaled. That is the lens behind every project in the profile.
+            Good storytelling helps a programme look like a programme that can be trusted, funded, shared, and scaled. That is the lens behind every project in the profile.
           </p>
           <div className="mt-6 rounded-[24px] bg-slate-50 p-5">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primaryColor">

@@ -37,6 +37,8 @@ import portfolioImage04 from "../../../assets/img/WFP-03525.jpg";
 import portfolioImage05 from "../../../assets/img/WFP-03527.jpg";
 import portfolioImage06 from "../../../assets/img/WFP-03534.jpg";
 
+const brochurePdfHref = "/OHI-Company-Profile.pdf";
+
 const profilePages = [
   {
     label: "Services",
@@ -53,7 +55,7 @@ const profilePages = [
   {
     label: "Who We Serve",
     path: "/who-we-serve",
-    description: "NGOs, DFIs, governments, municipalities, and private-sector impact teams.",
+    description: "NGOs, DFIs, governments, multilateral agencies, and private-sector impact teams.",
     icon: Handshake,
   },
   {
@@ -114,9 +116,9 @@ const profileHighlights = [
 ];
 
 const profileStats = [
-  { label: "Profile sections", value: "06" },
-  { label: "Client brands", value: "04" },
-  { label: "Story focus", value: "Impact" },
+  { label: "Projects delivered", value: "100+" },
+  { label: "Institutional clients", value: "70+" },
+  { label: "Repeat rate", value: "95%" },
 ];
 
 const portfolioProjects = [
@@ -175,8 +177,18 @@ const CompanyProfile = () => {
           <p className="mt-4 max-w-2xl text-base leading-7 text-textColor">
             The company profile is designed as a guided entry point into OHI. It
             gives visitors a fast read on who the team is, what they do, and why
-            their work matters for development and impact communication.
+            their work matters for development, investment, and impact communication.
           </p>
+
+          <div className="mt-6">
+            <a
+              href={brochurePdfHref}
+              download
+              className="hero_btn1 inline-flex items-center gap-2 transition duration-300 ease-out hover:-translate-y-0.5"
+            >
+              Download Brochure
+            </a>
+          </div>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {profileStats.map((stat) => (

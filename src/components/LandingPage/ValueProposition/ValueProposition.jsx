@@ -5,26 +5,26 @@ import Reveal from "../../ui/reveal";
 
 const tiers = [
   {
-    name: "Expertise & Credibility",
+    name: "Institutional credibility",
     id: "tier-expertise",
     href: "#contact",
     priceMonthly: "01",
     description:
-      "Seasoned professionals delivering visual content for development institutions, governments, NGOs and corporate brands.",
+      "Seasoned professionals delivering visual content for DFIs, multilaterals, governments, NGOs, and private-sector actors.",
     features: [
       "Nearly a decade of experience",
-      "UN, EU and private-sector project exposure",
+      "UN, EU, and private-sector project exposure",
       "Trusted delivery across Africa",
     ],
     featured: false,
   },
   {
-    name: "Strategic Creativity",
+    name: "Strategic fluency",
     id: "tier-strategic",
     href: "#contact",
     priceMonthly: "02",
     description:
-      "We combine narrative craft with communication strategy so every film supports a clear organisational objective.",
+      "We combine narrative craft with communication strategy so every film supports a clear institutional objective.",
     features: [
       "Storytelling grounded in strategy",
       "Content tailored to audiences and outcomes",
@@ -33,12 +33,12 @@ const tiers = [
     featured: true,
   },
   {
-    name: "Flexible, Value-Based Solutions",
+    name: "Multilingual delivery",
     id: "tier-flexible",
     href: "#contact",
     priceMonthly: "03",
     description:
-      "We adapt to your timelines, budgets and communication standards without compromising quality.",
+      "We adapt to your timelines, budgets, and communication standards without compromising quality.",
     features: [
       "Tailored project scoping",
       "End-to-end production support",
@@ -60,7 +60,7 @@ export default function ValueProposition() {
     >
       <SectionHeader
         title="Our Value Proposition"
-        description="OHI combines creativity, credibility and flexibility to help projects communicate with clarity and impact."
+        description="OHI combines creativity, credibility, and flexibility to help projects communicate with clarity and impact."
       />
 
       <div className="mx-auto mt-12 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-16 lg:max-w-6xl lg:grid-cols-3">
